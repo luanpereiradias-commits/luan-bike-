@@ -16,6 +16,7 @@
         body {
             background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
 
         /* Cabeçalho */
@@ -72,6 +73,7 @@
         .titulo-secao {
             text-align: center;
             margin-bottom: 2rem;
+            font-size: 2rem;
         }
 
         .grid-produtos {
@@ -86,6 +88,8 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .card-produto:hover {
@@ -100,10 +104,117 @@
 
         .info-produto {
             padding: 15px;
+            text-align: center;
+        }
+
+        .info-produto h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
         }
 
         .preco {
             color: #e67e22;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            margin
+            display: block;
+            margin: 10px 0;
+        }
+
+        .btn-comprar {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: #ffcc00;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 2rem; }
+            header { flex-direction: column; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BIKE PRO</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Bikes</a>
+            <a href="#">Acessórios</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Domine as Trilhas</h2>
+        <p>As melhores mountain bikes e equipamentos para sua próxima aventura.</p>
+    </section>
+
+    <main class="container">
+        <h2 class="titulo-secao">Destaques da Semana</h2>
+        
+        <div class="grid-produtos">
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=500&q=60" alt="Mountain Bike">
+                <div class="info-produto">
+                    <h3>MTB Trail Master 29</h3>
+                    <span class="preco">R$ 3.499,00</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1532298229144-0ee0511810dd?auto=format&fit=crop&w=500&q=60" alt="Road Bike">
+                <div class="info-produto">
+                    <h3>Road Speed Carbon</h3>
+                    <span class="preco">R$ 5.800,00</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1598681414404-98448f2945ba?auto=format&fit=crop&w=500&q=60" alt="Capacete Pro">
+                <div class="info-produto">
+                    <h3>Capacete Aero Stealth</h3>
+                    <span class="preco">R$ 450,00</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=500&q=60" alt="Bicicleta Urbana">
+                <div class="info-produto">
+                    <h3>Urban City Ride</h3>
+                    <span class="preco">R$ 1.950,00</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bike Pro - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
