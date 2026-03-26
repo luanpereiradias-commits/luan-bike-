@@ -3,152 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bike Pro - Sua Loja de Aventuras</title>
+    <title>Bike Pro | Especialista em Duas Rodas</title>
     <style>
-        /* Estilos Básicos */
+        :root {
+            --primary: #ffcc00;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --text: #333;
+            --accent: #e67e22;
+            --shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--light);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        /* Cabeçalho */
+        /* Header refinado */
         header {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 1rem 5%;
+            background-color: var(--dark);
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffcc00;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #ffcc00;
-        }
+        nav a:hover { color: var(--primary); }
 
-        /* Hero Section (Banner) */
+        /* Hero Section com Overlay mais suave */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 400px;
+            height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
+            padding: 0 20px;
         }
 
-        .hero h2 { font-size: 3rem; margin-bottom: 10px; }
+        .hero h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 15px; text-transform: uppercase; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; }
 
-        /* Vitrine de Produtos */
-        .container {
-            padding: 2rem 5%;
-        }
-
-        .titulo-secao {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
+        /* Vitrine */
+        .container { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .titulo-secao { text-align: center; margin-bottom: 3rem; font-size: 2.2rem; position: relative; }
+        .titulo-secao::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
         }
 
         .grid-produtos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
+        /* Card de Produto Melhorado */
         .card-produto {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
             display: flex;
             flex-direction: column;
         }
 
         .card-produto:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .img-container {
+            overflow: hidden;
+            height: 220px;
         }
 
         .card-produto img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card-produto:hover img { transform: scale(1.1); }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 10;
         }
 
         .info-produto {
-            padding: 15px;
-            text-align: center;
+            padding: 20px;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .info-produto h3 {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
+        .info-produto h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--dark); }
+        .descricao { font-size: 0.85rem; color: #666; margin-bottom: 15px; min-height: 40px; }
+        
         .preco {
-            color: #e67e22;
-            font-size: 1.4rem;
-            font-weight: bold;
-            display: block;
-            margin: 10px 0;
+            color: var(--dark);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            margin-top: auto;
         }
 
         .btn-comprar {
-            display: inline-block;
-            background-color: #1a1a1a;
-            color: #ffcc00;
-            padding: 10px 20px;
+            background-color: var(--dark);
+            color: var(--primary);
+            padding: 12px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
+            text-align: center;
             transition: 0.3s;
         }
 
         .btn-comprar:hover {
-            background-color: #ffcc00;
-            color: #1a1a1a;
+            background-color: var(--primary);
+            color: var(--dark);
         }
 
         footer {
-            background: #1a1a1a;
-            color: white;
+            background: var(--dark);
+            color: #888;
             text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
+            padding: 3rem;
+            margin-top: 4rem;
         }
 
-        /* Responsividade */
         @media (max-width: 600px) {
-            .hero h2 { font-size: 2rem; }
-            header { flex-direction: column; }
-            nav { margin-top: 15px; }
+            header { flex-direction: column; gap: 15px; }
             nav a { margin: 0 10px; }
         }
     </style>
@@ -160,52 +195,66 @@
         <nav>
             <a href="#">Início</a>
             <a href="#">Bikes</a>
-            <a href="#">Acessórios</a>
+            <a href="#">Peças</a>
             <a href="#">Contato</a>
         </nav>
     </header>
 
     <section class="hero">
         <h2>Domine as Trilhas</h2>
-        <p>As melhores mountain bikes e equipamentos para sua próxima aventura.</p>
+        <p>Alta performance e resistência para quem não tem medo de poeira.</p>
     </section>
 
     <main class="container">
-        <h2 class="titulo-secao">Destaques da Semana</h2>
+        <h2 class="titulo-secao">Destaques 2026</h2>
         
         <div class="grid-produtos">
             <div class="card-produto">
-                <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=500&q=60" alt="Mountain Bike">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=500&q=60" alt="MTB">
+                </div>
                 <div class="info-produto">
                     <h3>MTB Trail Master 29</h3>
+                    <p class="descricao">Ideal para trilhas técnicas e XC de longa distância.</p>
                     <span class="preco">R$ 3.499,00</span>
                     <a href="#" class="btn-comprar">Comprar Agora</a>
                 </div>
             </div>
 
             <div class="card-produto">
-                <img src="https://images.unsplash.com/photo-1532298229144-0ee0511810dd?auto=format&fit=crop&w=500&q=60" alt="Road Bike">
+                <span class="badge">Lançamento</span>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&w=500&q=60" alt="Hupi Naja">
+                </div>
+                <div class="info-produto">
+                    <h3>Hupi Naja 2026</h3>
+                    <p class="descricao">Geometria otimizada para Pump Tracks e Dirt Jump.</p>
+                    <span class="preco">R$ 4.250,00</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <span class="badge">Popular</span>
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1544191959-2383e521ce7f?auto=format&fit=crop&w=500&q=60" alt="Gios BR">
+                </div>
+                <div class="info-produto">
+                    <h3>Gios BR Stage 2</h3>
+                    <p class="descricao">A favorita para o Wheeling com quadro reforçado.</p>
+                    <span class="preco">R$ 3.890,00</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
+            </div>
+
+            <div class="card-produto">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1532298229144-0ee0511810dd?auto=format&fit=crop&w=500&q=60" alt="Road Bike">
+                </div>
                 <div class="info-produto">
                     <h3>Road Speed Carbon</h3>
+                    <p class="descricao">Ultra leve para máxima velocidade no asfalto.</p>
                     <span class="preco">R$ 5.800,00</span>
-                    <a href="#" class="btn-comprar">Comprar Agora</a>
-                </div>
-            </div>
-
-            <div class="card-produto">
-                <img src="https://images.unsplash.com/photo-1598681414404-98448f2945ba?auto=format&fit=crop&w=500&q=60" alt="Capacete Pro">
-                <div class="info-produto">
-                    <h3>Capacete Aero Stealth</h3>
-                    <span class="preco">R$ 450,00</span>
-                    <a href="#" class="btn-comprar">Comprar Agora</a>
-                </div>
-            </div>
-
-            <div class="card-produto">
-                <img src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&w=500&q=60" alt="Bicicleta Urbana">
-                <div class="info-produto">
-                    <h3>Urban City Ride</h3>
-                    <span class="preco">R$ 1.950,00</span>
                     <a href="#" class="btn-comprar">Comprar Agora</a>
                 </div>
             </div>
@@ -213,36 +262,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Bike Pro - Todos os direitos reservados.</p>
+        <p>&copy; 2026 Bike Pro - Paixão por Ciclismo</p>
     </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<div class="card-produto">
-                <img src="https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&w=500&q=60" alt="Hupi Naja">
-                <div class="info-produto">
-                    <h3>Hupi Naja 2026 - Edição Limitada</h3>
-                    <p style="font-size: 0.8rem; color: #666;">Geometria perfeita para manobras e pump tracks.</p>
-                    <span class="preco">R$ 4.250,00</span>
-                    <a href="#" class="btn-comprar">Comprar Agora</a>
-                </div>
-            </div>
-
-            <div class="card-produto">
-                <img src="https://images.unsplash.com/photo-1544191959-2383e521ce7f?auto=format&fit=crop&w=500&q=60" alt="Gios BR">
-                <div class="info-produto">
-                    <h3>Gios BR Stage 2</h3>
-                    <p style="font-size: 0.8rem; color: #666;">O clássico do Wheeling com reforço estrutural.</p>
-                    <span class="preco">R$ 3.890,00</span>
-                    <a href="#" class="btn-comprar">Comprar Agora</a>
-                </div>
-            </div>
