@@ -1,386 +1,388 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bike Pro - Especialista em bicicletas e peças. Confira nossas bikes e peças em destaque 2026.">
-    <title>Bike Pro | Especialista em Duas Rodas</title>
-    <style>
-        :root {
-            --primary: #ffcc00;
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
-            --text: #333;
-            --accent: #e67e22;
-            --shadow: 0 10px 20px rgba(0,0,0,0.08);
-            --transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; }
-        body { background: var(--light); color: var(--text); line-height:1.6; scroll-behavior: smooth; }
-
-        header { background: var(--dark); padding:1.2rem 5%; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.3);}
-        .logo { font-size:1.6rem; font-weight:800; color:var(--primary); letter-spacing:-1px; }
-        nav a { color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size:0.95rem; transition:0.3s; }
-        nav a:hover, nav a:focus { color:var(--primary); outline:none; }
-
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-                        url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1350&q=80');
-            background-size:cover; background-position:center; height:450px;
-            display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center; padding:0 20px; position:relative;
-        }
-        .hero::before {
-            content:""; position:absolute; width:100%; height:100%;
-            background: linear-gradient(120deg, rgba(255,204,0,0.2), rgba(230,126,34,0.2));
-            animation: moveGradient 15s linear infinite;
-        }
-        @keyframes moveGradient { 0%{transform:translateX(-100%);} 100%{transform:translateX(100%);} }
-        .hero h2 { position:relative; z-index:1; font-size:clamp(2rem,5vw,3.5rem); margin-bottom:15px; text-transform:uppercase;}
-        .hero p { position:relative; z-index:1; font-size:1.2rem; opacity:0.9; max-width:600px; }
-
-        .container { padding:4rem 5%; max-width:1200px; margin:0 auto; }
-        .titulo-secao { text-align:center; margin-bottom:3rem; font-size:2.2rem; position:relative; }
-        .titulo-secao::after { content:''; display:block; width:60px; height:4px; background:var(--primary); margin:10px auto; }
-
-        .grid-produtos { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
-
-        .card-produto { background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow); transition:var(--transition); position:relative; display:flex; flex-direction:column; transform:translateY(20px); opacity:0;}
-        .card-produto.visible { transform:translateY(0); opacity:1; }
-        .card-produto:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.15);}
-        .img-container { overflow:hidden; height:220px; }
-        .card-produto img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s;}
-        .card-produto:hover img { transform:scale(1.1); }
-
-        .badge { position:absolute; top:15px; right:15px; background:var(--accent); color:white; padding:5px 12px; border-radius:20px; font-size:0.75rem; font-weight:bold; z-index:10; transition:transform 0.3s; }
-        .card-produto:hover .badge { transform:scale(1.1); }
-
-        .info-produto { padding:20px; text-align:left; flex-grow:1; display:flex; flex-direction:column; }
-        .info-produto h3 { font-size:1.2rem; margin-bottom:8px; color:var(--dark); }
-        .descricao { font-size:0.85rem; color:#666; margin-bottom:15px; min-height:40px; }
-        .preco { color:var(--dark); font-size:1.5rem; font-weight:800; margin-bottom:20px; margin-top:auto; }
-        .btn-comprar { background:var(--dark); color:var(--primary); padding:12px; text-decoration:none; border-radius:8px; font-weight:bold; text-align:center; transition:0.3s; }
-        .btn-comprar:hover, .btn-comprar:focus { background:var(--primary); color:var(--dark); outline:none; }
-
-        footer { background:var(--dark); color:#888; text-align:center; padding:3rem; margin-top:4rem; }
-
-        #topBtn { position:fixed; bottom:30px; right:30px; background:var(--primary); color:var(--dark); border:none; padding:12px 16px; border-radius:50px; cursor:pointer; box-shadow:var(--shadow); display:none; z-index:100; transition:transform 0.3s; }
-        #topBtn:hover { transform:scale(1.1); }
-
-        @media(max-width:600px){ header{flex-direction:column; gap:15px;} nav a{margin:0 10px;} }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="logo">BIKE PRO</div>
-        <nav>
-            <a href="#bikes">Bikes</a>
-            <a href="#pecas">Peças</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h2>Domine as Trilhas</h2>
-        <p>Alta performance e resistência para quem não tem medo de poeira.</p>
-    </section>
-
-    <!-- Seção Bikes -->
-    <main class="container" id="bikes">
-        <h2 class="titulo-secao">Bikes em Destaque 2026</h2>
-        <div class="grid-produtos">
-            <div class="card-produto">
-                <div class="img-container"><img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=500&q=60" alt="MTB Trail Master 29" loading="lazy"></div>
-                <div class="info-produto">
-                    <h3>MTB Trail Master 29</h3>
-                    <p class="descricao">Ideal para trilhas técnicas e XC de longa distância.</p>
-                    <span class="preco">R$ 3.499,00</span>
-                    <a href="#" class="btn-comprar" aria-label="Comprar MTB Trail Master 29">Comprar Agora</a>
-                </div>
-            </div>
-
-            <div class="card-produto">
-                <span class="badge">Lançamento</span>
-                <div class="img-container"><img src="https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&w=500&q=60" alt="Hupi Naja 2026" loading="lazy"></div>
-                <div class="info-produto">
-                    <h3>Hupi Naja 2026</h3>
-                    <p class="descricao">Geometria otimizada para Pump Tracks e Dirt Jump.</p>
-                    <span class="preco">R$ 4.250,00</span>
-                    <a href="#" class="btn-comprar" aria-label="Comprar Hupi Naja 2026">Comprar Agora</a>
-                </div>
-            </div>
-
-            <div class="card-produto">
-                <span class="badge">Popular</span>
-                <div class="img-container"><img src="https://images.unsplash.com/photo-1544191959-2383e521ce7f?auto=format&fit=crop&w=500&q=60" alt="Gios BR Stage 2" loading="lazy"></div>
-                <div class="info-produto">
-                    <h3>Gios BR Stage 2</h3>
-                    <p class="descricao">A favorita para o Wheeling com quadro reforçado.</p>
-                    <span class="preco">R$ 3.890,00</span>
-                    <a href="#" class="btn-comprar" aria-label="Comprar Gios BR Stage 2">Comprar Agora</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Seção Peças -->
-    <section class="container" id="pecas">
-        <h2 class="titulo-secao">Peças em Destaque 2026</h2>
-        <div class="grid-produtos">
-            <div class="card-produto">
-                <div class="img-container"><img src="https://images.unsplash.com/photo-1599041857453-1a1c0a5e0cf4?auto=format&fit=crop&w=500&q=60" alt="Pedal Clip MTB" loading="lazy"></div>
-                <div class="info-produto">
-                    <h3>Pedal Clip MTB</h3>
-                    <p class="descricao">Alta resistência e firmeza para trilhas e XC.</p>
-                    <span class="preco">R$ 180,00</span>
-                    <a href="#" class="btn-comprar" aria-label="Comprar Pedal Clip MTB">Comprar Agora</a>
-                </div>
-            </div>
-
-            <div class="card-produto">
-                <div class="img-container"><img src="https://images.unsplash.com/photo-1596085127361-7e0f04720bc7?auto=format&fit=crop&w=500&q=60" alt="Capacete Speed" loading="lazy"></div>
-                <div class="info-produto">
-                    <h3>Capacete Speed</h3>
-                    <p class="descricao">Leve e aerodinâmico, ideal para asfalto e treino intenso.</p>
-                    <span class="preco">R$ 320,00</span>
-                    <a href="#" class="btn-comprar" aria-label="Comprar Capacete Speed">Comprar Agora</a>
-                </div>
-            </div>
-
-            <div class="card-produto">
-                <div class="img-container"><img src="https://images.unsplash.com/photo-1580656013683-6231c79c54a8?auto=format&fit=crop&w=500&q=60" alt="Guidão MTB Carbon" loading="lazy"></div>
-                <div class="info-produto">
-                    <h3>Guidão MTB Carbon</h3>
-                    <p class="descricao">Leve e resistente, perfeito para trilhas e manobras.</p>
-                    <span class="preco">R$ 450,00</span>
-                    <a href="#" class="btn-comprar" aria-label="Comprar Guidão MTB Carbon">Comprar Agora</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contato">
-        <p>&copy; 2026 Bike Pro - Paixão por Ciclismo</p>
-    </footer>
-
-    <button id="topBtn" onclick="scrollToTop()">↑</button>
-
-    <script>
-        // Botão voltar ao topo
-        const topBtn = document.getElementById('topBtn');
-        window.onscroll = () => { topBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; };
-        function scrollToTop() { window.scrollTo({ top:0, behavior:'smooth' }); }
-
-        // Animação fade-in cards
-        const cards = document.querySelectorAll('.card-produto');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold:0.1 });
-        cards.forEach(card => observer.observe(card));
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>LSDV Logo</title>
-
-  <!-- Fonte elegante -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Carro</title>
   <style>
-    body {
+    * {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #111;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #0b0b0b;
-      font-family: 'Playfair Display', serif;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: white;
+      overflow: hidden;
     }
 
-    .logo {
-      font-size: 80px;
-      letter-spacing: 10px;
-      text-transform: uppercase;
+    #game-container {
+      position: relative;
+      width: 400px;
+      height: 600px;
+      background: #222;
+      border: 4px solid #444;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 150, 255, 0.3);
+    }
 
-      /* Efeito dourado */
-      background: linear-gradient(135deg, #d4af37, #ffd700, #b8962e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    canvas {
+      display: block;
+      background: #1a1a1a;
+    }
 
-      /* Brilho sutil */
-      text-shadow: 
-        0 0 10px rgba(255, 215, 0, 0.3),
-        0 0 20px rgba(255, 215, 0, 0.2);
+    #ui {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+      z-index: 10;
+    }
 
-      /* Leve efeito 3D */
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8));
+    #score {
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00aaff;
+    }
+
+    #high-score {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 4px;
+    }
+
+    #message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 30px 40px;
+      border-radius: 15px;
+      border: 2px solid #00aaff;
+      display: none;
+      z-index: 20;
+    }
+
+    #message h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #ff4444;
+    }
+
+    #message p {
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    #message button {
+      background: #00aaff;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #message button:hover {
+      background: #0088cc;
+    }
+
+    #controls {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    
+    <div id="ui">
+      <div id="score">0</div>
+      <div id="high-score">Recorde: 0</div>
+    </div>
 
-  <div class="logo">LSDV</div>
+    <div id="message">
+      <h2>Game Over!</h2>
+      <p id="final-score">Pontuação: 0</p>
+      <button onclick="restartGame()">Jogar Novamente</button>
+    </div>
 
+    <div id="controls">
+      ← → ou A D para mover | Espaço para pausar
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const scoreEl = document.getElementById('score');
+    const highScoreEl = document.getElementById('high-score');
+    const messageEl = document.getElementById('message');
+    const finalScoreEl = document.getElementById('final-score');
+
+    // Configurações
+    const ROAD_WIDTH = 280;
+    const LANE_COUNT = 3;
+    const LANE_WIDTH = ROAD_WIDTH / LANE_COUNT;
+
+    // Estado do jogo
+    let gameRunning = true;
+    let paused = false;
+    let score = 0;
+    let highScore = localStorage.getItem('carGameHighScore') || 0;
+    let speed = 4;
+    let frame = 0;
+
+    highScoreEl.textContent = `Recorde: ${highScore}`;
+
+    // Carro do jogador
+    const player = {
+      x: canvas.width / 2 - 20,
+      y: canvas.height - 100,
+      width: 40,
+      height: 70,
+      color: '#00aaff',
+      speed: 6
+    };
+
+    // Obstáculos
+    let obstacles = [];
+    let roadLines = [];
+
+    // Inicializa linhas da estrada
+    for (let i = 0; i < 10; i++) {
+      roadLines.push({
+        y: i * 70
+      });
+    }
+
+    // Controles
+    const keys = {};
+    window.addEventListener('keydown', e => {
+      keys[e.key.toLowerCase()] = true;
+      if (e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        if (gameRunning) paused = !paused;
+      }
+    });
+    window.addEventListener('keyup', e => {
+      keys[e.key.toLowerCase()] = false;
+    });
+
+    function createObstacle() {
+      const lane = Math.floor(Math.random() * LANE_COUNT);
+      const roadLeft = (canvas.width - ROAD_WIDTH) / 2;
+      const colors = ['#ff4444', '#ff8800', '#aa44ff', '#44ff88', '#ffff44'];
+      
+      obstacles.push({
+        x: roadLeft + lane * LANE_WIDTH + (LANE_WIDTH - 40) / 2,
+        y: -80,
+        width: 40,
+        height: 70,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        passed: false
+      });
+    }
+
+    function drawRoad() {
+      const roadLeft = (canvas.width - ROAD_WIDTH) / 2;
+
+      // Grama / laterais
+      ctx.fillStyle = '#1a3a1a';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Estrada
+      ctx.fillStyle = '#333';
+      ctx.fillRect(roadLeft, 0, ROAD_WIDTH, canvas.height);
+
+      // Bordas da estrada
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(roadLeft, 0);
+      ctx.lineTo(roadLeft, canvas.height);
+      ctx.moveTo(roadLeft + ROAD_WIDTH, 0);
+      ctx.lineTo(roadLeft + ROAD_WIDTH, canvas.height);
+      ctx.stroke();
+
+      // Linhas tracejadas do meio
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 3;
+      ctx.setLineDash([30, 30]);
+      
+      for (let i = 1; i < LANE_COUNT; i++) {
+        const x = roadLeft + i * LANE_WIDTH;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+
+      // Linhas horizontais (efeito de movimento)
+      ctx.fillStyle = 'rgba(255,255,255,0.15)';
+      roadLines.forEach(line => {
+        ctx.fillRect(roadLeft + 5, line.y, ROAD_WIDTH - 10, 4);
+      });
+    }
+
+    function drawCar(car) {
+      // Corpo
+      ctx.fillStyle = car.color;
+      ctx.fillRect(car.x, car.y, car.width, car.height);
+
+      // Teto
+      ctx.fillStyle = 'rgba(0,0,0,0.3)';
+      ctx.fillRect(car.x + 6, car.y + 12, car.width - 12, 22);
+
+      // Faróis
+      ctx.fillStyle = '#ffffaa';
+      ctx.fillRect(car.x + 5, car.y, 8, 6);
+      ctx.fillRect(car.x + car.width - 13, car.y, 8, 6);
+
+      // Lanternas
+      ctx.fillStyle = '#ff2222';
+      ctx.fillRect(car.x + 5, car.y + car.height - 8, 10, 8);
+      ctx.fillRect(car.x + car.width - 15, car.y + car.height - 8, 10, 8);
+
+      // Rodas
+      ctx.fillStyle = '#111';
+      ctx.fillRect(car.x - 4, car.y + 10, 6, 16);
+      ctx.fillRect(car.x + car.width - 2, car.y + 10, 6, 16);
+      ctx.fillRect(car.x - 4, car.y + car.height - 26, 6, 16);
+      ctx.fillRect(car.x + car.width - 2, car.y + car.height - 26, 6, 16);
+    }
+
+    function update() {
+      if (!gameRunning || paused) return;
+
+      frame++;
+
+      // Movimento do jogador
+      const roadLeft = (canvas.width - ROAD_WIDTH) / 2;
+      const roadRight = roadLeft + ROAD_WIDTH;
+
+      if ((keys['arrowleft'] || keys['a']) && player.x > roadLeft + 5) {
+        player.x -= player.speed;
+      }
+      if ((keys['arrowright'] || keys['d']) && player.x + player.width < roadRight - 5) {
+        player.x += player.speed;
+      }
+
+      // Movimento das linhas da estrada
+      roadLines.forEach(line => {
+        line.y += speed * 1.5;
+        if (line.y > canvas.height) {
+          line.y = -20;
+        }
+      });
+
+      // Spawn de obstáculos
+      if (frame % Math.max(40, 90 - Math.floor(score / 5)) === 0) {
+        createObstacle();
+      }
+
+      // Atualiza obstáculos
+      obstacles.forEach((obs, index) => {
+        obs.y += speed;
+
+        // Pontuação
+        if (!obs.passed && obs.y > player.y + player.height) {
+          obs.passed = true;
+          score++;
+          scoreEl.textContent = score;
+
+          // Aumenta velocidade
+          if (score % 5 === 0) {
+            speed += 0.3;
+          }
+        }
+
+        // Colisão
+        if (
+          player.x < obs.x + obs.width &&
+          player.x + player.width > obs.x &&
+          player.y < obs.y + obs.height &&
+          player.y + player.height > obs.y
+        ) {
+          gameOver();
+        }
+
+        // Remove obstáculos fora da tela
+        if (obs.y > canvas.height) {
+          obstacles.splice(index, 1);
+        }
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawRoad();
+      
+      obstacles.forEach(obs => drawCar(obs));
+      drawCar(player);
+
+      if (paused && gameRunning) {
+        ctx.fillStyle = 'rgba(0,0,0,0.6)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 36px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('PAUSADO', canvas.width / 2, canvas.height / 2);
+      }
+    }
+
+    function gameOver() {
+      gameRunning = false;
+      if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('carGameHighScore', highScore);
+        highScoreEl.textContent = `Recorde: ${highScore}`;
+      }
+      finalScoreEl.textContent = `Pontuação: ${score}`;
+      messageEl.style.display = 'block';
+    }
+
+    function restartGame() {
+      score = 0;
+      speed = 4;
+      frame = 0;
+      obstacles = [];
+      player.x = canvas.width / 2 - 20;
+      scoreEl.textContent = '0';
+      messageEl.style.display = 'none';
+      gameRunning = true;
+      paused = false;
+    }
+
+    function gameLoop() {
+      update();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Inicia o jogo
+    gameLoop();
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-from flask import Flask, render_template, request, redirect, url_for, session, flash
-import sqlite3
-from datetime import datetime
-
-app = Flask(__name__)
-app.secret_key = 'chave_secreta_para_vendas' # Necessário para usar sessões (login)
-
-# --- CONFIGURAÇÕES DO BANCO (Igual ao anterior) ---
-def conectar():
-    conn = sqlite3.connect('sisvenda.db')
-    conn.row_factory = sqlite3.Row
-    return conn
-
-# Inicializa o banco ao rodar o app
-with conectar() as conn:
-    conn.execute('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, senha TEXT)')
-    conn.execute('CREATE TABLE IF NOT EXISTS produtos (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, preco REAL, estoque INTEGER)')
-    conn.execute('CREATE TABLE IF NOT EXISTS vendas (id INTEGER PRIMARY KEY AUTOINCREMENT, data TIMESTAMP DEFAULT CURRENT_TIMESTAMP, produto_id INTEGER, quantidade INTEGER, total REAL, FOREIGN KEY (produto_id) REFERENCES produtos(id))')
-    try:
-        conn.execute('INSERT INTO usuarios (username, senha) VALUES (?, ?)', ('admin', '123'))
-    except: pass
-
-# --- ROTAS ---
-
-@app.route('/')
-def index():
-    if 'user' in session:
-        return redirect(url_for('dashboard'))
-    return render_template('login.html')
-
-@app.route('/login', methods=['POST'])
-def login():
-    usuario = request.form.get('usuario')
-    senha = request.form.get('senha')
-    
-    with conectar() as conn:
-        user = conn.execute('SELECT * FROM usuarios WHERE username = ? AND senha = ?', (usuario, senha)).fetchone()
-    
-    if user:
-        session['user'] = user['username']
-        return redirect(url_for('dashboard'))
-    else:
-        flash('Usuário ou senha incorretos!', 'error')
-        return redirect(url_for('index'))
-
-@app.route('/dashboard')
-def dashboard():
-    if 'user' not in session:
-        return redirect(url_for('index'))
-    
-    with conectar() as conn:
-        produtos = conn.execute('SELECT * FROM produtos').fetchall()
-        # Pega as últimas 5 vendas para o histórico rápido
-        vendas = conn.execute('''
-            SELECT v.data, p.nome, v.quantidade, v.total 
-            FROM vendas v JOIN produtos p ON v.produto_id = p.id 
-            ORDER BY v.data DESC LIMIT 5
-        ''').fetchall()
-        
-    return render_template('dashboard.html', produtos=produtos, vendas=vendas, usuario=session['user'])
-
-@app.route('/vender', methods=['POST'])
-def vender():
-    id_p = request.form.get('produto_id')
-    qtd = int(request.form.get('quantidade'))
-    
-    with conectar() as conn:
-        prod = conn.execute('SELECT * FROM produtos WHERE id = ?', (id_p,)).fetchone()
-        
-        if prod and prod['estoque'] >= qtd:
-            total = prod['preco'] * qtd
-            conn.execute('UPDATE produtos SET estoque = estoque - ? WHERE id = ?', (qtd, id_p))
-            conn.execute('INSERT INTO vendas (produto_id, quantidade, total) VALUES (?, ?, ?)', (id_p, qtd, total))
-            conn.commit()
-            flash(f'Venda de {prod["nome"]} realizada!', 'success')
-        else:
-            flash('Erro: Estoque insuficiente ou produto inválido.', 'error')
-            
-    return redirect(url_for('dashboard'))
-
-@app.route('/logout')
-def logout():
-    session.pop('user', None)
-    return redirect(url_for('index'))
-
-if __name__ == '__main__':
-    app.run(debug=True)
