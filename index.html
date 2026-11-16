@@ -97,7 +97,7 @@
         /* HERO */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
                         url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000') center/cover no-repeat;
             display: flex;
             align-items: center;
@@ -121,7 +121,7 @@
         .hero-content p {
             font-size: 1.2rem;
             color: var(--cinza-texto);
-            max-width: 500px;
+            max-width: 520px;
             margin: 0 auto 32px;
         }
 
@@ -189,12 +189,11 @@
         }
 
         .produto-img {
-            height: 240px;
-            background: var(--cinza);
+            height: 260px;
+            background: #111;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -202,12 +201,13 @@
         .produto-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            padding: 20px;
             transition: transform 0.5s;
         }
 
         .produto-card:hover .produto-img img {
-            transform: scale(1.08);
+            transform: scale(1.06);
         }
 
         .badge {
@@ -220,6 +220,11 @@
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
+            z-index: 2;
+        }
+
+        .badge.novo {
+            background: #00c853;
         }
 
         .produto-info {
@@ -227,14 +232,23 @@
         }
 
         .produto-info h3 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .produto-info .marca {
+            color: var(--laranja);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 8px;
         }
 
         .produto-info .categoria {
             color: var(--cinza-texto);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
         }
 
         .preco {
@@ -244,7 +258,7 @@
         }
 
         .preco .valor {
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: var(--laranja);
         }
@@ -312,6 +326,32 @@
             font-size: 0.9rem;
         }
 
+        /* MARCAS */
+        .marcas {
+            text-align: center;
+            padding: 60px 24px;
+        }
+
+        .marcas-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .marca-item {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            color: #444;
+            transition: color 0.3s;
+        }
+
+        .marca-item:hover {
+            color: var(--laranja);
+        }
+
         /* SOBRE */
         .sobre-content {
             display: grid;
@@ -357,8 +397,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
             border: 1px solid #222;
+            overflow: hidden;
+        }
+
+        .sobre-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* FOOTER */
@@ -469,7 +515,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>BIKE DE <span>GRAU</span></h1>
-            <p>As melhores bikes, peças e acessórios para quem vive o freestyle de verdade.</p>
+            <p>Gios • Hupi Naja • Absolute — As melhores bikes de freestyle do Brasil.</p>
             <a href="#produtos" class="btn-primary">Ver Bikes</a>
         </div>
     </section>
@@ -477,18 +523,70 @@
     <!-- PRODUTOS -->
     <section id="produtos">
         <h2 class="section-title">DESTAQUES</h2>
-        <p class="section-subtitle">As bikes mais desejadas do momento</p>
+        <p class="section-subtitle">Gios • Hupi Naja • Absolute</p>
 
         <div class="produtos-grid">
-            <!-- Produto 1 -->
+
+            <!-- GIOS -->
             <div class="produto-card">
                 <div class="produto-img">
-                    <span class="badge">NOVO</span>
-                    <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80" alt="BMX Pro">
+                    <span class="badge">DESTAQUE</span>
+                    <img src="https://i.imgur.com/8QZ5Y5L.png" alt="Gios Quadro Roxo" 
+                         onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80'">
                 </div>
                 <div class="produto-info">
-                    <h3>Grau Pro X1</h3>
-                    <p class="categoria">BMX Freestyle • Completa</p>
+                    <p class="marca">Gios</p>
+                    <h3>Gios FRX Roxo</h3>
+                    <p class="categoria">Quadro BMX Freestyle • 20"</p>
+                    <div class="preco">
+                        <span class="valor">R$ 1.299</span>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HUPI NAJA -->
+            <div class="produto-card">
+                <div class="produto-img">
+                    <span class="badge novo">NOVO</span>
+                    <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&q=80" alt="Hupi Naja">
+                </div>
+                <div class="produto-info">
+                    <p class="marca">Hupi</p>
+                    <h3>Hupi Naja</h3>
+                    <p class="categoria">Bike Completa • Freestyle</p>
+                    <div class="preco">
+                        <span class="valor">R$ 2.899</span>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ABSOLUTE -->
+            <div class="produto-card">
+                <div class="produto-img">
+                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&q=80" alt="Absolute">
+                </div>
+                <div class="produto-info">
+                    <p class="marca">Absolute</p>
+                    <h3>Absolute Nitro</h3>
+                    <p class="categoria">Bike Completa • Street/Park</p>
+                    <div class="preco">
+                        <span class="valor">R$ 2.199</span>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIOS COMPLETA -->
+            <div class="produto-card">
+                <div class="produto-img">
+                    <img src="https://images.unsplash.com/photo-1511994298241-608e28f14f64?w=600&q=80" alt="Gios Completa">
+                </div>
+                <div class="produto-info">
+                    <p class="marca">Gios</p>
+                    <h3>Gios Pro Complete</h3>
+                    <p class="categoria">Bike Completa • Freestyle</p>
                     <div class="preco">
                         <span class="valor">R$ 2.499</span>
                         <button class="btn-comprar">Comprar</button>
@@ -496,80 +594,80 @@
                 </div>
             </div>
 
-            <!-- Produto 2 -->
+            <!-- HUPI -->
             <div class="produto-card">
                 <div class="produto-img">
-                    <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&q=80" alt="BMX Street">
+                    <span class="badge">-12%</span>
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Hupi">
                 </div>
                 <div class="produto-info">
-                    <h3>Street Killer V2</h3>
-                    <p class="categoria">BMX Street • Completa</p>
+                    <p class="marca">Hupi</p>
+                    <h3>Hupi Dirt</h3>
+                    <p class="categoria">Bike Completa • Dirt Jump</p>
                     <div class="preco">
-                        <span class="valor">R$ 1.899</span>
+                        <span class="valor">R$ 2.449</span>
                         <button class="btn-comprar">Comprar</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Produto 3 -->
+            <!-- ABSOLUTE -->
             <div class="produto-card">
                 <div class="produto-img">
-                    <span class="badge">-15%</span>
-                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&q=80" alt="BMX Park">
+                    <img src="https://images.unsplash.com/photo-1571333252801-8b8b0b0b0b0b?w=600&q=80" 
+                         onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80'" 
+                         alt="Absolute">
                 </div>
                 <div class="produto-info">
-                    <h3>Park Master 20"</h3>
-                    <p class="categoria">BMX Park • Completa</p>
+                    <p class="marca">Absolute</p>
+                    <h3>Absolute Grau</h3>
+                    <p class="categoria">Bike Completa • Iniciante/Intermediário</p>
                     <div class="preco">
-                        <span class="valor">R$ 1.649</span>
+                        <span class="valor">R$ 1.799</span>
                         <button class="btn-comprar">Comprar</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Produto 4 -->
-            <div class="produto-card">
-                <div class="produto-img">
-                    <img src="https://images.unsplash.com/photo-1511994298241-608e28f14f64?w=600&q=80" alt="BMX Entry">
-                </div>
-                <div class="produto-info">
-                    <h3>Iniciante Grau</h3>
-                    <p class="categoria">BMX Entry Level</p>
-                    <div class="preco">
-                        <span class="valor">R$ 989</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
+
+    <!-- MARCAS -->
+    <div class="marcas">
+        <h2 class="section-title">MARCAS</h2>
+        <div class="marcas-grid">
+            <div class="marca-item">GIOS</div>
+            <div class="marca-item">HUPI</div>
+            <div class="marca-item">ABSOLUTE</div>
+        </div>
+    </div>
 
     <!-- CATEGORIAS -->
     <div class="categorias" id="categorias">
         <div class="categorias-container">
             <h2 class="section-title">CATEGORIAS</h2>
-            <p class="section-subtitle">Tudo o que você precisa pra evoluir no grau</p>
+            <p class="section-subtitle">Tudo o que você precisa pro grau</p>
 
             <div class="categorias-grid">
                 <div class="categoria-card">
                     <div class="icon">🚲</div>
                     <h3>Bikes Completas</h3>
-                    <p>Prontas pra sair andando</p>
+                    <p>Gios, Hupi Naja e Absolute</p>
+                </div>
+                <div class="categoria-card">
+                    <div class="icon">🛠️</div>
+                    <h3>Quadros</h3>
+                    <p>Gios FRX e outros</p>
                 </div>
                 <div class="categoria-card">
                     <div class="icon">⚙️</div>
                     <h3>Peças</h3>
-                    <p>Quadros, guidões, pedais e mais</p>
+                    <p>Guidão, pedais, mesa e mais</p>
                 </div>
                 <div class="categoria-card">
                     <div class="icon">🛡️</div>
                     <h3>Proteção</h3>
-                    <p>Capacetes, joelheiras e cotoveleiras</p>
-                </div>
-                <div class="categoria-card">
-                    <div class="icon">👕</div>
-                    <h3>Vestuário</h3>
-                    <p>Camisetas, bermudas e calçados</p>
+                    <p>Capacete, joelheira e cotoveleira</p>
                 </div>
             </div>
         </div>
@@ -580,16 +678,16 @@
         <div class="sobre-content">
             <div class="sobre-texto">
                 <h2>SOBRE A GRAU BIKES</h2>
-                <p>Somos uma loja especializada em bike de grau, criada por riders para riders. Aqui você encontra as melhores marcas e o atendimento de quem realmente entende do assunto.</p>
-                <p>Seja você iniciante ou já manda um 360 no half, temos a bike certa pro seu nível.</p>
+                <p>Especializada em bike de grau, trabalhamos com as principais marcas do freestyle brasileiro: <strong>Gios</strong>, <strong>Hupi</strong> e <strong>Absolute</strong>.</p>
+                <p>Seja quadro avulso ou bike completa, aqui você encontra qualidade de verdade pra mandar de verdade.</p>
                 
                 <div class="stats">
                     <div class="stat">
-                        <h3>+1200</h3>
+                        <h3>+1500</h3>
                         <p>Bikes vendidas</p>
                     </div>
                     <div class="stat">
-                        <h3>8</h3>
+                        <h3>9</h3>
                         <p>Anos de rua</p>
                     </div>
                     <div class="stat">
@@ -599,7 +697,7 @@
                 </div>
             </div>
             <div class="sobre-img">
-                🛹
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="BMX">
             </div>
         </div>
     </section>
@@ -609,15 +707,15 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">GRAU<span>BIKES</span></a>
-                <p>A loja de quem vive o freestyle. Peças originais, bikes top e atendimento de rider pra rider.</p>
+                <p>Gios • Hupi Naja • Absolute. A loja de quem vive o freestyle de verdade.</p>
             </div>
             <div class="footer-col">
-                <h4>Loja</h4>
+                <h4>Marcas</h4>
                 <ul>
-                    <li><a href="#">Bikes</a></li>
+                    <li><a href="#">Gios</a></li>
+                    <li><a href="#">Hupi</a></li>
+                    <li><a href="#">Absolute</a></li>
                     <li><a href="#">Peças</a></li>
-                    <li><a href="#">Acessórios</a></li>
-                    <li><a href="#">Roupas</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -640,7 +738,7 @@
             </div>
         </div>
         <div class="copyright">
-            © 2024 Grau Bikes — Todos os direitos reservados.
+            © 2024 Grau Bikes — Gios • Hupi • Absolute
         </div>
     </footer>
 
