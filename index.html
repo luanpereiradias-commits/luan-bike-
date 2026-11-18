@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grau Bikes | Loja Completa</title>
+    <title>Grau Bikes | Loja Completa de Bike de Grau</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -91,7 +91,7 @@
 
         /* HERO */
         .hero {
-            height: 92vh;
+            height: 90vh;
             background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
                         url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000') center/cover;
             display: flex;
@@ -102,23 +102,23 @@
         }
         .hero h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3.8rem, 9vw, 7rem);
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
             letter-spacing: 3px;
             line-height: 1;
             margin-bottom: 16px;
         }
         .hero h1 span { color: var(--laranja); }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--cinza-texto);
-            max-width: 520px;
+            max-width: 540px;
             margin: 0 auto 32px;
         }
         .btn-primary {
             background: var(--laranja);
             color: white;
             border: none;
-            padding: 16px 42px;
+            padding: 16px 40px;
             font-size: 1rem;
             font-weight: 600;
             border-radius: 8px;
@@ -144,14 +144,14 @@
         .section-subtitle {
             text-align: center;
             color: var(--cinza-texto);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         /* FILTROS */
         .filtros {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             margin-bottom: 40px;
         }
@@ -159,11 +159,12 @@
             background: var(--cinza);
             border: 1px solid #333;
             color: var(--cinza-texto);
-            padding: 10px 22px;
+            padding: 10px 20px;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 500;
             transition: 0.25s;
+            font-size: 0.9rem;
         }
         .filtro-btn.active, .filtro-btn:hover {
             background: var(--laranja);
@@ -174,8 +175,8 @@
         /* PRODUTOS */
         .produtos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 26px;
         }
         .produto-card {
             background: var(--cinza-escuro);
@@ -183,7 +184,6 @@
             overflow: hidden;
             border: 1px solid #222;
             transition: 0.3s;
-            cursor: pointer;
         }
         .produto-card:hover {
             transform: translateY(-8px);
@@ -191,7 +191,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
         .produto-img {
-            height: 240px;
+            height: 230px;
             background: #111;
             display: flex;
             align-items: center;
@@ -208,31 +208,32 @@
         .produto-card:hover .produto-img img { transform: scale(1.06); }
         .badge {
             position: absolute;
-            top: 14px;
-            left: 14px;
+            top: 12px;
+            left: 12px;
             background: var(--laranja);
             color: white;
-            padding: 5px 12px;
+            padding: 5px 11px;
             border-radius: 20px;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             z-index: 2;
         }
         .badge.novo { background: var(--verde); }
-        .produto-info { padding: 20px; }
+        .badge.promo { background: #e91e63; }
+        .produto-info { padding: 18px; }
         .marca {
             color: var(--laranja);
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 4px;
         }
-        .produto-info h3 { font-size: 1.2rem; margin-bottom: 6px; }
+        .produto-info h3 { font-size: 1.15rem; margin-bottom: 5px; }
         .categoria {
             color: var(--cinza-texto);
-            font-size: 0.88rem;
-            margin-bottom: 16px;
+            font-size: 0.85rem;
+            margin-bottom: 14px;
         }
         .preco-row {
             display: flex;
@@ -240,7 +241,7 @@
             align-items: center;
         }
         .valor {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--laranja);
         }
@@ -248,11 +249,12 @@
             background: transparent;
             border: 2px solid var(--laranja);
             color: var(--laranja);
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.25s;
+            font-size: 0.9rem;
         }
         .btn-add:hover {
             background: var(--laranja);
@@ -370,7 +372,6 @@
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
-            transition: 0.25s;
             margin-bottom: 10px;
         }
         .btn-finalizar:hover { background: var(--laranja-hover); }
@@ -390,7 +391,7 @@
             color: var(--cinza-texto);
         }
 
-        /* CHECKOUT / PAGAMENTO */
+        /* CHECKOUT */
         .checkout-overlay {
             position: fixed;
             inset: 0;
@@ -416,7 +417,6 @@
             max-height: 90vh;
             overflow-y: auto;
             border: 1px solid #333;
-            position: relative;
         }
         .checkout-header {
             padding: 20px 24px;
@@ -428,15 +428,10 @@
         .checkout-header h3 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.5rem;
-            letter-spacing: 1px;
         }
         .checkout-body { padding: 24px; }
 
-        .payment-methods {
-            display: grid;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
+        .payment-methods { display: grid; gap: 12px; margin-bottom: 24px; }
         .payment-option {
             display: flex;
             align-items: center;
@@ -453,71 +448,57 @@
             background: #1a1a1a;
         }
         .payment-option input { display: none; }
-        .payment-option .icon {
-            font-size: 1.6rem;
-            width: 40px;
-            text-align: center;
-        }
+        .payment-option .icon { font-size: 1.5rem; width: 36px; text-align: center; }
         .payment-option .info h4 { font-size: 1rem; margin-bottom: 2px; }
         .payment-option .info p { font-size: 0.85rem; color: var(--cinza-texto); }
 
-        /* PIX */
-        .pix-area {
-            text-align: center;
-            display: none;
-        }
-        .pix-area.show { display: block; }
+        .pix-area, .card-form, .boleto-area { display: none; }
+        .pix-area.show, .card-form.show, .boleto-area.show { display: block; }
+
         .pix-qr {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             background: white;
-            margin: 0 auto 20px;
+            margin: 0 auto 16px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3.5rem;
         }
         .pix-code {
             background: #111;
             border: 1px solid #333;
             border-radius: 8px;
-            padding: 14px;
+            padding: 12px;
             font-family: monospace;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             word-break: break-all;
             margin-bottom: 12px;
-            position: relative;
         }
         .btn-copy {
             background: var(--pix);
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 12px;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             width: 100%;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
-        .pix-timer {
-            color: var(--cinza-texto);
-            font-size: 0.9rem;
-        }
+        .pix-timer { color: var(--cinza-texto); font-size: 0.9rem; text-align: center; }
         .pix-timer span { color: var(--laranja); font-weight: 700; }
 
-        /* CARTÃO */
-        .card-form {
-            display: none;
-            gap: 14px;
-        }
-        .card-form.show { display: grid; }
-        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group { margin-bottom: 14px; }
         .form-group label {
+            display: block;
             font-size: 0.85rem;
             color: var(--cinza-texto);
+            margin-bottom: 6px;
         }
         .form-group input, .form-group select {
+            width: 100%;
             background: #111;
             border: 1px solid #333;
             border-radius: 8px;
@@ -525,30 +506,17 @@
             color: white;
             font-size: 1rem;
         }
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--laranja);
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-        /* BOLETO */
-        .boleto-area {
-            display: none;
-            text-align: center;
-        }
-        .boleto-area.show { display: block; }
         .boleto-code {
             background: #111;
             border: 1px solid #333;
             border-radius: 8px;
             padding: 16px;
             font-family: monospace;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin: 16px 0;
+            text-align: center;
             letter-spacing: 1px;
         }
 
@@ -562,60 +530,14 @@
             font-weight: 700;
             font-size: 1.05rem;
             cursor: pointer;
-            margin-top: 20px;
-            transition: 0.25s;
+            margin-top: 16px;
         }
         .btn-pay:hover { background: var(--laranja-hover); }
-        .btn-pay:disabled {
-            background: #444;
-            cursor: not-allowed;
-        }
 
-        /* SUCCESS */
-        .success-screen {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .success-screen.show { display: block; }
-        .success-icon {
-            font-size: 4rem;
-            margin-bottom: 16px;
-        }
-        .success-screen h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        .success-screen p {
-            color: var(--cinza-texto);
-            margin-bottom: 24px;
-        }
+        .success-screen { text-align: center; padding: 30px 10px; }
+        .success-icon { font-size: 4rem; margin-bottom: 12px; }
 
-        /* CATEGORIAS + FOOTER (resumo) */
-        .categorias { background: var(--cinza-escuro); padding: 80px 24px; }
-        .categorias-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-        .categoria-card {
-            background: var(--cinza);
-            border-radius: 14px;
-            padding: 36px 24px;
-            text-align: center;
-            border: 1px solid transparent;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .categoria-card:hover {
-            border-color: var(--laranja);
-            transform: translateY(-5px);
-        }
-        .categoria-card .icon { font-size: 2.8rem; margin-bottom: 14px; }
-
+        /* FOOTER */
         footer {
             background: var(--cinza-escuro);
             padding: 60px 24px 30px;
@@ -681,7 +603,6 @@
         <a href="#" class="logo">GRAU<span>BIKES</span></a>
         <ul class="nav-links">
             <li><a href="#produtos">Bikes</a></li>
-            <li><a href="#categorias">Categorias</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
         <button class="btn-carrinho" onclick="toggleCart()">
@@ -694,14 +615,14 @@
 <section class="hero">
     <div>
         <h1>BIKE DE <span>GRAU</span></h1>
-        <p>Gios • Hupi Naja • Absolute — Pague com Pix, Cartão ou Boleto.</p>
-        <a href="#produtos" class="btn-primary">Ver Catálogo</a>
+        <p>Mais de 15 modelos de Gios, Hupi Naja e Absolute. Pix, Cartão e Boleto.</p>
+        <a href="#produtos" class="btn-primary">Ver Todas as Bikes</a>
     </div>
 </section>
 
 <!-- PRODUTOS -->
 <section id="produtos">
-    <h2 class="section-title">CATÁLOGO</h2>
+    <h2 class="section-title">CATÁLOGO COMPLETO</h2>
     <p class="section-subtitle">Escolha sua próxima máquina</p>
 
     <div class="filtros">
@@ -709,21 +630,12 @@
         <button class="filtro-btn" onclick="filtrar('gios')">Gios</button>
         <button class="filtro-btn" onclick="filtrar('hupi')">Hupi Naja</button>
         <button class="filtro-btn" onclick="filtrar('absolute')">Absolute</button>
+        <button class="filtro-btn" onclick="filtrar('quadro')">Só Quadros</button>
+        <button class="filtro-btn" onclick="filtrar('completa')">Completas</button>
     </div>
 
     <div class="produtos-grid" id="produtos-grid"></div>
 </section>
-
-<!-- CATEGORIAS -->
-<div class="categorias" id="categorias">
-    <h2 class="section-title" style="margin-bottom:40px">CATEGORIAS</h2>
-    <div class="categorias-grid">
-        <div class="categoria-card"><div class="icon">🚲</div><h3>Bikes Completas</h3></div>
-        <div class="categoria-card"><div class="icon">🛠️</div><h3>Quadros</h3></div>
-        <div class="categoria-card"><div class="icon">⚙️</div><h3>Peças</h3></div>
-        <div class="categoria-card"><div class="icon">🛡️</div><h3>Proteção</h3></div>
-    </div>
-</div>
 
 <!-- FOOTER -->
 <footer id="contato">
@@ -756,7 +668,7 @@
             </ul>
         </div>
     </div>
-    <div class="copyright">© 2026 Grau Bikes</div>
+    <div class="copyright">© 2026 Grau Bikes — Todos os direitos reservados</div>
 </footer>
 
 <!-- CARRINHO -->
@@ -777,47 +689,204 @@
     </div>
 </div>
 
-<!-- CHECKOUT MODAL -->
+<!-- CHECKOUT -->
 <div class="checkout-overlay" id="checkout-overlay">
     <div class="checkout-modal">
         <div class="checkout-header">
             <h3>FINALIZAR PAGAMENTO</h3>
             <button class="close-cart" onclick="fecharCheckout()">×</button>
         </div>
-        <div class="checkout-body" id="checkout-body">
-            <!-- Conteúdo dinâmico -->
-        </div>
+        <div class="checkout-body" id="checkout-body"></div>
     </div>
 </div>
 
-<!-- WHATSAPP FLOAT -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">💬</a>
 
 <script>
-// ========== PRODUTOS ==========
+// ========== CATÁLOGO AMPLIADO ==========
 const produtos = [
-    { id: 1, marca: "gios", nome: "Gios FRX Roxo", categoria: "Quadro Aro 26", preco: 999, img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg", badge: "DESTAQUE", desc: "Quadro Gios FRX alumínio 6061-T6." },
-    { id: 2, marca: "gios", nome: "Gios 4Trix Completa", categoria: "Bike Completa", preco: 2399, img: "https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp", badge: "NOVO", desc: "Bike completa Gios." },
-    { id: 3, marca: "hupi", nome: "Hupi Naja Single", categoria: "Single Speed", preco: 2899, img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp", badge: "NOVO", desc: "Hupi Naja com freio MT200." },
-    { id: 4, marca: "hupi", nome: "Hupi Naja V10", categoria: "Bike Completa", preco: 2699, img: "https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp", badge: "", desc: "Hupi Naja V10." },
-    { id: 5, marca: "absolute", nome: "Absolute Nero 5", categoria: "21v", preco: 1299, img: "https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg", badge: "PROMO", desc: "Absolute Nero 5 do Grau." },
-    { id: 6, marca: "absolute", nome: "Absolute Nero Oliva", categoria: "Freestyle", preco: 1399, img: "https://http2.mlstatic.com/D_NQ_NP_935044-MLA99881475487_112025-O.webp", badge: "", desc: "Absolute Nero Oliva." },
-    { id: 7, marca: "gios", nome: "Gios FRX Completa", categoria: "Single", preco: 2199, img: "https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg", badge: "", desc: "Montagem completa Gios FRX." },
-    { id: 8, marca: "hupi", nome: "Hupi Sleeper BMX", categoria: "Big BMX", preco: 2499, img: "https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg", badge: "NOVO", desc: "Hupi Sleeper aro 26." }
+    // GIOS
+    {
+        id: 1,
+        marca: "gios",
+        tipo: "quadro",
+        nome: "Gios FRX Roxo",
+        categoria: "Quadro Aro 26 • Alumínio",
+        preco: 999,
+        img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg",
+        badge: "DESTAQUE"
+    },
+    {
+        id: 2,
+        marca: "gios",
+        tipo: "completa",
+        nome: "Gios 4Trix Completa",
+        categoria: "Bike Completa • 21v",
+        preco: 2399,
+        img: "https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp",
+        badge: "NOVO"
+    },
+    {
+        id: 3,
+        marca: "gios",
+        tipo: "completa",
+        nome: "Gios FRX Completa Preto/Roxo",
+        categoria: "Bike Completa • Single",
+        preco: 2199,
+        img: "https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg",
+        badge: ""
+    },
+    {
+        id: 4,
+        marca: "gios",
+        tipo: "quadro",
+        nome: "Gios FRX Preto/Roxo",
+        categoria: "Quadro Aro 26",
+        preco: 949,
+        img: "https://rogeriobikes.com/media/catalog/product/cache/83cdda7a34ac79691fa0545c8713101e/1/3/13793.png",
+        badge: ""
+    },
+    {
+        id: 5,
+        marca: "gios",
+        tipo: "completa",
+        nome: "Gios 4Trix Roxo",
+        categoria: "Bike Completa • Freestyle",
+        preco: 2499,
+        img: "https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp",
+        badge: "NOVO"
+    },
+
+    // HUPI NAJA
+    {
+        id: 6,
+        marca: "hupi",
+        tipo: "completa",
+        nome: "Hupi Naja Single 2025",
+        categoria: "Single Speed • MT200",
+        preco: 2899,
+        img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp",
+        badge: "NOVO"
+    },
+    {
+        id: 7,
+        marca: "hupi",
+        tipo: "completa",
+        nome: "Hupi Naja V10 Laranja",
+        categoria: "Bike Completa • Aro 26",
+        preco: 2699,
+        img: "https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp",
+        badge: ""
+    },
+    {
+        id: 8,
+        marca: "hupi",
+        tipo: "completa",
+        nome: "Hupi Naja Branca",
+        categoria: "Single • Cubo Barulhento",
+        preco: 2799,
+        img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp",
+        badge: "DESTAQUE"
+    },
+    {
+        id: 9,
+        marca: "hupi",
+        tipo: "completa",
+        nome: "Hupi Sleeper BMX",
+        categoria: "Big BMX • Single Speed",
+        preco: 2499,
+        img: "https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg",
+        badge: "NOVO"
+    },
+    {
+        id: 10,
+        marca: "hupi",
+        tipo: "completa",
+        nome: "Hupi Naja V10 Preta",
+        categoria: "Freestyle • Hidráulico",
+        preco: 2749,
+        img: "https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp",
+        badge: ""
+    },
+
+    // ABSOLUTE
+    {
+        id: 11,
+        marca: "absolute",
+        tipo: "completa",
+        nome: "Absolute Nero 5 Cinza",
+        categoria: "21v • Freestyle",
+        preco: 1299,
+        img: "https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg",
+        badge: "PROMO"
+    },
+    {
+        id: 12,
+        marca: "absolute",
+        tipo: "completa",
+        nome: "Absolute Nero 5 Oliva",
+        categoria: "Bike Completa • Aro 26",
+        preco: 1349,
+        img: "https://http2.mlstatic.com/D_NQ_NP_935044-MLA99881475487_112025-O.webp",
+        badge: ""
+    },
+    {
+        id: 13,
+        marca: "absolute",
+        tipo: "completa",
+        nome: "Absolute Nero 5 Preta",
+        categoria: "Freestyle • 21v",
+        preco: 1299,
+        img: "https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg",
+        badge: "PROMO"
+    },
+    {
+        id: 14,
+        marca: "absolute",
+        tipo: "completa",
+        nome: "Absolute Nero Grau Sport",
+        categoria: "Aro 29 • Single",
+        preco: 1599,
+        img: "https://http2.mlstatic.com/D_NQ_NP_996978-MLB111201892744_052026-O-bicicleta-absolute-nero-grau-sport-aro-29-vmaxx-mt200-v3.webp",
+        badge: "NOVO"
+    },
+    {
+        id: 15,
+        marca: "absolute",
+        tipo: "completa",
+        nome: "Absolute Nero 5 Verde Neon",
+        categoria: "Freestyle",
+        preco: 1399,
+        img: "https://http2.mlstatic.com/D_NQ_NP_935044-MLA99881475487_112025-O.webp",
+        badge: ""
+    },
+
+    // MAIS GIOS
+    {
+        id: 16,
+        marca: "gios",
+        tipo: "quadro",
+        nome: "Gios FRX Evo 2026",
+        categoria: "Quadro • Última geração",
+        preco: 1099,
+        img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg",
+        badge: "NOVO"
+    }
 ];
 
 let carrinho = JSON.parse(localStorage.getItem('grauCarrinho')) || [];
 let metodoPagamento = 'pix';
 let pixTimer = null;
 
-// ========== RENDER PRODUTOS ==========
+// RENDER
 function renderProdutos(lista = produtos) {
     const grid = document.getElementById('produtos-grid');
     grid.innerHTML = lista.map(p => `
         <div class="produto-card">
             <div class="produto-img">
-                ${p.badge ? `<span class="badge ${p.badge==='NOVO'?'novo':''}">${p.badge}</span>` : ''}
-                <img src="${p.img}" alt="${p.nome}" loading="lazy">
+                ${p.badge ? `<span class="badge ${p.badge === 'NOVO' ? 'novo' : p.badge === 'PROMO' ? 'promo' : ''}">${p.badge}</span>` : ''}
+                <img src="${p.img}" alt="${p.nome}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Bike'">
             </div>
             <div class="produto-info">
                 <p class="marca">${p.marca.toUpperCase()}</p>
@@ -832,15 +901,23 @@ function renderProdutos(lista = produtos) {
     `).join('');
 }
 
-function filtrar(marca) {
+function filtrar(tipo) {
     document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
-    const filtrados = marca === 'todos' ? produtos : produtos.filter(p => p.marca === marca);
+
+    let filtrados = produtos;
+    if (tipo === 'gios' || tipo === 'hupi' || tipo === 'absolute') {
+        filtrados = produtos.filter(p => p.marca === tipo);
+    } else if (tipo === 'quadro') {
+        filtrados = produtos.filter(p => p.tipo === 'quadro');
+    } else if (tipo === 'completa') {
+        filtrados = produtos.filter(p => p.tipo === 'completa');
+    }
     renderProdutos(filtrados);
     document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
 }
 
-// ========== CARRINHO ==========
+// CARRINHO
 function adicionarCarrinho(id) {
     const produto = produtos.find(p => p.id === id);
     const item = carrinho.find(i => i.id === id);
@@ -911,12 +988,9 @@ function toggleCart(forceOpen = false) {
     }
 }
 
-// ========== CHECKOUT / PAGAMENTO ==========
+// CHECKOUT
 function abrirCheckout() {
-    if (carrinho.length === 0) {
-        alert('Carrinho vazio!');
-        return;
-    }
+    if (carrinho.length === 0) return alert('Carrinho vazio!');
     toggleCart();
     document.getElementById('checkout-overlay').classList.add('open');
     renderCheckout();
@@ -965,60 +1039,55 @@ function renderCheckout() {
             </label>
         </div>
 
-        <!-- ÁREA PIX -->
         <div class="pix-area show" id="pix-area">
             <div class="pix-qr">📱</div>
-            <p style="margin-bottom:10px;font-size:0.9rem;color:var(--cinza-texto)">Escaneie o QR Code ou copie o código Pix</p>
-            <div class="pix-code" id="pix-code">00020126580014br.gov.bcb.pix0136${gerarPixCode()}520400005303986540${total.toFixed(2)}5802BR5913GRAU BIKES6009SAO PAULO62070503***6304ABCD</div>
+            <p style="text-align:center;margin-bottom:10px;font-size:0.9rem;color:var(--cinza-texto)">Escaneie ou copie o código Pix</p>
+            <div class="pix-code" id="pix-code">00020126580014br.gov.bcb.pix0136${Math.random().toString(36).substring(2,15)}520400005303986540${total.toFixed(2)}5802BR5913GRAU BIKES6009SAO PAULO62070503***6304ABCD</div>
             <button class="btn-copy" onclick="copiarPix()">📋 Copiar código Pix</button>
             <p class="pix-timer">Expira em <span id="pix-timer">15:00</span></p>
             <button class="btn-pay" onclick="simularPagamento('pix')">Já paguei o Pix</button>
         </div>
 
-        <!-- ÁREA CARTÃO -->
         <div class="card-form" id="card-form">
             <div class="form-group">
                 <label>Número do cartão</label>
-                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" id="card-number">
+                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19">
             </div>
             <div class="form-group">
-                <label>Nome impresso no cartão</label>
-                <input type="text" placeholder="NOME COMPLETO" id="card-name">
+                <label>Nome no cartão</label>
+                <input type="text" placeholder="NOME COMPLETO">
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label>Validade</label>
-                    <input type="text" placeholder="MM/AA" maxlength="5" id="card-expiry">
+                    <input type="text" placeholder="MM/AA" maxlength="5">
                 </div>
                 <div class="form-group">
                     <label>CVV</label>
-                    <input type="text" placeholder="000" maxlength="4" id="card-cvv">
+                    <input type="text" placeholder="000" maxlength="4">
                 </div>
             </div>
             <div class="form-group">
                 <label>Parcelas</label>
-                <select id="card-installments">
-                    <option value="1">1x de R$ ${total.toLocaleString('pt-BR')} sem juros</option>
-                    <option value="2">2x de R$ ${(total/2).toLocaleString('pt-BR', {minimumFractionDigits:2})} sem juros</option>
-                    <option value="3">3x de R$ ${(total/3).toLocaleString('pt-BR', {minimumFractionDigits:2})} sem juros</option>
-                    <option value="6">6x de R$ ${(total/6).toLocaleString('pt-BR', {minimumFractionDigits:2})} sem juros</option>
-                    <option value="12">12x de R$ ${(total/12).toLocaleString('pt-BR', {minimumFractionDigits:2})} sem juros</option>
+                <select>
+                    <option>1x de R$ ${total.toLocaleString('pt-BR')} sem juros</option>
+                    <option>2x de R$ ${(total/2).toFixed(2).replace('.',',')} sem juros</option>
+                    <option>3x de R$ ${(total/3).toFixed(2).replace('.',',')} sem juros</option>
+                    <option>6x de R$ ${(total/6).toFixed(2).replace('.',',')} sem juros</option>
+                    <option>12x de R$ ${(total/12).toFixed(2).replace('.',',')} sem juros</option>
                 </select>
             </div>
             <button class="btn-pay" onclick="simularPagamento('cartao')">Pagar com Cartão</button>
         </div>
 
-        <!-- ÁREA BOLETO -->
         <div class="boleto-area" id="boleto-area">
-            <p style="margin-bottom:12px">Boleto gerado com sucesso!</p>
-            <div class="boleto-code" id="boleto-code">34191.79001 01043.510047 91020.150008 1 966100000${Math.floor(total)}</div>
-            <button class="btn-copy" onclick="copiarBoleto()" style="background:#666">📋 Copiar código de barras</button>
-            <p style="font-size:0.85rem;color:var(--cinza-texto);margin:16px 0">O boleto vence em 3 dias úteis. Após o pagamento a confirmação pode levar até 2 dias úteis.</p>
+            <p style="text-align:center;margin-bottom:12px">Boleto gerado com sucesso!</p>
+            <div class="boleto-code">34191.79001 01043.510047 91020.150008 1 966100000${Math.floor(total)}</div>
+            <button class="btn-copy" style="background:#555" onclick="alert('Código copiado!')">📋 Copiar código de barras</button>
+            <p style="font-size:0.85rem;color:var(--cinza-texto);margin:16px 0;text-align:center">Vencimento em 3 dias úteis</p>
             <button class="btn-pay" onclick="simularPagamento('boleto')">Já paguei o Boleto</button>
         </div>
     `;
-
-    // Inicia timer do Pix
     iniciarTimerPix();
 }
 
@@ -1026,21 +1095,15 @@ function selecionarMetodo(metodo) {
     metodoPagamento = metodo;
     document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('active'));
     event.currentTarget.classList.add('active');
-
     document.getElementById('pix-area').classList.toggle('show', metodo === 'pix');
     document.getElementById('card-form').classList.toggle('show', metodo === 'cartao');
     document.getElementById('boleto-area').classList.toggle('show', metodo === 'boleto');
-}
-
-function gerarPixCode() {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 
 function iniciarTimerPix() {
     let segundos = 15 * 60;
     const el = document.getElementById('pix-timer');
     if (pixTimer) clearInterval(pixTimer);
-
     pixTimer = setInterval(() => {
         segundos--;
         const min = Math.floor(segundos / 60).toString().padStart(2, '0');
@@ -1052,55 +1115,41 @@ function iniciarTimerPix() {
 
 function copiarPix() {
     const code = document.getElementById('pix-code').textContent;
-    navigator.clipboard.writeText(code).then(() => {
-        alert('Código Pix copiado!');
-    });
-}
-
-function copiarBoleto() {
-    const code = document.getElementById('boleto-code').textContent;
-    navigator.clipboard.writeText(code).then(() => {
-        alert('Código de barras copiado!');
-    });
+    navigator.clipboard.writeText(code).then(() => alert('Código Pix copiado!'));
 }
 
 function simularPagamento(metodo) {
     const body = document.getElementById('checkout-body');
     const total = carrinho.reduce((s, i) => s + (i.preco * i.qtd), 0);
 
-    // Simula processamento
     body.innerHTML = `
         <div style="text-align:center;padding:40px 20px">
             <div style="font-size:3rem;margin-bottom:16px">⏳</div>
             <h3>Processando pagamento...</h3>
-            <p style="color:var(--cinza-texto);margin-top:10px">Aguarde alguns segundos</p>
+            <p style="color:var(--cinza-texto);margin-top:10px">Aguarde</p>
         </div>
     `;
 
     setTimeout(() => {
-        // Limpa carrinho
         carrinho = [];
         salvarCarrinho();
         atualizarCarrinho();
 
         body.innerHTML = `
-            <div class="success-screen show">
+            <div class="success-screen">
                 <div class="success-icon">✅</div>
-                <h2>PAGAMENTO APROVADO!</h2>
-                <p>Seu pedido foi confirmado com sucesso.<br>
-                Você receberá um e-mail com os detalhes.</p>
-                <p style="font-weight:700;color:var(--laranja);font-size:1.3rem;margin:20px 0">
+                <h2 style="font-family:'Bebas Neue';font-size:2rem;margin-bottom:10px">PAGAMENTO APROVADO!</h2>
+                <p style="color:var(--cinza-texto);margin-bottom:20px">Seu pedido foi confirmado.</p>
+                <p style="font-weight:700;color:var(--laranja);font-size:1.4rem;margin-bottom:8px">
                     R$ ${total.toLocaleString('pt-BR')}
                 </p>
                 <p style="font-size:0.9rem;color:var(--cinza-texto);margin-bottom:24px">
-                    Método: ${metodo === 'pix' ? 'Pix' : metodo === 'cartao' ? 'Cartão de Crédito' : 'Boleto'}
+                    Método: ${metodo === 'pix' ? 'Pix' : metodo === 'cartao' ? 'Cartão' : 'Boleto'}
                 </p>
-                <button class="btn-primary" onclick="fecharCheckout(); window.location.href='#produtos'">
-                    Continuar Comprando
-                </button>
+                <button class="btn-primary" onclick="fecharCheckout()">Continuar Comprando</button>
             </div>
         `;
-    }, 2000);
+    }, 1800);
 }
 
 function finalizarWhatsApp() {
