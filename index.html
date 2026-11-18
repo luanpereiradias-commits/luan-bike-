@@ -53,17 +53,17 @@
         }
 
         .hero {
-            height: 70vh; min-height: 420px;
+            height: 68vh; min-height: 400px;
             background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
                         url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000') center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px;
         }
         .hero h1 {
-            font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5.5rem);
+            font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5.2rem);
             letter-spacing: 3px; line-height: 1; margin-bottom: 14px;
         }
         .hero h1 span { color: var(--laranja); }
-        .hero p { font-size: 1.1rem; color: var(--cinza-texto); max-width: 520px; margin: 0 auto 28px; }
+        .hero p { font-size: 1.1rem; color: var(--cinza-texto); max-width: 500px; margin: 0 auto 28px; }
         .btn-primary {
             background: var(--laranja); color: white; border: none; padding: 15px 36px;
             font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.3s; display: inline-block;
@@ -221,7 +221,7 @@
 </head>
 <body>
 
-<div class="top-bar">🚚 Frete grátis acima de R$ 1.500 • Pix 5% off • Peças originais</div>
+<div class="top-bar">🚚 Frete grátis acima de R$ 1.500 • Pix 5% off</div>
 
 <header>
     <nav class="navbar">
@@ -236,7 +236,7 @@
 <section class="hero">
     <div>
         <h1>BIKES + <span>PEÇAS</span></h1>
-        <p>Gios, Hupi Naja, Absolute e peças separadas com imagens reais.</p>
+        <p>Gios, Hupi Naja, Absolute e peças separadas.</p>
         <a href="#produtos" class="btn-primary">Ver Catálogo</a>
     </div>
 </section>
@@ -250,8 +250,6 @@
         <button class="filtro-btn" onclick="filtrar('hupi')">Hupi</button>
         <button class="filtro-btn" onclick="filtrar('absolute')">Absolute</button>
         <button class="filtro-btn" onclick="filtrar('quadro')">Quadros</button>
-        <button class="filtro-btn" onclick="filtrar('guidao')">Guidão</button>
-        <button class="filtro-btn" onclick="filtrar('pedal')">Pedais</button>
     </div>
     <select class="sort-select" id="sort-select" onchange="ordenar()">
         <option value="default">Ordenar por</option>
@@ -327,8 +325,9 @@
 <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">💬</a>
 
 <script>
+// CATÁLOGO LIMPO - SEM REPETIÇÕES
 const produtos = [
-    // BIKES
+    // ===== BIKES =====
     { id: 1, marca: "gios", tipo: "bike", subtipo: "completa", nome: "Gios FRX Completa", categoria: "Bike Completa • Single", preco: 2199, img: "https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg", badge: "" },
     { id: 2, marca: "gios", tipo: "bike", subtipo: "completa", nome: "Gios 4Trix Completa", categoria: "Bike Completa • 21v", preco: 2399, img: "https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp", badge: "NOVO" },
     { id: 3, marca: "hupi", tipo: "bike", subtipo: "completa", nome: "Hupi Naja Single 2025", categoria: "Single • MT200", preco: 2899, img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp", badge: "NOVO" },
@@ -338,23 +337,15 @@ const produtos = [
     { id: 7, marca: "absolute", tipo: "bike", subtipo: "completa", nome: "Absolute Nero 5 Oliva", categoria: "Bike Completa", preco: 1349, img: "https://http2.mlstatic.com/D_NQ_NP_935044-MLA99881475487_112025-O.webp", badge: "" },
     { id: 8, marca: "absolute", tipo: "bike", subtipo: "completa", nome: "Absolute Nero Grau Sport", categoria: "Aro 29 • Single", preco: 1599, img: "https://http2.mlstatic.com/D_NQ_NP_996978-MLB111201892744_052026-O-bicicleta-absolute-nero-grau-sport-aro-29-vmaxx-mt200-v3.webp", badge: "NOVO" },
 
-    // QUADROS
+    // ===== QUADROS =====
     { id: 9, marca: "gios", tipo: "peca", subtipo: "quadro", nome: "Quadro Gios FRX Roxo", categoria: "Quadro Aro 26 • Alumínio", preco: 999, img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg", badge: "DESTAQUE" },
     { id: 10, marca: "gios", tipo: "peca", subtipo: "quadro", nome: "Quadro Gios FRX Preto/Roxo", categoria: "Quadro Aro 26", preco: 949, img: "https://rogeriobikes.com/media/catalog/product/cache/83cdda7a34ac79691fa0545c8713101e/1/3/13793.png", badge: "" },
-    { id: 11, marca: "gios", tipo: "peca", subtipo: "quadro", nome: "Quadro Gios FRX Evo 2026", categoria: "Quadro Nova Geração", preco: 1099, img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg", badge: "NOVO" },
 
-    // PEÇAS COM IMAGENS REAIS
-    { id: 12, marca: "absolute", tipo: "peca", subtipo: "pedal", nome: "Pedal Absolute Brutus Flat", categoria: "Pedal Plataforma Vermelho", preco: 149, img: "https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp", badge: "PEÇA" },
-    { id: 13, marca: "absolute", tipo: "peca", subtipo: "mesa", nome: "Mesa Absolute Brutus 35mm", categoria: "Mesa / Avanço Preto", preco: 139, img: "https://http2.mlstatic.com/D_NQ_NP_756627-MLA99503239942_112025-O.webp", badge: "PEÇA" },
-    { id: 14, marca: "hupi", tipo: "peca", subtipo: "selim", nome: "Selim Hupi HPK", categoria: "Selim Freestyle", preco: 99, img: "https://http2.mlstatic.com/D_NQ_NP_798792-MLB89731168913_082025-O-banco-hupi-naja-selim-manobras-bmx-wheeling-grau-style-ddk.webp", badge: "PEÇA" },
-    { id: 15, marca: "gios", tipo: "peca", subtipo: "guidao", nome: "Guidão Gios Voador 700mm", categoria: "Guidão Alumínio", preco: 189, img: "https://http2.mlstatic.com/D_NQ_NP_730792-MLA114907022057_072026-B.webp", badge: "PEÇA" },
-    { id: 16, marca: "absolute", tipo: "peca", subtipo: "cubo", nome: "Cubo Barulhento Absolute", categoria: "Cubo Traseiro 36F", preco: 279, img: "https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp", badge: "PEÇA" },
-    { id: 17, marca: "gios", tipo: "peca", subtipo: "manopla", nome: "Manopla Gios BMX", categoria: "Par de Manoplas", preco: 49, img: "https://http2.mlstatic.com/D_NQ_NP_798792-MLB89731168913_082025-O-banco-hupi-naja-selim-manobras-bmx-wheeling-grau-style-ddk.webp", badge: "PEÇA" },
-    { id: 18, marca: "absolute", tipo: "peca", subtipo: "freio", nome: "Freio Shimano MT200", categoria: "Freio Hidráulico", preco: 349, img: "https://http2.mlstatic.com/D_NQ_NP_756627-MLA99503239942_112025-O.webp", badge: "PEÇA" },
-    { id: 19, marca: "gios", tipo: "peca", subtipo: "guidao", nome: "Guidão Absolute Flying", categoria: "Guidão 720mm", preco: 169, img: "https://http2.mlstatic.com/D_NQ_NP_730792-MLA114907022057_072026-B.webp", badge: "PEÇA" },
-    { id: 20, marca: "hupi", tipo: "peca", subtipo: "pedal", nome: "Pedal Hupi Plataforma", categoria: "Pedal Freestyle", preco: 79, img: "https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp", badge: "PEÇA" },
-    { id: 21, marca: "absolute", tipo: "peca", subtipo: "mesa", nome: "Mesa Absolute Brutus Camaleão", categoria: "Mesa 35mm", preco: 159, img: "https://http2.mlstatic.com/D_NQ_NP_756627-MLA99503239942_112025-O.webp", badge: "PEÇA" },
-    { id: 22, marca: "gios", tipo: "peca", subtipo: "aro", nome: "Aro Vzan Vmaxx 26\"", categoria: "Aro Parede Dupla", preco: 189, img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg", badge: "PEÇA" }
+    // ===== PEÇAS (sem repetição) =====
+    { id: 11, marca: "absolute", tipo: "peca", subtipo: "pedal", nome: "Pedal Absolute Brutus Flat", categoria: "Pedal Plataforma", preco: 149, img: "https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp", badge: "PEÇA" },
+    { id: 12, marca: "absolute", tipo: "peca", subtipo: "mesa", nome: "Mesa Absolute Brutus 35mm", categoria: "Mesa / Avanço", preco: 139, img: "https://http2.mlstatic.com/D_NQ_NP_756627-MLA99503239942_112025-O.webp", badge: "PEÇA" },
+    { id: 13, marca: "hupi", tipo: "peca", subtipo: "selim", nome: "Selim Hupi HPK", categoria: "Selim Freestyle", preco: 99, img: "https://http2.mlstatic.com/D_NQ_NP_798792-MLB89731168913_082025-O-banco-hupi-naja-selim-manobras-bmx-wheeling-grau-style-ddk.webp", badge: "PEÇA" },
+    { id: 14, marca: "gios", tipo: "peca", subtipo: "guidao", nome: "Guidão Gios Voador 700mm", categoria: "Guidão Alumínio", preco: 189, img: "https://http2.mlstatic.com/D_NQ_NP_730792-MLA114907022057_072026-B.webp", badge: "PEÇA" }
 ];
 
 let carrinho = JSON.parse(localStorage.getItem('grauCarrinho')) || [];
@@ -397,8 +388,6 @@ function filtrar(tipo) {
     else if (tipo === 'peca') filtrados = produtos.filter(p => p.tipo === 'peca');
     else if (['gios','hupi','absolute'].includes(tipo)) filtrados = produtos.filter(p => p.marca === tipo);
     else if (tipo === 'quadro') filtrados = produtos.filter(p => p.subtipo === 'quadro');
-    else if (tipo === 'guidao') filtrados = produtos.filter(p => p.subtipo === 'guidao');
-    else if (tipo === 'pedal') filtrados = produtos.filter(p => p.subtipo === 'pedal');
     renderProdutos(filtrados);
 }
 
@@ -409,7 +398,7 @@ function buscar() {
     if (!termo) return renderProdutos(produtos);
     const filtrados = produtos.filter(p =>
         p.nome.toLowerCase().includes(termo) || p.marca.toLowerCase().includes(termo) ||
-        p.categoria.toLowerCase().includes(termo) || (p.subtipo && p.subtipo.includes(termo))
+        p.categoria.toLowerCase().includes(termo)
     );
     renderProdutos(filtrados);
 }
