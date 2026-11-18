@@ -3,193 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grau Bikes | Loja de Bike de Grau</title>
+    <title>Grau Bikes | Loja Completa de Bike de Grau</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --preto: #0a0a0a;
-            --cinza-escuro: #141414;
-            --cinza: #1f1f1f;
+            --cinza-escuro: #121212;
+            --cinza: #1e1e1e;
             --laranja: #ff4d00;
-            --laranja-claro: #ff6b2b;
+            --laranja-hover: #ff6b2b;
             --branco: #f5f5f5;
             --cinza-texto: #a0a0a0;
         }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--preto);
+            background: var(--preto);
             color: var(--branco);
-            line-height: 1.6;
+            line-height: 1.5;
         }
+        a { text-decoration: none; color: inherit; }
 
         /* HEADER */
         header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid #222;
         }
-
         .navbar {
-            max-width: 1280px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 18px 24px;
+            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
+            font-size: 1.9rem;
             letter-spacing: 2px;
-            color: var(--branco);
-            text-decoration: none;
         }
-
-        .logo span {
-            color: var(--laranja);
-        }
-
+        .logo span { color: var(--laranja); }
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             list-style: none;
         }
-
         .nav-links a {
             color: var(--cinza-texto);
-            text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.3s;
+            transition: 0.25s;
         }
-
-        .nav-links a:hover {
-            color: var(--laranja);
-        }
-
+        .nav-links a:hover { color: var(--laranja); }
         .btn-carrinho {
             background: var(--laranja);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 10px 18px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.25s;
         }
-
-        .btn-carrinho:hover {
-            background: var(--laranja-claro);
+        .btn-carrinho:hover { background: var(--laranja-hover); }
+        #cart-count {
+            background: white;
+            color: var(--laranja);
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* HERO */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000') center/cover no-repeat;
+            height: 92vh;
+            background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 0 20px;
         }
-
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3.5rem, 8vw, 6.5rem);
-            letter-spacing: 4px;
+            font-size: clamp(3.8rem, 9vw, 7rem);
+            letter-spacing: 3px;
             line-height: 1;
             margin-bottom: 16px;
         }
-
-        .hero-content h1 span {
-            color: var(--laranja);
-        }
-
-        .hero-content p {
+        .hero h1 span { color: var(--laranja); }
+        .hero p {
             font-size: 1.2rem;
             color: var(--cinza-texto);
             max-width: 520px;
             margin: 0 auto 32px;
         }
-
         .btn-primary {
             background: var(--laranja);
             color: white;
             border: none;
-            padding: 16px 40px;
+            padding: 16px 42px;
             font-size: 1rem;
             font-weight: 600;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
+            transition: 0.3s;
             display: inline-block;
         }
-
         .btn-primary:hover {
-            background: var(--laranja-claro);
+            background: var(--laranja-hover);
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 77, 0, 0.3);
+            box-shadow: 0 12px 30px rgba(255,77,0,0.35);
         }
 
         /* SEÇÕES */
-        section {
-            padding: 100px 24px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
+        section { padding: 90px 24px; max-width: 1300px; margin: 0 auto; }
         .section-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             letter-spacing: 2px;
-            margin-bottom: 12px;
             text-align: center;
+            margin-bottom: 10px;
         }
-
         .section-subtitle {
             text-align: center;
             color: var(--cinza-texto);
-            margin-bottom: 60px;
-            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+
+        /* FILTROS */
+        .filtros {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .filtro-btn {
+            background: var(--cinza);
+            border: 1px solid #333;
+            color: var(--cinza-texto);
+            padding: 10px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.25s;
+        }
+        .filtro-btn.active, .filtro-btn:hover {
+            background: var(--laranja);
+            border-color: var(--laranja);
+            color: white;
         }
 
         /* PRODUTOS */
         .produtos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
         }
-
         .produto-card {
             background: var(--cinza-escuro);
             border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #222;
+            transition: 0.3s;
+            cursor: pointer;
         }
-
         .produto-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             border-color: var(--laranja);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-
         .produto-img {
-            height: 260px;
+            height: 240px;
             background: #111;
             display: flex;
             align-items: center;
@@ -197,160 +197,287 @@
             position: relative;
             overflow: hidden;
         }
-
         .produto-img img {
-            width: 100%;
-            height: 100%;
+            max-width: 90%;
+            max-height: 90%;
             object-fit: contain;
-            padding: 20px;
-            transition: transform 0.5s;
+            transition: 0.4s;
         }
-
-        .produto-card:hover .produto-img img {
-            transform: scale(1.06);
-        }
-
+        .produto-card:hover .produto-img img { transform: scale(1.06); }
         .badge {
             position: absolute;
-            top: 16px;
-            left: 16px;
+            top: 14px;
+            left: 14px;
             background: var(--laranja);
             color: white;
-            padding: 6px 12px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             z-index: 2;
         }
-
-        .badge.novo {
-            background: #00c853;
-        }
-
-        .produto-info {
-            padding: 24px;
-        }
-
-        .produto-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 6px;
-        }
-
-        .produto-info .marca {
+        .badge.novo { background: #00c853; }
+        .produto-info { padding: 20px; }
+        .marca {
             color: var(--laranja);
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
-
-        .produto-info .categoria {
+        .produto-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+        .categoria {
             color: var(--cinza-texto);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 16px;
         }
-
-        .preco {
+        .preco-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        .preco .valor {
-            font-size: 1.45rem;
+        .valor {
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--laranja);
         }
-
-        .btn-comprar {
+        .btn-add {
             background: transparent;
             border: 2px solid var(--laranja);
             color: var(--laranja);
-            padding: 8px 18px;
+            padding: 8px 16px;
             border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: 0.25s;
         }
-
-        .btn-comprar:hover {
+        .btn-add:hover {
             background: var(--laranja);
             color: white;
         }
 
-        /* CATEGORIAS */
-        .categorias {
+        /* CARRINHO SIDEBAR */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+        .cart-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            max-width: 95%;
+            height: 100%;
             background: var(--cinza-escuro);
-            padding: 80px 24px;
+            z-index: 2001;
+            transition: 0.35s;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #333;
+        }
+        .cart-sidebar.open { right: 0; }
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--cinza-texto);
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        .cart-item {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            background: #111;
+            border-radius: 8px;
+        }
+        .cart-item-info { flex: 1; }
+        .cart-item-info h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .cart-item-info .preco { color: var(--laranja); font-weight: 600; }
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #444;
+            background: #222;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff5252;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .cart-total span:last-child { color: var(--laranja); }
+        .btn-finalizar {
+            width: 100%;
+            background: var(--laranja);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .btn-finalizar:hover { background: var(--laranja-hover); }
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--cinza-texto);
         }
 
-        .categorias-container {
-            max-width: 1280px;
-            margin: 0 auto;
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            padding: 20px;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal {
+            background: var(--cinza-escuro);
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid #333;
+        }
+        .modal-img {
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        .modal-img img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+        }
+        .modal-info { padding: 30px; }
+        .modal-info .marca { margin-bottom: 6px; }
+        .modal-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .modal-info .valor {
+            font-size: 1.8rem;
+            margin: 16px 0;
+        }
+        .modal-info p {
+            color: var(--cinza-texto);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #333;
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
         }
 
+        /* CATEGORIAS */
+        .categorias { background: var(--cinza-escuro); padding: 80px 24px; }
         .categorias-grid {
+            max-width: 1300px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
         }
-
         .categoria-card {
             background: var(--cinza);
-            border-radius: 12px;
-            padding: 40px 24px;
+            border-radius: 14px;
+            padding: 36px 24px;
             text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
             border: 1px solid transparent;
+            transition: 0.3s;
+            cursor: pointer;
         }
-
         .categoria-card:hover {
             border-color: var(--laranja);
             transform: translateY(-5px);
         }
-
-        .categoria-card .icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-        }
-
-        .categoria-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        .categoria-card p {
-            color: var(--cinza-texto);
-            font-size: 0.9rem;
-        }
-
-        /* MARCAS */
-        .marcas {
-            text-align: center;
-            padding: 60px 24px;
-        }
-
-        .marcas-grid {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .marca-item {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            letter-spacing: 3px;
-            color: #444;
-            transition: color 0.3s;
-        }
-
-        .marca-item:hover {
-            color: var(--laranja);
-        }
+        .categoria-card .icon { font-size: 2.8rem; margin-bottom: 14px; }
+        .categoria-card h3 { margin-bottom: 6px; }
+        .categoria-card p { color: var(--cinza-texto); font-size: 0.9rem; }
 
         /* SOBRE */
         .sobre-content {
@@ -359,53 +486,27 @@
             gap: 60px;
             align-items: center;
         }
-
         .sobre-texto h2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
-
         .sobre-texto p {
             color: var(--cinza-texto);
-            margin-bottom: 16px;
-            font-size: 1.05rem;
+            margin-bottom: 14px;
         }
-
         .stats {
             display: flex;
             gap: 40px;
-            margin-top: 40px;
+            margin-top: 36px;
         }
-
         .stat h3 {
+            font-family: 'Bebas Neue', sans-serif;
             font-size: 2.2rem;
             color: var(--laranja);
-            font-family: 'Bebas Neue', sans-serif;
         }
-
-        .stat p {
-            color: var(--cinza-texto);
-            font-size: 0.9rem;
-        }
-
-        .sobre-img {
-            height: 400px;
-            background: var(--cinza);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #222;
-            overflow: hidden;
-        }
-
-        .sobre-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .stat p { color: var(--cinza-texto); font-size: 0.9rem; }
 
         /* FOOTER */
         footer {
@@ -413,334 +514,477 @@
             padding: 60px 24px 30px;
             border-top: 1px solid #222;
         }
-
         .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
+            max-width: 1300px;
+            margin: 0 auto 40px;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
-            margin-bottom: 40px;
         }
-
-        .footer-brand .logo {
-            font-size: 1.8rem;
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            color: var(--cinza-texto);
-            max-width: 300px;
-            font-size: 0.95rem;
-        }
-
-        .footer-col h4 {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col a {
-            color: var(--cinza-texto);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--laranja);
-        }
-
+        .footer-brand .logo { font-size: 1.7rem; display: inline-block; margin-bottom: 14px; }
+        .footer-brand p { color: var(--cinza-texto); max-width: 280px; font-size: 0.95rem; }
+        .footer-col h4 { margin-bottom: 18px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 10px; }
+        .footer-col a { color: var(--cinza-texto); transition: 0.25s; }
+        .footer-col a:hover { color: var(--laranja); }
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 24px;
             border-top: 1px solid #222;
             color: var(--cinza-texto);
             font-size: 0.9rem;
-            max-width: 1280px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            z-index: 999;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
         /* RESPONSIVO */
         @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
-
-            .sobre-content {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+            .nav-links { display: none; }
+            .sobre-content { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .modal { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 600px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                flex-direction: column;
-                gap: 20px;
-            }
+            .footer-content { grid-template-columns: 1fr; }
+            .stats { flex-direction: column; gap: 16px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <nav class="navbar">
+<!-- HEADER -->
+<header>
+    <nav class="navbar">
+        <a href="#" class="logo">GRAU<span>BIKES</span></a>
+        <ul class="nav-links">
+            <li><a href="#produtos">Bikes</a></li>
+            <li><a href="#categorias">Categorias</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button class="btn-carrinho" onclick="toggleCart()">
+            🛒 Carrinho <span id="cart-count">0</span>
+        </button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>BIKE DE <span>GRAU</span></h1>
+        <p>Gios • Hupi Naja • Absolute — As melhores bikes de freestyle e wheeling do Brasil.</p>
+        <a href="#produtos" class="btn-primary">Ver Catálogo</a>
+    </div>
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos">
+    <h2 class="section-title">CATÁLOGO</h2>
+    <p class="section-subtitle">Escolha sua próxima máquina</p>
+
+    <div class="filtros">
+        <button class="filtro-btn active" onclick="filtrar('todos')">Todas</button>
+        <button class="filtro-btn" onclick="filtrar('gios')">Gios</button>
+        <button class="filtro-btn" onclick="filtrar('hupi')">Hupi Naja</button>
+        <button class="filtro-btn" onclick="filtrar('absolute')">Absolute</button>
+    </div>
+
+    <div class="produtos-grid" id="produtos-grid">
+        <!-- Produtos serão inseridos via JS -->
+    </div>
+</section>
+
+<!-- CATEGORIAS -->
+<div class="categorias" id="categorias">
+    <h2 class="section-title" style="margin-bottom:40px">CATEGORIAS</h2>
+    <div class="categorias-grid">
+        <div class="categoria-card" onclick="filtrar('todos')">
+            <div class="icon">🚲</div>
+            <h3>Bikes Completas</h3>
+            <p>Prontas pra sair andando</p>
+        </div>
+        <div class="categoria-card">
+            <div class="icon">🛠️</div>
+            <h3>Quadros</h3>
+            <p>Gios FRX e Hupi Naja</p>
+        </div>
+        <div class="categoria-card">
+            <div class="icon">⚙️</div>
+            <h3>Peças</h3>
+            <p>Guidão, mesa, pedais e mais</p>
+        </div>
+        <div class="categoria-card">
+            <div class="icon">🛡️</div>
+            <h3>Proteção</h3>
+            <p>Capacete, joelheira e cotoveleira</p>
+        </div>
+    </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+    <div class="sobre-content">
+        <div class="sobre-texto">
+            <h2>SOBRE A GRAU BIKES</h2>
+            <p>Especializada em bike de grau, trabalhamos com as principais marcas do freestyle brasileiro: <strong>Gios</strong>, <strong>Hupi Naja</strong> e <strong>Absolute</strong>.</p>
+            <p>Seja quadro avulso ou bike completa, aqui você encontra qualidade de verdade pra mandar de verdade na rua e na pista.</p>
+            <div class="stats">
+                <div class="stat"><h3>+1800</h3><p>Bikes vendidas</p></div>
+                <div class="stat"><h3>9</h3><p>Anos de rua</p></div>
+                <div class="stat"><h3>100%</h3><p>Satisfação</p></div>
+            </div>
+        </div>
+        <div style="height:380px;background:#1a1a1a;border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid #333;overflow:hidden">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg" 
+                 alt="Gios" style="max-width:90%;max-height:90%;object-fit:contain">
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contato">
+    <div class="footer-content">
+        <div class="footer-brand">
             <a href="#" class="logo">GRAU<span>BIKES</span></a>
-            <ul class="nav-links">
-                <li><a href="#produtos">Bikes</a></li>
-                <li><a href="#categorias">Categorias</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
+            <p>Gios • Hupi Naja • Absolute. A loja de quem vive o freestyle de verdade.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Marcas</h4>
+            <ul>
+                <li><a href="#" onclick="filtrar('gios')">Gios</a></li>
+                <li><a href="#" onclick="filtrar('hupi')">Hupi Naja</a></li>
+                <li><a href="#" onclick="filtrar('absolute')">Absolute</a></li>
             </ul>
-            <button class="btn-carrinho">🛒 Carrinho (0)</button>
-        </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>BIKE DE <span>GRAU</span></h1>
-            <p>Gios • Hupi Naja • Absolute — As melhores bikes de freestyle do Brasil.</p>
-            <a href="#produtos" class="btn-primary">Ver Bikes</a>
         </div>
-    </section>
-
-    <!-- PRODUTOS -->
-    <section id="produtos">
-        <h2 class="section-title">DESTAQUES</h2>
-        <p class="section-subtitle">Gios • Hupi Naja • Absolute</p>
-
-        <div class="produtos-grid">
-
-            <!-- GIOS -->
-            <div class="produto-card">
-                <div class="produto-img">
-                    <span class="badge">DESTAQUE</span>
-                    <img src="https://i.imgur.com/8QZ5Y5L.png" alt="Gios Quadro Roxo" 
-                         onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80'">
-                </div>
-                <div class="produto-info">
-                    <p class="marca">Gios</p>
-                    <h3>Gios FRX Roxo</h3>
-                    <p class="categoria">Quadro BMX Freestyle • 20"</p>
-                    <div class="preco">
-                        <span class="valor">R$ 1.299</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HUPI NAJA -->
-            <div class="produto-card">
-                <div class="produto-img">
-                    <span class="badge novo">NOVO</span>
-                    <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&q=80" alt="Hupi Naja">
-                </div>
-                <div class="produto-info">
-                    <p class="marca">Hupi</p>
-                    <h3>Hupi Naja</h3>
-                    <p class="categoria">Bike Completa • Freestyle</p>
-                    <div class="preco">
-                        <span class="valor">R$ 2.899</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ABSOLUTE -->
-            <div class="produto-card">
-                <div class="produto-img">
-                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&q=80" alt="Absolute">
-                </div>
-                <div class="produto-info">
-                    <p class="marca">Absolute</p>
-                    <h3>Absolute Nitro</h3>
-                    <p class="categoria">Bike Completa • Street/Park</p>
-                    <div class="preco">
-                        <span class="valor">R$ 2.199</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GIOS COMPLETA -->
-            <div class="produto-card">
-                <div class="produto-img">
-                    <img src="https://images.unsplash.com/photo-1511994298241-608e28f14f64?w=600&q=80" alt="Gios Completa">
-                </div>
-                <div class="produto-info">
-                    <p class="marca">Gios</p>
-                    <h3>Gios Pro Complete</h3>
-                    <p class="categoria">Bike Completa • Freestyle</p>
-                    <div class="preco">
-                        <span class="valor">R$ 2.499</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HUPI -->
-            <div class="produto-card">
-                <div class="produto-img">
-                    <span class="badge">-12%</span>
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Hupi">
-                </div>
-                <div class="produto-info">
-                    <p class="marca">Hupi</p>
-                    <h3>Hupi Dirt</h3>
-                    <p class="categoria">Bike Completa • Dirt Jump</p>
-                    <div class="preco">
-                        <span class="valor">R$ 2.449</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ABSOLUTE -->
-            <div class="produto-card">
-                <div class="produto-img">
-                    <img src="https://images.unsplash.com/photo-1571333252801-8b8b0b0b0b0b?w=600&q=80" 
-                         onerror="this.src='https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80'" 
-                         alt="Absolute">
-                </div>
-                <div class="produto-info">
-                    <p class="marca">Absolute</p>
-                    <h3>Absolute Grau</h3>
-                    <p class="categoria">Bike Completa • Iniciante/Intermediário</p>
-                    <div class="preco">
-                        <span class="valor">R$ 1.799</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
+        <div class="footer-col">
+            <h4>Ajuda</h4>
+            <ul>
+                <li><a href="#">Como comprar</a></li>
+                <li><a href="#">Frete e prazos</a></li>
+                <li><a href="#">Trocas</a></li>
+            </ul>
         </div>
-    </section>
-
-    <!-- MARCAS -->
-    <div class="marcas">
-        <h2 class="section-title">MARCAS</h2>
-        <div class="marcas-grid">
-            <div class="marca-item">GIOS</div>
-            <div class="marca-item">HUPI</div>
-            <div class="marca-item">ABSOLUTE</div>
+        <div class="footer-col">
+            <h4>Contato</h4>
+            <ul>
+                <li><a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">E-mail</a></li>
+            </ul>
         </div>
     </div>
+    <div class="copyright">© 2026 Grau Bikes — Gios • Hupi • Absolute</div>
+</footer>
 
-    <!-- CATEGORIAS -->
-    <div class="categorias" id="categorias">
-        <div class="categorias-container">
-            <h2 class="section-title">CATEGORIAS</h2>
-            <p class="section-subtitle">Tudo o que você precisa pro grau</p>
-
-            <div class="categorias-grid">
-                <div class="categoria-card">
-                    <div class="icon">🚲</div>
-                    <h3>Bikes Completas</h3>
-                    <p>Gios, Hupi Naja e Absolute</p>
-                </div>
-                <div class="categoria-card">
-                    <div class="icon">🛠️</div>
-                    <h3>Quadros</h3>
-                    <p>Gios FRX e outros</p>
-                </div>
-                <div class="categoria-card">
-                    <div class="icon">⚙️</div>
-                    <h3>Peças</h3>
-                    <p>Guidão, pedais, mesa e mais</p>
-                </div>
-                <div class="categoria-card">
-                    <div class="icon">🛡️</div>
-                    <h3>Proteção</h3>
-                    <p>Capacete, joelheira e cotoveleira</p>
-                </div>
-            </div>
-        </div>
+<!-- CARRINHO -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h3>SEU CARRINHO</h3>
+        <button class="close-cart" onclick="toggleCart()">×</button>
     </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total">R$ 0</span>
+        </div>
+        <button class="btn-finalizar" onclick="finalizarPedido()">Finalizar no WhatsApp</button>
+    </div>
+</div>
 
-    <!-- SOBRE -->
-    <section id="sobre">
-        <div class="sobre-content">
-            <div class="sobre-texto">
-                <h2>SOBRE A GRAU BIKES</h2>
-                <p>Especializada em bike de grau, trabalhamos com as principais marcas do freestyle brasileiro: <strong>Gios</strong>, <strong>Hupi</strong> e <strong>Absolute</strong>.</p>
-                <p>Seja quadro avulso ou bike completa, aqui você encontra qualidade de verdade pra mandar de verdade.</p>
-                
-                <div class="stats">
-                    <div class="stat">
-                        <h3>+1500</h3>
-                        <p>Bikes vendidas</p>
-                    </div>
-                    <div class="stat">
-                        <h3>9</h3>
-                        <p>Anos de rua</p>
-                    </div>
-                    <div class="stat">
-                        <h3>100%</h3>
-                        <p>Satisfação</p>
-                    </div>
+<!-- MODAL PRODUTO -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal-content" style="position:relative"></div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5511999999999?text=Olá! Quero informações sobre bikes de grau." 
+   class="whatsapp-float" target="_blank" title="Fale conosco">
+    💬
+</a>
+
+<script>
+// PRODUTOS
+const produtos = [
+    {
+        id: 1,
+        marca: "gios",
+        nome: "Gios FRX Roxo",
+        categoria: "Quadro Aro 26 • Freestyle",
+        preco: 999,
+        img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg",
+        badge: "DESTAQUE",
+        desc: "Quadro Gios FRX em alumínio 6061-T6, tamanho 13,5\". Ideal para wheeling, dirt e freestyle. Geometria pensada para manobras."
+    },
+    {
+        id: 2,
+        marca: "gios",
+        nome: "Gios 4Trix Completa",
+        categoria: "Bike Completa • Aro 26",
+        preco: 2399,
+        img: "https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp",
+        badge: "NOVO",
+        desc: "Bike completa Gios 4Trix/FRX. Quadro de alumínio, freio a disco, pronta para grau e street."
+    },
+    {
+        id: 3,
+        marca: "hupi",
+        nome: "Hupi Naja Single",
+        categoria: "Bike Completa • Single Speed",
+        preco: 2899,
+        img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp",
+        badge: "NOVO",
+        desc: "Hupi Naja 2025 com kit single, freio hidráulico Shimano MT200 e cubo barulhento. A favorita do grau."
+    },
+    {
+        id: 4,
+        marca: "hupi",
+        nome: "Hupi Naja V10",
+        categoria: "Bike Completa • Aro 26",
+        preco: 2699,
+        img: "https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp",
+        badge: "",
+        desc: "Hupi Naja V10 com freio a disco e visual agressivo. Perfeita para wheeling e dirt jump."
+    },
+    {
+        id: 5,
+        marca: "absolute",
+        nome: "Absolute Nero 5 Grau",
+        categoria: "Bike Completa • 21v",
+        preco: 1299,
+        img: "https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg",
+        badge: "PROMO",
+        desc: "Absolute Nero 5 do Grau. Quadro de alumínio, suspensão 100mm, freio a disco. Excelente custo-benefício."
+    },
+    {
+        id: 6,
+        marca: "absolute",
+        nome: "Absolute Nero Oliva",
+        categoria: "Bike Completa • Freestyle",
+        preco: 1399,
+        img: "https://http2.mlstatic.com/D_NQ_NP_935044-MLA99881475487_112025-O.webp",
+        badge: "",
+        desc: "Absolute Nero 5 na cor oliva. Ideal para quem está começando no grau ou quer uma bike resistente."
+    },
+    {
+        id: 7,
+        marca: "gios",
+        nome: "Gios FRX Completa",
+        categoria: "Bike Completa • Single",
+        preco: 2199,
+        img: "https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg",
+        badge: "",
+        desc: "Montagem completa em quadro Gios FRX com freios hidráulicos e componentes reforçados."
+    },
+    {
+        id: 8,
+        marca: "hupi",
+        nome: "Hupi Sleeper BMX",
+        categoria: "Big BMX • Single Speed",
+        preco: 2499,
+        img: "https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg",
+        badge: "NOVO",
+        desc: "Hupi Sleeper aro 26 single speed. Estilo street europeu, ideal para wheeling e manobras."
+    }
+];
+
+let carrinho = JSON.parse(localStorage.getItem('grauCarrinho')) || [];
+
+// RENDER PRODUTOS
+function renderProdutos(lista = produtos) {
+    const grid = document.getElementById('produtos-grid');
+    grid.innerHTML = lista.map(p => `
+        <div class="produto-card" data-marca="${p.marca}">
+            <div class="produto-img" onclick="abrirModal(${p.id})">
+                ${p.badge ? `<span class="badge ${p.badge === 'NOVO' ? 'novo' : ''}">${p.badge}</span>` : ''}
+                <img src="${p.img}" alt="${p.nome}" loading="lazy">
+            </div>
+            <div class="produto-info">
+                <p class="marca">${p.marca.toUpperCase()}</p>
+                <h3>${p.nome}</h3>
+                <p class="categoria">${p.categoria}</p>
+                <div class="preco-row">
+                    <span class="valor">R$ ${p.preco.toLocaleString('pt-BR')}</span>
+                    <button class="btn-add" onclick="event.stopPropagation(); adicionarCarrinho(${p.id})">+ Carrinho</button>
                 </div>
             </div>
-            <div class="sobre-img">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="BMX">
-            </div>
         </div>
-    </section>
+    `).join('');
+}
 
-    <!-- FOOTER -->
-    <footer id="contato">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo">GRAU<span>BIKES</span></a>
-                <p>Gios • Hupi Naja • Absolute. A loja de quem vive o freestyle de verdade.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Marcas</h4>
-                <ul>
-                    <li><a href="#">Gios</a></li>
-                    <li><a href="#">Hupi</a></li>
-                    <li><a href="#">Absolute</a></li>
-                    <li><a href="#">Peças</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Ajuda</h4>
-                <ul>
-                    <li><a href="#">Como comprar</a></li>
-                    <li><a href="#">Frete e prazos</a></li>
-                    <li><a href="#">Trocas</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contato</h4>
-                <ul>
-                    <li><a href="#">WhatsApp</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">E-mail</a></li>
-                    <li><a href="#">Localização</a></li>
-                </ul>
+// FILTRO
+function filtrar(marca) {
+    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    const filtrados = marca === 'todos' ? produtos : produtos.filter(p => p.marca === marca);
+    renderProdutos(filtrados);
+    
+    document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+}
+
+// CARRINHO
+function adicionarCarrinho(id) {
+    const produto = produtos.find(p => p.id === id);
+    const item = carrinho.find(i => i.id === id);
+    
+    if (item) {
+        item.qtd++;
+    } else {
+        carrinho.push({ ...produto, qtd: 1 });
+    }
+    
+    salvarCarrinho();
+    atualizarCarrinho();
+    toggleCart(true);
+}
+
+function removerItem(id) {
+    carrinho = carrinho.filter(i => i.id !== id);
+    salvarCarrinho();
+    atualizarCarrinho();
+}
+
+function alterarQtd(id, delta) {
+    const item = carrinho.find(i => i.id === id);
+    if (!item) return;
+    
+    item.qtd += delta;
+    if (item.qtd <= 0) {
+        removerItem(id);
+    } else {
+        salvarCarrinho();
+        atualizarCarrinho();
+    }
+}
+
+function atualizarCarrinho() {
+    const container = document.getElementById('cart-items');
+    const count = document.getElementById('cart-count');
+    const totalEl = document.getElementById('cart-total');
+    
+    const totalQtd = carrinho.reduce((s, i) => s + i.qtd, 0);
+    const totalPreco = carrinho.reduce((s, i) => s + (i.preco * i.qtd), 0);
+    
+    count.textContent = totalQtd;
+    totalEl.textContent = `R$ ${totalPreco.toLocaleString('pt-BR')}`;
+    
+    if (carrinho.length === 0) {
+        container.innerHTML = `<div class="empty-cart">Seu carrinho está vazio</div>`;
+        return;
+    }
+    
+    container.innerHTML = carrinho.map(i => `
+        <div class="cart-item">
+            <img src="${i.img}" alt="${i.nome}">
+            <div class="cart-item-info">
+                <h4>${i.nome}</h4>
+                <div class="preco">R$ ${(i.preco * i.qtd).toLocaleString('pt-BR')}</div>
+                <div class="qty-controls">
+                    <button class="qty-btn" onclick="alterarQtd(${i.id}, -1)">−</button>
+                    <span>${i.qtd}</span>
+                    <button class="qty-btn" onclick="alterarQtd(${i.id}, 1)">+</button>
+                </div>
+                <button class="remove-item" onclick="removerItem(${i.id})">Remover</button>
             </div>
         </div>
-        <div class="copyright">
-            © 2024 Grau Bikes — Gios • Hupi • Absolute
+    `).join('');
+}
+
+function salvarCarrinho() {
+    localStorage.setItem('grauCarrinho', JSON.stringify(carrinho));
+}
+
+function toggleCart(forceOpen = false) {
+    const overlay = document.getElementById('cart-overlay');
+    const sidebar = document.getElementById('cart-sidebar');
+    
+    if (forceOpen || !sidebar.classList.contains('open')) {
+        overlay.classList.add('open');
+        sidebar.classList.add('open');
+    } else {
+        overlay.classList.remove('open');
+        sidebar.classList.remove('open');
+    }
+}
+
+function finalizarPedido() {
+    if (carrinho.length === 0) {
+        alert('Carrinho vazio!');
+        return;
+    }
+    
+    let msg = 'Olá! Quero finalizar o pedido:%0A%0A';
+    carrinho.forEach(i => {
+        msg += `• ${i.nome} (${i.qtd}x) - R$ ${(i.preco * i.qtd).toLocaleString('pt-BR')}%0A`;
+    });
+    const total = carrinho.reduce((s, i) => s + (i.preco * i.qtd), 0);
+    msg += `%0A*Total: R$ ${total.toLocaleString('pt-BR')}*`;
+    
+    window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
+}
+
+// MODAL
+function abrirModal(id) {
+    const p = produtos.find(x => x.id === id);
+    const overlay = document.getElementById('modal-overlay');
+    const content = document.getElementById('modal-content');
+    
+    content.innerHTML = `
+        <button class="close-modal" onclick="fecharModal()">×</button>
+        <div class="modal-img">
+            <img src="${p.img}" alt="${p.nome}">
         </div>
-    </footer>
+        <div class="modal-info">
+            <p class="marca">${p.marca.toUpperCase()}</p>
+            <h2>${p.nome}</h2>
+            <p class="categoria">${p.categoria}</p>
+            <div class="valor">R$ ${p.preco.toLocaleString('pt-BR')}</div>
+            <p>${p.desc}</p>
+            <button class="btn-primary" style="width:100%" onclick="adicionarCarrinho(${p.id}); fecharModal()">
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    `;
+    
+    overlay.classList.add('open');
+}
+
+function fecharModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+}
+
+// Fechar modal clicando fora
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) fecharModal();
+});
+
+// INIT
+renderProdutos();
+atualizarCarrinho();
+</script>
 
 </body>
 </html>
