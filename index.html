@@ -3,84 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grau Bikes | Bikes e Peças de Grau</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Grau Bikes | Loja Oficial de Bikes e Peças de Grau</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 :root{
   --preto:#0a0a0a;--cinza-escuro:#121212;--cinza:#1c1c1c;
   --laranja:#ff4d00;--laranja-hover:#ff6b2b;--branco:#f5f5f5;
-  --cinza-texto:#9a9a9a;--verde:#00c853;--pix:#32BCAD;--roxo:#7c4dff;
+  --cinza-texto:#9a9a9a;--verde:#00c853;--pix:#32BCAD;--roxo:#7c4dff;--vermelho:#ff3b5c;
 }
 body{font-family:'Inter',sans-serif;background:var(--preto);color:var(--branco);line-height:1.5}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer}
 
-.top-bar{background:var(--laranja);color:#fff;text-align:center;padding:9px 16px;font-size:.88rem;font-weight:600;letter-spacing:.3px}
+.top-bar{background:var(--laranja);color:#fff;text-align:center;padding:9px 16px;font-size:.86rem;font-weight:600;letter-spacing:.3px}
 header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;top:0;z-index:1000;border-bottom:1px solid #222}
-.navbar{max-width:1320px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.navbar{max-width:1320px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:1.95rem;letter-spacing:2px;white-space:nowrap}
 .logo span{color:var(--laranja)}
-.search-box{flex:1;max-width:460px;position:relative;min-width:220px}
-.search-box input{width:100%;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:11px 16px 11px 42px;color:#fff;font-size:.95rem;transition:.2s}
+.search-box{flex:1;max-width:440px;position:relative;min-width:200px}
+.search-box input{width:100%;background:#1a1a1a;border:1px solid #333;border-radius:10px;padding:11px 16px 11px 42px;color:#fff;font-size:.94rem;transition:.2s}
 .search-box input:focus{outline:none;border-color:var(--laranja);background:#202020}
 .search-box::before{content:"🔍";position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:.95rem}
+
+.nav-actions{display:flex;align-items:center;gap:10px}
+.btn-icon-nav{background:#1a1a1a;border:1px solid #333;color:#fff;padding:10px 14px;border-radius:10px;font-weight:600;font-size:.86rem;display:flex;align-items:center;gap:6px;transition:.2s}
+.btn-icon-nav:hover{border-color:var(--laranja);color:var(--laranja)}
+.btn-icon-nav.active{border-color:var(--vermelho);color:var(--vermelho)}
 .btn-carrinho{background:var(--laranja);color:#fff;border:none;padding:10px 18px;border-radius:10px;font-weight:700;display:flex;align-items:center;gap:8px;transition:.25s}
 .btn-carrinho:hover{background:var(--laranja-hover);transform:translateY(-1px)}
-#cart-count{background:#fff;color:var(--laranja);font-size:.75rem;font-weight:800;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 5px}
+.badge-pill{background:#fff;color:var(--laranja);font-size:.74rem;font-weight:800;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 5px}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-  min-height:84vh;
+  min-height:82vh;
   background:
-    linear-gradient(135deg, rgba(0,0,0,.86) 0%, rgba(0,0,0,.6) 50%, rgba(255,77,0,.18) 100%),
+    linear-gradient(135deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.6) 50%, rgba(255,77,0,.18) 100%),
     url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000') center/cover no-repeat;
   display:flex;align-items:center;position:relative;overflow:hidden;
 }
-.hero::after{
-  content:"";position:absolute;bottom:0;left:0;right:0;height:110px;
-  background:linear-gradient(transparent, var(--preto));pointer-events:none;
-}
-.hero-content{
-  max-width:1320px;margin:0 auto;padding:48px 24px 80px;
-  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;width:100%;position:relative;z-index:2;
-}
-.hero-badge{
-  display:inline-block;background:rgba(255,77,0,.15);border:1px solid rgba(255,77,0,.4);
-  color:var(--laranja);padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;
-}
-.hero-text h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3.2rem, 7.5vw, 5.6rem);
-  letter-spacing:3px;line-height:.95;margin-bottom:18px;
-}
+.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:110px;background:linear-gradient(transparent, var(--preto));pointer-events:none}
+.hero-content{max-width:1320px;margin:0 auto;padding:48px 24px 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;width:100%;position:relative;z-index:2}
+.hero-badge{display:inline-block;background:rgba(255,77,0,.15);border:1px solid rgba(255,77,0,.4);color:var(--laranja);padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.hero-text h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.2rem, 7.5vw, 5.6rem);letter-spacing:3px;line-height:.95;margin-bottom:18px}
 .hero-text h1 span{color:var(--laranja)}
-.hero-text .subtitle{
-  font-size:1.1rem;color:#c2c2c2;max-width:490px;margin-bottom:28px;line-height:1.6;
-}
+.hero-text .subtitle{font-size:1.08rem;color:#c2c2c2;max-width:490px;margin-bottom:28px;line-height:1.6}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
-.btn-primary{
-  background:var(--laranja);color:#fff;border:none;padding:15px 32px;
-  font-size:1rem;font-weight:700;border-radius:10px;transition:.3s;display:inline-flex;align-items:center;gap:8px;
-}
+.btn-primary{background:var(--laranja);color:#fff;border:none;padding:15px 32px;font-size:1rem;font-weight:700;border-radius:10px;transition:.3s;display:inline-flex;align-items:center;gap:8px}
 .btn-primary:hover{background:var(--laranja-hover);transform:translateY(-3px);box-shadow:0 14px 32px rgba(255,77,0,.4)}
-.btn-secondary{
-  background:rgba(255,255,255,.05);color:#fff;border:1px solid #444;padding:15px 28px;
-  font-size:1rem;font-weight:600;border-radius:10px;transition:.3s;
-}
+.btn-secondary{background:rgba(255,255,255,.05);color:#fff;border:1px solid #444;padding:15px 28px;font-size:1rem;font-weight:600;border-radius:10px;transition:.3s}
 .btn-secondary:hover{border-color:var(--laranja);color:var(--laranja)}
-
 .hero-stats{display:flex;gap:32px;flex-wrap:wrap}
 .stat-item strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:2.1rem;color:var(--laranja);letter-spacing:1px;line-height:1}
 .stat-item span{font-size:.85rem;color:var(--cinza-texto)}
-
 .hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.hero-card{
-  background:rgba(18,18,18,.88);backdrop-filter:blur(10px);
-  border:1px solid #2a2a2a;border-radius:16px;padding:22px;transition:.3s;
-}
+.hero-card{background:rgba(18,18,18,.88);backdrop-filter:blur(10px);border:1px solid #2a2a2a;border-radius:16px;padding:22px;transition:.3s}
 .hero-card:hover{border-color:var(--laranja);transform:translateY(-4px)}
 .hero-card .icon{font-size:1.8rem;margin-bottom:10px}
 .hero-card h3{font-size:1rem;margin-bottom:6px}
@@ -92,21 +70,18 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:#bdbdbd;font-weight:500}
 .trust-item span{font-size:1.25rem}
 
-/* CATEGORIAS RÁPIDAS */
+/* CATEGORIAS */
 .cats-section{max-width:1320px;margin:0 auto;padding:48px 20px 16px}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;letter-spacing:2px;margin-bottom:4px}
 .section-sub{color:var(--cinza-texto);margin-bottom:22px;font-size:.95rem}
 .cats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.cat-card{
-  background:var(--cinza-escuro);border:1px solid #222;border-radius:14px;
-  padding:26px 20px;text-align:center;transition:.3s;cursor:pointer;
-}
+.cat-card{background:var(--cinza-escuro);border:1px solid #222;border-radius:14px;padding:26px 20px;text-align:center;transition:.3s;cursor:pointer}
 .cat-card:hover{border-color:var(--laranja);transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.35)}
 .cat-card .cat-icon{font-size:2.2rem;margin-bottom:10px}
 .cat-card h3{font-size:1.05rem;margin-bottom:4px}
 .cat-card p{font-size:.82rem;color:var(--cinza-texto)}
 
-/* LAYOUT LOJA */
+/* LOJA */
 .shop-layout{max-width:1320px;margin:0 auto;padding:30px 20px 80px;display:grid;grid-template-columns:265px 1fr;gap:28px}
 .filtros-panel{background:var(--cinza-escuro);border:1px solid #222;border-radius:14px;padding:20px;height:fit-content;position:sticky;top:92px}
 .filtros-panel h3{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:1px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center}
@@ -135,14 +110,19 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .produtos-count{color:var(--cinza-texto);font-size:.95rem}
 .sort-select{background:var(--cinza);border:1px solid #333;color:#fff;padding:9px 14px;border-radius:8px;font-size:.9rem;cursor:pointer}
 .sort-select:focus{outline:none;border-color:var(--laranja)}
-.produtos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:20px}
-.produto-card{background:var(--cinza-escuro);border-radius:14px;overflow:hidden;border:1px solid #222;transition:.3s;display:flex;flex-direction:column}
+.produtos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:20px}
+.produto-card{background:var(--cinza-escuro);border-radius:14px;overflow:hidden;border:1px solid #222;transition:.3s;display:flex;flex-direction:column;position:relative}
 .produto-card:hover{transform:translateY(-6px);border-color:var(--laranja);box-shadow:0 18px 36px rgba(0,0,0,.45)}
 .produto-img{height:210px;background:#111;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;cursor:pointer;padding:12px}
 .produto-img img{max-width:90%;max-height:90%;object-fit:contain;transition:.4s}
 .produto-card:hover .produto-img img{transform:scale(1.07)}
 .badge{position:absolute;top:11px;left:11px;background:var(--laranja);color:#fff;padding:4px 10px;border-radius:20px;font-size:.68rem;font-weight:700;z-index:2;letter-spacing:.5px}
 .badge.novo{background:var(--verde)}.badge.promo{background:#e91e63}.badge.peca{background:var(--roxo)}
+
+.btn-fav{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(18,18,18,.85);border:1px solid #333;color:#aaa;font-size:1rem;display:flex;align-items:center;justify-content:center;z-index:3;transition:.2s}
+.btn-fav:hover{border-color:var(--vermelho);transform:scale(1.08)}
+.btn-fav.liked{color:var(--vermelho);border-color:var(--vermelho);background:rgba(255,59,92,.12)}
+
 .btn-quick{position:absolute;bottom:12px;left:50%;transform:translateX(-50%) translateY(10px);background:rgba(0,0,0,.88);border:1px solid #444;color:#fff;padding:7px 14px;border-radius:8px;font-size:.78rem;font-weight:600;opacity:0;transition:.3s;white-space:nowrap}
 .produto-card:hover .btn-quick{opacity:1;transform:translateX(-50%) translateY(0)}
 .produto-info{padding:16px;flex:1;display:flex;flex-direction:column}
@@ -163,15 +143,25 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 /* MODAL PRODUTO */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:2500;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.3s;padding:20px}
 .modal-overlay.open{opacity:1;visibility:visible}
-.modal-produto{background:var(--cinza-escuro);border-radius:16px;width:100%;max-width:740px;max-height:90vh;overflow-y:auto;border:1px solid #333;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.modal-produto{background:var(--cinza-escuro);border-radius:16px;width:100%;max-width:780px;max-height:92vh;overflow-y:auto;border:1px solid #333;display:grid;grid-template-columns:1fr 1.1fr;position:relative}
 .modal-img{background:#111;display:flex;align-items:center;justify-content:center;padding:30px;min-height:280px}
 .modal-img img{max-width:100%;max-height:320px;object-fit:contain}
-.modal-info{padding:28px;display:flex;flex-direction:column}
-.modal-info h2{font-size:1.5rem;margin-bottom:6px;line-height:1.25}
+.modal-info{padding:26px;display:flex;flex-direction:column}
+.modal-info h2{font-size:1.5rem;margin-bottom:4px;line-height:1.25}
 .modal-pix{color:var(--pix);font-weight:700;font-size:.95rem;margin-top:6px}
 .modal-preco{font-size:1.75rem;font-weight:700;color:var(--laranja);margin-bottom:2px}
-.modal-parcelas{color:var(--cinza-texto);font-size:.88rem;margin-bottom:16px}
-.modal-desc{color:#ccc;font-size:.92rem;margin-bottom:24px;line-height:1.6}
+.modal-parcelas{color:var(--cinza-texto);font-size:.86rem;margin-bottom:12px}
+.modal-desc{color:#ccc;font-size:.9rem;margin-bottom:16px;line-height:1.55}
+
+.var-label{font-size:.8rem;color:var(--cinza-texto);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;display:block}
+.var-options{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.var-chip{background:#1a1a1a;border:1px solid #333;color:#ddd;padding:6px 13px;border-radius:8px;font-size:.84rem;font-weight:600;transition:.2s}
+.var-chip.active,.var-chip:hover{border-color:var(--laranja);background:rgba(255,77,0,.15);color:#fff}
+
+.parcelas-toggle{background:none;border:none;color:var(--laranja);font-size:.82rem;font-weight:600;text-align:left;margin-bottom:10px;text-decoration:underline}
+.parcelas-grid{display:none;background:#161616;border:1px solid #2a2a2a;border-radius:8px;padding:10px;margin-bottom:14px;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:.78rem;color:#bbb}
+.parcelas-grid.show{display:grid}
+
 .modal-actions{margin-top:auto}
 .modal-close{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.7);border:1px solid #333;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.3rem;display:flex;align-items:center;justify-content:center;z-index:5;transition:.2s}
 .modal-close:hover{border-color:var(--laranja);color:var(--laranja)}
@@ -183,53 +173,52 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 /* CARRINHO LATERAL */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:2000;opacity:0;visibility:hidden;transition:.3s}
 .cart-overlay.open{opacity:1;visibility:visible}
-.cart-sidebar{position:fixed;top:0;right:-440px;width:420px;max-width:95%;height:100%;background:var(--cinza-escuro);z-index:2001;transition:.35s;display:flex;flex-direction:column;border-left:1px solid #333}
+.cart-sidebar{position:fixed;top:0;right:-450px;width:430px;max-width:96%;height:100%;background:var(--cinza-escuro);z-index:2001;transition:.35s;display:flex;flex-direction:column;border-left:1px solid #333}
 .cart-sidebar.open{right:0}
-.cart-header{padding:18px 20px;border-bottom:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center}
+.cart-header{padding:16px 20px;border-bottom:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center}
 .cart-header h3{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:1px}
 .close-cart{background:none;border:none;color:var(--cinza-texto);font-size:1.7rem;line-height:1}
 .close-cart:hover{color:#fff}
 
-/* BARRA FRETE GRÁTIS */
-.shipping-bar{background:#181818;padding:12px 20px;border-bottom:1px solid #262626;font-size:.82rem}
+.shipping-bar{background:#181818;padding:11px 20px;border-bottom:1px solid #262626;font-size:.82rem}
 .shipping-text{margin-bottom:6px;color:#ddd}
 .shipping-text strong{color:var(--verde)}
 .progress-track{height:6px;background:#2a2a2a;border-radius:10px;overflow:hidden}
 .progress-fill{height:100%;background:var(--verde);width:0%;transition:.4s}
 
-.cart-items{flex:1;overflow-y:auto;padding:16px 20px}
-.cart-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #242424}
-.cart-item img{width:68px;height:68px;object-fit:contain;background:#111;border-radius:8px;padding:4px}
+.cart-items{flex:1;overflow-y:auto;padding:12px 20px}
+.cart-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #242424}
+.cart-item img{width:64px;height:64px;object-fit:contain;background:#111;border-radius:8px;padding:4px}
 .cart-item-info{flex:1}
-.cart-item-info h4{font-size:.93rem;margin-bottom:4px}
-.cart-item-info .preco{color:var(--laranja);font-weight:700;font-size:.95rem}
-.qty-controls{display:flex;align-items:center;gap:10px;margin-top:8px}
-.qty-btn{width:28px;height:28px;border:1px solid #444;background:#222;color:#fff;border-radius:6px;font-weight:700}
+.cart-item-info h4{font-size:.92rem;margin-bottom:2px}
+.cart-item-var{font-size:.76rem;color:var(--cinza-texto);margin-bottom:3px}
+.cart-item-info .preco{color:var(--laranja);font-weight:700;font-size:.94rem}
+.qty-controls{display:flex;align-items:center;gap:10px;margin-top:6px}
+.qty-btn{width:26px;height:26px;border:1px solid #444;background:#222;color:#fff;border-radius:6px;font-weight:700}
 .qty-btn:hover{border-color:var(--laranja)}
-.remove-item{background:none;border:none;color:#ff5252;font-size:.8rem;margin-left:auto}
+.remove-item{background:none;border:none;color:#ff5252;font-size:.78rem;margin-left:auto}
 
-/* CEP NO CARRINHO */
-.cep-box{padding:14px 20px;background:#161616;border-top:1px solid #262626}
-.cep-row{display:flex;gap:8px}
-.cep-row input{flex:1;background:#111;border:1px solid #333;border-radius:8px;padding:8px 12px;color:#fff;font-size:.88rem}
-.cep-row input:focus{outline:none;border-color:var(--laranja)}
-.cep-row button{background:#262626;border:1px solid #3a3a3a;color:#fff;padding:8px 14px;border-radius:8px;font-size:.85rem;font-weight:600}
-.cep-row button:hover{border-color:var(--laranja);color:var(--laranja)}
-.cep-result{font-size:.8rem;color:var(--verde);margin-top:6px}
+.cart-tools{padding:12px 20px;background:#161616;border-top:1px solid #262626;display:flex;flex-direction:column;gap:8px}
+.tool-row{display:flex;gap:8px}
+.tool-row input{flex:1;background:#111;border:1px solid #333;border-radius:8px;padding:8px 11px;color:#fff;font-size:.84rem}
+.tool-row input:focus{outline:none;border-color:var(--laranja)}
+.tool-row button{background:#262626;border:1px solid #3a3a3a;color:#fff;padding:8px 13px;border-radius:8px;font-size:.82rem;font-weight:600;white-space:nowrap}
+.tool-row button:hover{border-color:var(--laranja);color:var(--laranja)}
+.tool-feedback{font-size:.78rem;color:var(--verde)}
 
-.cart-footer{padding:18px 20px;border-top:1px solid #2a2a2a}
-.cart-subrow{display:flex;justify-content:space-between;font-size:.88rem;color:var(--cinza-texto);margin-bottom:6px}
-.cart-total{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:700;margin-bottom:14px;padding-top:8px;border-top:1px solid #222}
+.cart-footer{padding:16px 20px;border-top:1px solid #2a2a2a}
+.cart-subrow{display:flex;justify-content:space-between;font-size:.86rem;color:var(--cinza-texto);margin-bottom:5px}
+.cart-total{display:flex;justify-content:space-between;font-size:1.18rem;font-weight:700;margin-bottom:12px;padding-top:8px;border-top:1px solid #222}
 .cart-total span:last-child{color:var(--laranja)}
-.btn-finalizar{width:100%;background:var(--laranja);color:#fff;border:none;padding:14px;border-radius:8px;font-weight:700;font-size:.95rem;margin-bottom:8px;transition:.2s}
+.btn-finalizar{width:100%;background:var(--laranja);color:#fff;border:none;padding:13px;border-radius:8px;font-weight:700;font-size:.94rem;margin-bottom:8px;transition:.2s}
 .btn-finalizar:hover{background:var(--laranja-hover)}
-.btn-whatsapp{width:100%;background:#25d366;color:#fff;border:none;padding:12px;border-radius:8px;font-weight:700;font-size:.9rem}
-.empty-cart{text-align:center;padding:60px 20px;color:var(--cinza-texto)}
+.btn-whatsapp{width:100%;background:#25d366;color:#fff;border:none;padding:11px;border-radius:8px;font-weight:700;font-size:.88rem}
+.empty-cart{text-align:center;padding:50px 20px;color:var(--cinza-texto)}
 
-/* CHECKOUT MODAL */
+/* CHECKOUT & PEDIDOS MODAL */
 .checkout-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:3000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.3s;padding:20px}
 .checkout-overlay.open{opacity:1;visibility:visible}
-.checkout-modal{background:var(--cinza-escuro);border-radius:16px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto;border:1px solid #333}
+.checkout-modal{background:var(--cinza-escuro);border-radius:16px;width:100%;max-width:510px;max-height:90vh;overflow-y:auto;border:1px solid #333}
 .checkout-header{padding:18px 22px;border-bottom:1px solid #2a2a2a;display:flex;justify-content:space-between;align-items:center}
 .checkout-header h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px}
 .checkout-body{padding:22px}
@@ -250,7 +239,7 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .pix-timer span{color:var(--laranja);font-weight:700}
 .form-group{margin-bottom:12px}
 .form-group label{display:block;font-size:.82rem;color:var(--cinza-texto);margin-bottom:5px}
-.form-group input,.form-group select{width:100%;background:#111;border:1px solid #333;border-radius:8px;padding:11px 13px;color:#fff;font-size:.93rem}
+.form-group input{width:100%;background:#111;border:1px solid #333;border-radius:8px;padding:11px 13px;color:#fff;font-size:.93rem}
 .form-group input:focus{outline:none;border-color:var(--laranja)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .boleto-code{background:#111;border:1px solid #333;border-radius:8px;padding:14px;font-family:monospace;font-size:.86rem;margin:14px 0;text-align:center}
@@ -258,693 +247,7 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .success-screen{text-align:center;padding:24px 10px}
 .success-icon{font-size:3.8rem;margin-bottom:12px}
 
-footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px solid #222}
-.footer-content{max-width:1320px;margin:0 auto 36px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
-.footer-brand .logo{font-size:1.7rem;display:inline-block;margin-bottom:10px}
-.footer-brand p{color:var(--cinza-texto);max-width:280px;font-size:.92rem}
-.footer-col h4{margin-bottom:14px;font-size:.95rem}
-.footer-col ul{list-style:none}
-.footer-col li{margin-bottom:8px;color:var(--cinza-texto);font-size:.9rem}
-.footer-col a{color:var(--cinza-texto);transition:.25s}
-.footer-col a:hover{color:var(--laranja)}
-.copyright{text-align:center;padding-top:22px;border-top:1px solid #222;color:var(--cinza-texto);font-size:.86rem;max-width:1320px;margin:0 auto}
-.whatsapp-float{position:fixed;bottom:24px;right:24px;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;z-index:999;box-shadow:0 6px 20px rgba(37,211,102,.4);transition:.3s}
-.whatsapp-float:hover{transform:scale(1.1)}
-.btn-filtros-mobile{display:none;background:var(--cinza);border:1px solid #333;color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;margin-bottom:16px}
-
-@media(max-width:900px){
-  .hero-content{grid-template-columns:1fr;text-align:center}
-  .hero-text .subtitle{margin-left:auto;margin-right:auto}
-  .hero-ctas,.hero-stats{justify-content:center}
-  .hero-cards{max-width:440px;margin:0 auto}
-  .cats-grid{grid-template-columns:1fr 1fr}
-  .shop-layout{grid-template-columns:1fr}
-  .filtros-panel{position:fixed;top:0;left:-300px;width:280px;height:100%;z-index:1500;overflow-y:auto;transition:.3s;border-radius:0}
-  .filtros-panel.open{left:0}
-  .btn-filtros-mobile{display:inline-flex;align-items:center;gap:8px}
-  .search-box{order:3;flex-basis:100%;max-width:100%}
-  .footer-content{grid-template-columns:1fr 1fr}
-  .modal-produto{grid-template-columns:1fr}
-  .filtros-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1400;opacity:0;visibility:hidden;transition:.3s}
-  .filtros-overlay.open{opacity:1;visibility:visible}
-}
-@media(max-width:600px){
-  .hero-cards{grid-template-columns:1fr}
-  .footer-content{grid-template-columns:1fr}
-  .trust-inner{justify-content:flex-start;gap:14px}
-}
-</style>
-</head>
-<body>
-
-<div class="top-bar">🚚 Frete grátis acima de R$ 1.500 • Pix com 5% de desconto imediato</div>
-
-<header>
-  <nav class="navbar">
-    <a href="#" class="logo">GRAU<span>BIKES</span></a>
-    <div class="search-box">
-      <input type="text" id="search-input" placeholder="Buscar bikes, quadros, peças..." oninput="aplicarFiltros()" aria-label="Buscar produtos">
-    </div>
-    <button class="btn-carrinho" onclick="toggleCart()" aria-label="Abrir carrinho">
-      🛒 Carrinho <span id="cart-count">0</span>
-    </button>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-badge">🔥 Coleção 2026 Disponível</div>
-      <h1>SUA PRÓXIMA<br><span>BIKE DE GRAU</span><br>ESTÁ AQUI</h1>
-      <p class="subtitle">
-        Gios, Hupi Naja e Absolute. Bikes completas e peças originais com Pix, parcelamento em 12x e envio rápido para todo o Brasil.
-      </p>
-      <div class="hero-ctas">
-        <a href="#produtos" class="btn-primary">Ver Catálogo →</a>
-        <a href="#produtos" class="btn-secondary" onclick="filtrarRapido('peca')">Só Peças</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item"><strong>+500</strong><span>Pedidos entregues</span></div>
-        <div class="stat-item"><strong>3</strong><span>Marcas oficiais</span></div>
-        <div class="stat-item"><strong>12x</strong><span>Sem juros no cartão</span></div>
-      </div>
-    </div>
-
-    <div class="hero-cards">
-      <div class="hero-card">
-        <div class="icon">🚲</div>
-        <h3>Bikes Completas</h3>
-        <p>Prontas pra rodar. Gios, Hupi e Absolute reguladas.</p>
-      </div>
-      <div class="hero-card">
-        <div class="icon">🔧</div>
-        <h3>Peças Originais</h3>
-        <p>Quadros reforçados, guidão, mesa, pedais e mais.</p>
-      </div>
-      <div class="hero-card">
-        <div class="icon">💠</div>
-        <h3>Pix com 5% off</h3>
-        <p>Aprovação na hora e desconto real no fechamento.</p>
-      </div>
-      <div class="hero-card">
-        <div class="icon">📦</div>
-        <h3>Frete Garantido</h3>
-        <p>Envio com rastreio e seguro para todo o país.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item"><span>🔒</span> Compra 100% segura</div>
-    <div class="trust-item"><span>💳</span> Até 12x sem juros</div>
-    <div class="trust-item"><span>🚚</span> Frete grátis acima de R$ 1.500</div>
-    <div class="trust-item"><span>💬</span> Suporte direto no WhatsApp</div>
-  </div>
-</div>
-
-<section class="cats-section">
-  <h2 class="section-title">CATEGORIAS</h2>
-  <p class="section-sub">Navegue direto pelo que você precisa</p>
-  <div class="cats-grid">
-    <div class="cat-card" onclick="filtrarRapido('bike')">
-      <div class="cat-icon">🚲</div>
-      <h3>Bikes Completas</h3>
-      <p>Prontas para o grau</p>
-    </div>
-    <div class="cat-card" onclick="filtrarRapido('quadro')">
-      <div class="cat-icon">🟧</div>
-      <h3>Quadros</h3>
-      <p>Gios FRX e mais</p>
-    </div>
-    <div class="cat-card" onclick="filtrarRapido('peca')">
-      <div class="cat-icon">⚙️</div>
-      <h3>Peças</h3>
-      <p>Guidão, mesa, pedal...</p>
-    </div>
-    <div class="cat-card" onclick="filtrarRapido('PROMO')">
-      <div class="cat-icon">🔥</div>
-      <h3>Promoções</h3>
-      <p>Ofertas do momento</p>
-    </div>
-  </div>
-</section>
-
-<div class="shop-layout" id="produtos">
-  <div class="filtros-overlay" id="filtros-overlay" onclick="toggleFiltrosMobile()"></div>
-
-  <aside class="filtros-panel" id="filtros-panel">
-    <h3>Filtros <button class="btn-limpar" onclick="limparFiltros()">Limpar</button></h3>
-    <div class="filtro-grupo">
-      <h4>Tipo</h4>
-      <div class="filtro-opcoes">
-        <label class="filtro-opcao"><input type="checkbox" value="bike" onchange="aplicarFiltros()"> Bikes Completas <span class="count" id="count-bike"></span></label>
-        <label class="filtro-opcao"><input type="checkbox" value="peca" onchange="aplicarFiltros()"> Peças <span class="count" id="count-peca"></span></label>
-        <label class="filtro-opcao"><input type="checkbox" value="quadro" data-subtipo onchange="aplicarFiltros()"> Quadros <span class="count" id="count-quadro"></span></label>
-      </div>
-    </div>
-    <div class="filtro-grupo">
-      <h4>Marca</h4>
-      <div class="filtro-opcoes">
-        <label class="filtro-opcao"><input type="checkbox" value="gios" data-marca onchange="aplicarFiltros()"> Gios <span class="count" id="count-gios"></span></label>
-        <label class="filtro-opcao"><input type="checkbox" value="hupi" data-marca onchange="aplicarFiltros()"> Hupi <span class="count" id="count-hupi"></span></label>
-        <label class="filtro-opcao"><input type="checkbox" value="absolute" data-marca onchange="aplicarFiltros()"> Absolute <span class="count" id="count-absolute"></span></label>
-      </div>
-    </div>
-    <div class="filtro-grupo">
-      <h4>Faixa de Preço</h4>
-      <div class="preco-inputs">
-        <input type="number" id="preco-min" placeholder="Mín" min="0">
-        <input type="number" id="preco-max" placeholder="Máx" min="0">
-      </div>
-      <button class="btn-aplicar-preco" onclick="aplicarFiltros()">Aplicar preço</button>
-      <div class="chips-preco">
-        <span class="chip-preco" onclick="setPreco(0,500,this)">Até R$500</span>
-        <span class="chip-preco" onclick="setPreco(500,1500,this)">R$500-1500</span>
-        <span class="chip-preco" onclick="setPreco(1500,2500,this)">R$1500-2500</span>
-        <span class="chip-preco" onclick="setPreco(2500,99999,this)">+ R$2500</span>
-      </div>
-    </div>
-    <div class="filtro-grupo">
-      <h4>Destaques</h4>
-      <div class="filtro-opcoes">
-        <label class="filtro-opcao"><input type="checkbox" value="NOVO" data-badge onchange="aplicarFiltros()"> Novidades</label>
-        <label class="filtro-opcao"><input type="checkbox" value="PROMO" data-badge onchange="aplicarFiltros()"> Promoções</label>
-        <label class="filtro-opcao"><input type="checkbox" value="DESTAQUE" data-badge onchange="aplicarFiltros()"> Destaques</label>
-      </div>
-    </div>
-  </aside>
-
-  <div class="produtos-area">
-    <button class="btn-filtros-mobile" onclick="toggleFiltrosMobile()">☰ Filtrar Produtos</button>
-    <div class="produtos-header">
-      <p class="produtos-count" id="produtos-count">Carregando...</p>
-      <select class="sort-select" id="sort-select" onchange="aplicarFiltros()" aria-label="Ordenar produtos">
-        <option value="default">Ordenar por: Relevância</option>
-        <option value="price-asc">Menor preço</option>
-        <option value="price-desc">Maior preço</option>
-        <option value="name">Nome A-Z</option>
-      </select>
-    </div>
-    <div class="produtos-grid" id="produtos-grid"></div>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-content">
-    <div class="footer-brand">
-      <a href="#" class="logo">GRAU<span>BIKES</span></a>
-      <p>Bikes e peças das melhores marcas do grau brasileiro com envio rápido e garantia oficial.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Categorias</h4>
-      <ul>
-        <li><a href="#produtos" onclick="filtrarRapido('bike')">Bikes Completas</a></li>
-        <li><a href="#produtos" onclick="filtrarRapido('quadro')">Quadros</a></li>
-        <li><a href="#produtos" onclick="filtrarRapido('peca')">Peças</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Pagamento</h4>
-      <ul><li>Pix (5% de desconto)</li><li>Cartão em até 12x</li><li>Boleto Bancário</li></ul>
-    </div>
-    <div class="footer-col">
-      <h4>Atendimento</h4>
-      <ul><li><a href="https://wa.me/5511999999999" target="_blank">WhatsApp Oficial</a></li><li>Seg a Sáb • 09h às 18h</li></ul>
-    </div>
-  </div>
-  <div class="copyright">© 2026 Grau Bikes — Todos os direitos reservados.</div>
-</footer>
-
-<!-- MODAL PRODUTO -->
-<div class="modal-overlay" id="modal-produto" onclick="if(event.target===this)fecharModal()">
-  <div class="modal-produto">
-    <button class="modal-close" onclick="fecharModal()" aria-label="Fechar">×</button>
-    <div class="modal-img"><img id="modal-img" src="" alt=""></div>
-    <div class="modal-info">
-      <p class="marca" id="modal-marca"></p>
-      <h2 id="modal-nome"></h2>
-      <p class="categoria" id="modal-cat"></p>
-      <div class="modal-pix" id="modal-pix"></div>
-      <div class="modal-preco" id="modal-preco"></div>
-      <div class="modal-parcelas" id="modal-parcelas"></div>
-      <p class="modal-desc" id="modal-desc"></p>
-      <div class="modal-actions">
-        <button class="btn-primary" id="modal-add" style="width:100%;justify-content:center">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="toast" id="toast">Produto adicionado!</div>
-<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-
-<!-- CARRINHO -->
-<div class="cart-sidebar" id="cart-sidebar">
-  <div class="cart-header">
-    <h3>SEU CARRINHO</h3>
-    <button class="close-cart" onclick="toggleCart()" aria-label="Fechar carrinho">×</button>
-  </div>
-
-  <div class="shipping-bar">
-    <div class="shipping-text" id="shipping-text">Adicione R$ 1.500 para ganhar <strong>Frete Grátis</strong></div>
-    <div class="progress-track"><div class="progress-fill" id="shipping-fill"></div></div>
-  </div>
-
-  <div class="cart-items" id="cart-items"></div>
-
-  <div class="cep-box" id="cep-box" style="display:none">
-    <div class="cep-row">
-      <input type="text" id="cep-input" placeholder="Calcular CEP (00000-000)" maxlength="9" oninput="mascaraCEP(this)">
-      <button onclick="calcularFrete()">Calcular</button>
-    </div>
-    <div class="cep-result" id="cep-result"></div>
-  </div>
-
-  <div class="cart-footer">
-    <div class="cart-subrow"><span>Subtotal:</span><span id="cart-subtotal">R$ 0</span></div>
-    <div class="cart-subrow"><span>Frete:</span><span id="cart-frete">A calcular</span></div>
-    <div class="cart-total"><span>Total:</span><span id="cart-total">R$ 0</span></div>
-    <button class="btn-finalizar" onclick="abrirCheckout()">Finalizar Compra</button>
-    <button class="btn-whatsapp" onclick="finalizarWhatsApp()">Pedir pelo WhatsApp</button>
-  </div>
-</div>
-
-<!-- CHECKOUT -->
-<div class="checkout-overlay" id="checkout-overlay" onclick="if(event.target===this)fecharCheckout()">
-  <div class="checkout-modal">
-    <div class="checkout-header">
-      <h3>FINALIZAR PAGAMENTO</h3>
-      <button class="close-cart" onclick="fecharCheckout()" aria-label="Fechar">×</button>
-    </div>
-    <div class="checkout-body" id="checkout-body"></div>
-  </div>
-</div>
-
-<a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">💬</a>
-
-<script>
-const produtos = [
-  {id:1,marca:"gios",tipo:"bike",subtipo:"completa",nome:"Gios FRX Completa",categoria:"Bike Completa • Single",preco:2199,img:"https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg",badge:"",desc:"Bike completa Gios FRX, ideal para grau e freestyle. Quadro reforçado em alumínio 6061 com geometria responsiva."},
-  {id:2,marca:"gios",tipo:"bike",subtipo:"completa",nome:"Gios 4Trix Completa",categoria:"Bike Completa • 21v",preco:2399,img:"https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp",badge:"NOVO",desc:"Gios 4Trix com 21 velocidades e freio a disco mecânico. Pronta para manobras urbanas e trilhas leves."},
-  {id:3,marca:"hupi",tipo:"bike",subtipo:"completa",nome:"Hupi Naja Single 2025",categoria:"Single • Freio MT200",preco:2899,img:"https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp",badge:"NOVO",desc:"Hupi Naja 2025 single speed equipada com freio hidráulico Shimano MT200. A favorita do grau."},
-  {id:4,marca:"hupi",tipo:"bike",subtipo:"completa",nome:"Hupi Naja V10 Laranja",categoria:"Bike Completa",preco:2699,img:"https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp",badge:"",desc:"Hupi Naja V10 na cor laranja vibrante. Visual agressivo, resistência e alta performance."},
-  {id:5,marca:"hupi",tipo:"bike",subtipo:"completa",nome:"Hupi Sleeper BMX",categoria:"Big BMX • Single",preco:2499,img:"https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg",badge:"NOVO",desc:"Hupi Sleeper Big BMX aro 26. Estilo street com geometria pensada exclusivamente para wheeling."},
-  {id:6,marca:"absolute",tipo:"bike",subtipo:"completa",nome:"Absolute Nero 5 Cinza",categoria:"21v • Freestyle",preco:1299,img:"https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg",badge:"PROMO",desc:"Absolute Nero 5 com excelente custo-benefício. Ideal para quem está começando no grau."},
-  {id:7,marca:"absolute",tipo:"bike",subtipo:"completa",nome:"Absolute Nero 5 Oliva",categoria:"Bike Completa",preco:1349,img:"https://http2.mlstatic.com/D_NQ_NP_935044-MLA99881475487_112025-O.webp",badge:"",desc:"Absolute Nero 5 na cor verde oliva fosco. Mesma robustez com visual diferenciado."},
-  {id:8,marca:"absolute",tipo:"bike",subtipo:"completa",nome:"Absolute Nero Grau Sport",categoria:"Aro 29 • Single",preco:1599,img:"https://http2.mlstatic.com/D_NQ_NP_996978-MLB111201892744_052026-O-bicicleta-absolute-nero-grau-sport-aro-29-vmaxx-mt200-v3.webp",badge:"NOVO",desc:"Nero Grau Sport aro 29 com aros Vmaxx e freio hidráulico. Mais estabilidade e presença na rua."},
-  {id:9,marca:"gios",tipo:"peca",subtipo:"quadro",nome:"Quadro Gios FRX Roxo",categoria:"Quadro Aro 26 • Alumínio",preco:999,img:"https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg",badge:"DESTAQUE",desc:"Quadro Gios FRX roxo reforçado nas gancheiras. O mais pedido para projetos customizados."},
-  {id:10,marca:"gios",tipo:"peca",subtipo:"quadro",nome:"Quadro Gios FRX Preto/Roxo",categoria:"Quadro Aro 26",preco:949,img:"https://rogeriobikes.com/media/catalog/product/cache/83cdda7a34ac79691fa0545c8713101e/1/3/13793.png",badge:"",desc:"Quadro Gios FRX preto com grafismo roxo. Leve, resistente e compatível com freio a disco."},
-  {id:11,marca:"absolute",tipo:"peca",subtipo:"pedal",nome:"Pedal Absolute Brutus Flat",categoria:"Pedal Plataforma",preco:149,img:"https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp",badge:"PEÇA",desc:"Pedal Absolute Brutus Flat com cravos substituíveis. Excelente aderência para o tênis."},
-  {id:12,marca:"absolute",tipo:"peca",subtipo:"guidao",nome:"Guidão Absolute Nero 720mm",categoria:"Guidão Alumínio 31.8mm",preco:119,img:"https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp",badge:"PEÇA",desc:"Guidão largo em alumínio reforçado para maior alavanca e controle nas manobras."}
-];
-
-const META_FRETE_GRATIS = 1500;
-let carrinho = JSON.parse(localStorage.getItem('graubikes_cart')) || [];
-let valorFrete = null;
-let timerInterval = null;
-
-function formatarMoeda(valor) {
-  return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
-}
-
-function atualizarContadoresFiltros() {
-  document.getElementById('count-bike').textContent = `(${produtos.filter(p => p.tipo === 'bike').length})`;
-  document.getElementById('count-peca').textContent = `(${produtos.filter(p => p.tipo === 'peca').length})`;
-  document.getElementById('count-quadro').textContent = `(${produtos.filter(p => p.subtipo === 'quadro').length})`;
-  document.getElementById('count-gios').textContent = `(${produtos.filter(p => p.marca === 'gios').length})`;
-  document.getElementById('count-hupi').textContent = `(${produtos.filter(p => p.marca === 'hupi').length})`;
-  document.getElementById('count-absolute').textContent = `(${produtos.filter(p => p.marca === 'absolute').length})`;
-}
-
-function renderizarProdutos(lista) {
-  const grid = document.getElementById('produtos-grid');
-  const count = document.getElementById('produtos-count');
-  count.textContent = `Mostrando ${lista.length} de ${produtos.length} produto${lista.length !== 1 ? 's' : ''}`;
-
-  if (lista.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <p>Nenhum produto encontrado com esses filtros.</p>
-        <button class="btn-primary" onclick="limparFiltros()">Limpar todos os filtros</button>
-      </div>`;
-    return;
-  }
-
-  grid.innerHTML = lista.map(p => {
-    const badgeClass = p.badge ? p.badge.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') : '';
-    const precoPix = Math.round(p.preco * 0.95);
-    const parcela = (p.preco / 12).toFixed(2).replace('.', ',');
-    return `
-      <article class="produto-card">
-        <div class="produto-img" onclick="abrirModal(${p.id})">
-          ${p.badge ? `<span class="badge ${badgeClass}">${p.badge}</span>` : ''}
-          <img src="${p.img}" alt="${p.nome}" loading="lazy">
-          <button class="btn-quick">Ver detalhes</button>
-        </div>
-        <div class="produto-info">
-          <div class="marca">${p.marca}</div>
-          <h3 onclick="abrirModal(${p.id})">${p.nome}</h3>
-          <div class="categoria">${p.categoria}</div>
-          <div class="preco-box">
-            <div class="pix-tag">💠 ${formatarMoeda(precoPix)} no Pix</div>
-            <div class="valor">${formatarMoeda(p.preco)}</div>
-            <div class="parcelas">ou 12x de R$ ${parcela} sem juros</div>
-          </div>
-          <button class="btn-add" onclick="adicionarCarrinho(${p.id})">+ Adicionar ao Carrinho</button>
-        </div>
-      </article>
-    `;
-  }).join('');
-}
-
-function aplicarFiltros() {
-  const busca = document.getElementById('search-input').value.toLowerCase().trim();
-  const tipos = Array.from(document.querySelectorAll('.filtro-opcao input:not([data-subtipo]):not([data-marca]):not([data-badge]):checked')).map(i => i.value);
-  const subtipos = Array.from(document.querySelectorAll('input[data-subtipo]:checked')).map(i => i.value);
-  const marcas = Array.from(document.querySelectorAll('input[data-marca]:checked')).map(i => i.value);
-  const badges = Array.from(document.querySelectorAll('input[data-badge]:checked')).map(i => i.value);
-  const min = parseFloat(document.getElementById('preco-min').value) || 0;
-  const max = parseFloat(document.getElementById('preco-max').value) || Infinity;
-  const sort = document.getElementById('sort-select').value;
-
-  let filtrados = produtos.filter(p => {
-    const matchBusca = !busca || p.nome.toLowerCase().includes(busca) || p.marca.toLowerCase().includes(busca) || p.categoria.toLowerCase().includes(busca);
-    const matchTipo = (tipos.length === 0 && subtipos.length === 0) || tipos.includes(p.tipo) || subtipos.includes(p.subtipo);
-    const matchMarca = marcas.length === 0 || marcas.includes(p.marca);
-    const matchBadge = badges.length === 0 || badges.includes(p.badge);
-    const matchPreco = p.preco >= min && p.preco <= max;
-    return matchBusca && matchTipo && matchMarca && matchBadge && matchPreco;
-  });
-
-  if (sort === 'price-asc') filtrados.sort((a, b) => a.preco - b.preco);
-  if (sort === 'price-desc') filtrados.sort((a, b) => b.preco - a.preco);
-  if (sort === 'name') filtrados.sort((a, b) => a.nome.localeCompare(b.nome));
-
-  renderizarProdutos(filtrados);
-}
-
-function filtrarRapido(valor) {
-  limparFiltros(false);
-  const checkbox = document.querySelector(`.filtros-panel input[value="${valor}"]`);
-  if (checkbox) checkbox.checked = true;
-  aplicarFiltros();
-  document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
-}
-
-function setPreco(min, max, el) {
-  document.getElementById('preco-min').value = min || '';
-  document.getElementById('preco-max').value = max === 99999 ? '' : max;
-  document.querySelectorAll('.chip-preco').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  aplicarFiltros();
-}
-
-function limparFiltros(reaplicar = true) {
-  document.getElementById('search-input').value = '';
-  document.getElementById('preco-min').value = '';
-  document.getElementById('preco-max').value = '';
-  document.getElementById('sort-select').value = 'default';
-  document.querySelectorAll('.filtros-panel input[type="checkbox"]').forEach(cb => cb.checked = false);
-  document.querySelectorAll('.chip-preco').forEach(c => c.classList.remove('active'));
-  if (reaplicar) aplicarFiltros();
-}
-
-function toggleFiltrosMobile() {
-  document.getElementById('filtros-panel').classList.toggle('open');
-  document.getElementById('filtros-overlay').classList.toggle('open');
-}
-
-/* MODAL PRODUTO */
-function abrirModal(id) {
-  const p = produtos.find(item => item.id === id);
-  if (!p) return;
-  const precoPix = Math.round(p.preco * 0.95);
-  document.getElementById('modal-img').src = p.img;
-  document.getElementById('modal-img').alt = p.nome;
-  document.getElementById('modal-marca').textContent = p.marca;
-  document.getElementById('modal-nome').textContent = p.nome;
-  document.getElementById('modal-cat').textContent = p.categoria;
-  document.getElementById('modal-pix').textContent = `💠 ${formatarMoeda(precoPix)} à vista no Pix (5% off)`;
-  document.getElementById('modal-preco').textContent = formatarMoeda(p.preco);
-  document.getElementById('modal-parcelas').textContent = `ou 12x de R$ ${(p.preco / 12).toFixed(2).replace('.', ',')} sem juros`;
-  document.getElementById('modal-desc').textContent = p.desc;
-  document.getElementById('modal-add').onclick = () => { adicionarCarrinho(p.id); fecharModal(); };
-  document.getElementById('modal-produto').classList.add('open');
-}
-
-function fecharModal() {
-  document.getElementById('modal-produto').classList.remove('open');
-}
-
-/* CARRINHO E FRETE */
-function salvarCarrinho() {
-  localStorage.setItem('graubikes_cart', JSON.stringify(carrinho));
-  atualizarCarrinhoUI();
-}
-
-function adicionarCarrinho(id) {
-  const item = carrinho.find(i => i.id === id);
-  if (item) {
-    item.qty++;
-  } else {
-    const prod = produtos.find(p => p.id === id);
-    carrinho.push({ ...prod, qty: 1 });
-  }
-  salvarCarrinho();
-  mostrarToast('✓ Produto adicionado ao carrinho!');
-}
-
-function alterarQtd(id, delta) {
-  const item = carrinho.find(i => i.id === id);
-  if (!item) return;
-  item.qty += delta;
-  if (item.qty <= 0) carrinho = carrinho.filter(i => i.id !== id);
-  salvarCarrinho();
-}
-
-function removerItem(id) {
-  carrinho = carrinho.filter(i => i.id !== id);
-  salvarCarrinho();
-}
-
-function mascaraCEP(input) {
-  let v = input.value.replace(/\D/g, '');
-  if (v.length > 5) v = v.slice(0, 5) + '-' + v.slice(5, 8);
-  input.value = v;
-}
-
-function calcularFrete() {
-  const cep = document.getElementById('cep-input').value.replace(/\D/g, '');
-  const res = document.getElementById('cep-result');
-  if (cep.length !== 8) {
-    res.style.color = '#ff5252';
-    res.textContent = 'Digite um CEP válido com 8 números.';
-    return;
-  }
-  const subtotal = carrinho.reduce((acc, i) => acc + (i.preco * i.qty), 0);
-  res.style.color = 'var(--verde)';
-  if (subtotal >= META_FRETE_GRATIS) {
-    valorFrete = 0;
-    res.textContent = '🎉 Frete Grátis desbloqueado! Entrega em 3 a 6 dias úteis.';
-  } else {
-    valorFrete = 39;
-    res.textContent = `Transportadora: ${formatarMoeda(valorFrete)} • Prazo: 4 a 7 dias úteis.`;
-  }
-  atualizarCarrinhoUI();
-}
-
-function atualizarCarrinhoUI() {
-  const totalQtd = carrinho.reduce((acc, i) => acc + i.qty, 0);
-  const subtotal = carrinho.reduce((acc, i) => acc + (i.preco * i.qty), 0);
-
-  // Barra de progresso Frete Grátis
-  const faltam = Math.max(0, META_FRETE_GRATIS - subtotal);
-  const pct = Math.min(100, (subtotal / META_FRETE_GRATIS) * 100);
-  document.getElementById('shipping-fill').style.width = `${pct}%`;
-  document.getElementById('shipping-text').innerHTML = faltam === 0
-    ? `🎉 Parabéns! Você ganhou <strong>Frete Grátis</strong>!`
-    : `Faltam <strong>${formatarMoeda(faltam)}</strong> para ganhar <strong>Frete Grátis</strong>`;
-
-  // Frete dinâmico
-  const freteFinal = subtotal >= META_FRETE_GRATIS ? 0 : (valorFrete ?? 0);
-  const textoFrete = subtotal >= META_FRETE_GRATIS
-    ? '<span style="color:var(--verde);font-weight:700">GRÁTIS</span>'
-    : (valorFrete === null ? 'A calcular' : formatarMoeda(valorFrete));
-
-  document.getElementById('cart-count').textContent = totalQtd;
-  document.getElementById('cart-subtotal').textContent = formatarMoeda(subtotal);
-  document.getElementById('cart-frete').innerHTML = textoFrete;
-  document.getElementById('cart-total').textContent = formatarMoeda(subtotal + freteFinal);
-  document.getElementById('cep-box').style.display = carrinho.length > 0 ? 'block' : 'none';
-
-  const container = document.getElementById('cart-items');
-  if (carrinho.length === 0) {
-    valorFrete = null;
-    document.getElementById('cep-result').textContent = '';
-    container.innerHTML = `<div class="empty-cart">Seu carrinho está vazio 🚲<br><small>Escolha uma bike ou peça para começar!</small></div>`;
-    return;
-  }
-
-  container.innerHTML = carrinho.map(item => `
-    <div class="cart-item">
-      <img src="${item.img}" alt="${item.nome}">
-      <div class="cart-item-info">
-        <h4>${item.nome}</h4>
-        <div class="preco">${formatarMoeda(item.preco * item.qty)}</div>
-        <div class="qty-controls">
-          <button class="qty-btn" onclick="alterarQtd(${item.id}, -1)">-</button>
-          <span>${item.qty}</span>
-          <button class="qty-btn" onclick="alterarQtd(${item.id}, 1)">+</button>
-          <button class="remove-item" onclick="removerItem(${item.id})">Remover</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function toggleCart() {
-  document.getElementById('cart-sidebar').classList.toggle('open');
-  document.getElementById('cart-overlay').classList.toggle('open');
-}
-
-function mostrarToast(msg) {
-  const toast = document.getElementById('toast');
-  toast.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2500);
-}
-
-/* CHECKOUT & WHATSAPP */
-function finalizarWhatsApp() {
-  if (carrinho.length === 0) return mostrarToast('Adicione produtos primeiro!');
-  const total = carrinho.reduce((acc, i) => acc + (i.preco * i.qty), 0);
-  const itensTexto = carrinho.map(i => `• ${i.qty}x ${i.nome} (${formatarMoeda(i.preco * i.qty)})`).join('%0A');
-  const msg = `Olá! Gostaria de fechar este pedido na *Grau Bikes*:%0A%0A${itensTexto}%0A%0A*Total:* ${formatarMoeda(total)}`;
-  window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
-}
-
-function abrirCheckout() {
-  if (carrinho.length === 0) return mostrarToast('Seu carrinho está vazio!');
-  toggleCart();
-  const subtotal = carrinho.reduce((acc, i) => acc + (i.preco * i.qty), 0);
-  const frete = subtotal >= META_FRETE_GRATIS ? 0 : (valorFrete ?? 0);
-  const total = subtotal + frete;
-  const totalPix = Math.round(subtotal * 0.95) + frete;
-  const pixPayload = `00020126360014BR.GOV.BCB.PIX0114+5511999999999520400005303986540${totalPix}.005802BR5910GRAUBIKES6009SAOPAULO62070503***6304E2CA`;
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(pixPayload)}`;
-
-  document.getElementById('checkout-body').innerHTML = `
-    <div class="payment-methods">
-      <label class="payment-option active" onclick="selecionarPagamento('pix', this)">
-        <input type="radio" name="pay" checked>
-        <div class="icon">💠</div>
-        <div class="info"><h4>Pix (5% de desconto)</h4><p>Total: ${formatarMoeda(totalPix)} • Aprovação imediata</p></div>
-      </label>
-      <label class="payment-option" onclick="selecionarPagamento('card', this)">
-        <input type="radio" name="pay">
-        <div class="icon">💳</div>
-        <div class="info"><h4>Cartão de Crédito</h4><p>Até 12x de R$ ${(total/12).toFixed(2).replace('.', ',')} sem juros</p></div>
-      </label>
-      <label class="payment-option" onclick="selecionarPagamento('boleto', this)">
-        <input type="radio" name="pay">
-        <div class="icon">📄</div>
-        <div class="info"><h4>Boleto Bancário</h4><p>Total: ${formatarMoeda(total)} • Vencimento em 3 dias</p></div>
-      </label>
-    </div>
-
-    <div class="pix-area show" id="area-pix">
-      <div class="pix-qr"><img src="${qrUrl}" alt="QR Code Pix"></div>
-      <div class="pix-code" id="pix-chave">${pixPayload}</div>
-      <button class="btn-copy" onclick="copiarPix()">Copiar Código Pix</button>
-      <div class="pix-timer">Expira em <span id="pix-countdown">15:00</span></div>
-    </div>
-
-    <div class="card-form" id="area-card">
-      <div class="form-group"><label>Número do Cartão</label><input type="text" placeholder="0000 0000 0000 0000" maxlength="19" oninput="this.value=this.value.replace(/\\D/g,'').replace(/(.{4})/g,'$1 ').trim()"></div>
-      <div class="form-group"><label>Nome Impresso</label><input type="text" placeholder="Como está no cartão"></div>
-      <div class="form-row">
-        <div class="form-group"><label>Validade</label><input type="text" placeholder="MM/AA" maxlength="5" oninput="this.value=this.value.replace(/\\D/g,'').replace(/^(\\d{2})(\\d)/,'$1/$2')"></div>
-        <div class="form-group"><label>CVV</label><input type="text" placeholder="123" maxlength="4" oninput="this.value=this.value.replace(/\\D/g,'')"></div>
-      </div>
-    </div>
-
-    <div class="boleto-area" id="area-boleto">
-      <p style="font-size:.88rem;color:var(--cinza-texto)">Copie a linha digitável abaixo para pagar no app do seu banco:</p>
-      <div class="boleto-code">34191.79001 01043.510047 91020.150008 8 98760000${total}00</div>
-    </div>
-
-    <button class="btn-pay" onclick="confirmarPedido()">Confirmar Pedido</button>
-  `;
-
-  document.getElementById('checkout-overlay').classList.add('open');
-  iniciarTimerPix();
-}
-
-function selecionarPagamento(tipo, el) {
-  document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('area-pix').classList.toggle('show', tipo === 'pix');
-  document.getElementById('area-card').classList.toggle('show', tipo === 'card');
-  document.getElementById('area-boleto').classList.toggle('show', tipo === 'boleto');
-}
-
-function copiarPix() {
-  navigator.clipboard.writeText(document.getElementById('pix-chave').textContent);
-  mostrarToast('✓ Código Pix copiado!');
-}
-
-function iniciarTimerPix() {
-  clearInterval(timerInterval);
-  let segundos = 900;
-  timerInterval = setInterval(() => {
-    segundos--;
-    const min = String(Math.floor(segundos / 60)).padStart(2, '0');
-    const sec = String(segundos % 60).padStart(2, '0');
-    const el = document.getElementById('pix-countdown');
-    if (el) el.textContent = `${min}:${sec}`;
-    if (segundos <= 0) clearInterval(timerInterval);
-  }, 1000);
-}
-
-function confirmarPedido() {
-  clearInterval(timerInterval);
-  const numeroPedido = Math.floor(10000 + Math.random() * 90000);
-  carrinho = [];
-  valorFrete = null;
-  salvarCarrinho();
-  document.getElementById('checkout-body').innerHTML = `
-    <div class="success-screen">
-      <div class="success-icon">✅</div>
-      <h2 style="margin-bottom:6px">Pedido #${numeroPedido} Confirmado!</h2>
-      <p style="color:var(--cinza-texto);margin-bottom:22px">Recebemos seu pedido e já estamos preparando sua bike/peças para envio.</p>
-      <button class="btn-primary" onclick="fecharCheckout()">Voltar para a Loja</button>
-    </div>
-  `;
-}
-
-function fecharCheckout() {
-  clearInterval(timerInterval);
-  document.getElementById('checkout-overlay').classList.remove('open');
-}
-
-/* FECHAR MODAIS COM ESC */
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    fecharModal();
-    fecharCheckout();
-    document.getElementById('cart-sidebar').classList.remove('open');
-    document.getElementById('cart-overlay').classList.remove('open');
-    document.getElementById('filtros-panel').classList.remove('open');
-    document.getElementById('filtros-overlay').classList.remove('open');
-  }
-});
-
-/* INICIALIZAÇÃO */
-atualizarContadoresFiltros();
-aplicarFiltros();
-atualizarCarrinhoUI();
-</script>
-</body>
-</html>
+.order-card{background:#181818;border:1px solid #2b2b2b;border-radius:12px;padding:14px;margin-bottom:12px}
+.order-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:.88rem}
+.order-status{background:rgba(0,200,83,.15);color:var(--verde);padding:3px 10px;border-radius:20px;font-size:.75rem;font-weight:700}
+.order-items
