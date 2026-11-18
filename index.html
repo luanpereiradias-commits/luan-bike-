@@ -18,337 +18,125 @@
             --verde: #00c853;
             --pix: #32BCAD;
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--preto);
-            color: var(--branco);
-            line-height: 1.5;
-        }
+        body { font-family: 'Inter', sans-serif; background: var(--preto); color: var(--branco); line-height: 1.5; }
         a { text-decoration: none; color: inherit; }
         button { font-family: inherit; }
 
         .top-bar {
-            background: var(--laranja);
-            color: white;
-            text-align: center;
-            padding: 9px 16px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            background: var(--laranja); color: white; text-align: center;
+            padding: 9px 16px; font-size: 0.9rem; font-weight: 600;
         }
-
         header {
-            background: rgba(10,10,10,0.97);
-            backdrop-filter: blur(14px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #222;
+            background: rgba(10,10,10,0.97); backdrop-filter: blur(14px);
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222;
         }
         .navbar {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 14px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
+            max-width: 1320px; margin: 0 auto; padding: 14px 20px;
+            display: flex; justify-content: space-between; align-items: center; gap: 20px;
         }
-        .logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.85rem;
-            letter-spacing: 2px;
-            white-space: nowrap;
-        }
+        .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.85rem; letter-spacing: 2px; white-space: nowrap; }
         .logo span { color: var(--laranja); }
-
-        .search-box {
-            flex: 1;
-            max-width: 420px;
-            position: relative;
-        }
+        .search-box { flex: 1; max-width: 420px; position: relative; }
         .search-box input {
-            width: 100%;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 11px 16px 11px 42px;
-            color: white;
-            font-size: 0.95rem;
+            width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px;
+            padding: 11px 16px 11px 42px; color: white; font-size: 0.95rem;
         }
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--laranja);
-        }
-        .search-box::before {
-            content: "🔍";
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.95rem;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .search-box input:focus { outline: none; border-color: var(--laranja); }
+        .search-box::before { content: "🔍"; position: absolute; left: 14px; top: 50%; transform: translateY(-50%); }
         .btn-carrinho {
-            background: var(--laranja);
-            color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            background: var(--laranja); color: white; border: none; padding: 10px 16px;
+            border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;
         }
-        .btn-carrinho:hover { background: var(--laranja-hover); }
         #cart-count {
-            background: white;
-            color: var(--laranja);
-            font-size: 0.72rem;
-            font-weight: 700;
-            min-width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: white; color: var(--laranja); font-size: 0.72rem; font-weight: 700;
+            min-width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
         }
 
         .hero {
-            height: 72vh;
-            min-height: 440px;
+            height: 70vh; min-height: 420px;
             background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
                         url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2000') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
+            display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px;
         }
         .hero h1 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            letter-spacing: 3px;
-            line-height: 1;
-            margin-bottom: 14px;
+            font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 8vw, 5.5rem);
+            letter-spacing: 3px; line-height: 1; margin-bottom: 14px;
         }
         .hero h1 span { color: var(--laranja); }
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--cinza-texto);
-            max-width: 520px;
-            margin: 0 auto 28px;
-        }
+        .hero p { font-size: 1.1rem; color: var(--cinza-texto); max-width: 520px; margin: 0 auto 28px; }
         .btn-primary {
-            background: var(--laranja);
-            color: white;
-            border: none;
-            padding: 15px 36px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: inline-block;
+            background: var(--laranja); color: white; border: none; padding: 15px 36px;
+            font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.3s; display: inline-block;
         }
-        .btn-primary:hover {
-            background: var(--laranja-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(255,77,0,0.35);
-        }
+        .btn-primary:hover { background: var(--laranja-hover); transform: translateY(-3px); }
 
         .controls {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 28px 20px 8px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            align-items: center;
-            justify-content: space-between;
+            max-width: 1320px; margin: 0 auto; padding: 28px 20px 8px;
+            display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
         }
-        .filtros {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+        .filtros { display: flex; gap: 8px; flex-wrap: wrap; }
         .filtro-btn {
-            background: var(--cinza);
-            border: 1px solid #333;
-            color: var(--cinza-texto);
-            padding: 9px 15px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.87rem;
-            transition: 0.25s;
+            background: var(--cinza); border: 1px solid #333; color: var(--cinza-texto);
+            padding: 9px 15px; border-radius: 30px; cursor: pointer; font-weight: 500; font-size: 0.87rem; transition: 0.25s;
         }
-        .filtro-btn.active, .filtro-btn:hover {
-            background: var(--laranja);
-            border-color: var(--laranja);
-            color: white;
-        }
+        .filtro-btn.active, .filtro-btn:hover { background: var(--laranja); border-color: var(--laranja); color: white; }
         .sort-select {
-            background: var(--cinza);
-            border: 1px solid #333;
-            color: var(--branco);
-            padding: 9px 14px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            cursor: pointer;
+            background: var(--cinza); border: 1px solid #333; color: var(--branco);
+            padding: 9px 14px; border-radius: 8px; font-size: 0.9rem; cursor: pointer;
         }
-        .produtos-count {
-            color: var(--cinza-texto);
-            font-size: 0.9rem;
-            width: 100%;
-            margin-top: 4px;
-        }
+        .produtos-count { color: var(--cinza-texto); font-size: 0.9rem; width: 100%; margin-top: 4px; }
 
         section { padding: 16px 20px 80px; max-width: 1320px; margin: 0 auto; }
-
         .produtos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 22px;
-            margin-top: 20px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; margin-top: 20px;
         }
         .produto-card {
-            background: var(--cinza-escuro);
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid #222;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
+            background: var(--cinza-escuro); border-radius: 14px; overflow: hidden;
+            border: 1px solid #222; transition: 0.3s; display: flex; flex-direction: column;
         }
         .produto-card:hover {
-            transform: translateY(-7px);
-            border-color: var(--laranja);
-            box-shadow: 0 18px 36px rgba(0,0,0,0.4);
+            transform: translateY(-7px); border-color: var(--laranja); box-shadow: 0 18px 36px rgba(0,0,0,0.4);
         }
         .produto-img {
-            height: 210px;
-            background: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+            height: 210px; background: #111; display: flex; align-items: center;
+            justify-content: center; position: relative; overflow: hidden;
         }
-        .produto-img img {
-            max-width: 88%;
-            max-height: 88%;
-            object-fit: contain;
-            transition: 0.4s;
-        }
+        .produto-img img { max-width: 88%; max-height: 88%; object-fit: contain; transition: 0.4s; }
         .produto-card:hover .produto-img img { transform: scale(1.07); }
         .badge {
-            position: absolute;
-            top: 11px;
-            left: 11px;
-            background: var(--laranja);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.68rem;
-            font-weight: 700;
-            z-index: 2;
+            position: absolute; top: 11px; left: 11px; background: var(--laranja); color: white;
+            padding: 4px 10px; border-radius: 20px; font-size: 0.68rem; font-weight: 700; z-index: 2;
         }
         .badge.novo { background: var(--verde); }
         .badge.promo { background: #e91e63; }
         .badge.peca { background: #7c4dff; }
-        .produto-info {
-            padding: 15px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .marca {
-            color: var(--laranja);
-            font-size: 0.73rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 3px;
-        }
-        .produto-info h3 {
-            font-size: 1.05rem;
-            margin-bottom: 4px;
-            line-height: 1.3;
-        }
-        .categoria {
-            color: var(--cinza-texto);
-            font-size: 0.8rem;
-            margin-bottom: 13px;
-        }
-        .preco-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-        }
-        .valor {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--laranja);
-        }
+        .produto-info { padding: 15px; flex: 1; display: flex; flex-direction: column; }
+        .marca { color: var(--laranja); font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+        .produto-info h3 { font-size: 1.05rem; margin-bottom: 4px; line-height: 1.3; }
+        .categoria { color: var(--cinza-texto); font-size: 0.8rem; margin-bottom: 13px; }
+        .preco-row { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .valor { font-size: 1.25rem; font-weight: 700; color: var(--laranja); }
         .btn-add {
-            background: transparent;
-            border: 2px solid var(--laranja);
-            color: var(--laranja);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.25s;
-            font-size: 0.85rem;
+            background: transparent; border: 2px solid var(--laranja); color: var(--laranja);
+            padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.25s; font-size: 0.85rem;
         }
-        .btn-add:hover {
-            background: var(--laranja);
-            color: white;
-        }
+        .btn-add:hover { background: var(--laranja); color: white; }
 
         .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #1f1f1f;
-            border: 1px solid var(--laranja);
-            color: white;
-            padding: 14px 24px;
-            border-radius: 10px;
-            font-weight: 500;
-            z-index: 9999;
-            opacity: 0;
-            transition: 0.35s;
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: #1f1f1f; border: 1px solid var(--laranja); color: white; padding: 14px 24px;
+            border-radius: 10px; font-weight: 500; z-index: 9999; opacity: 0; transition: 0.35s;
         }
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-        /* CARRINHO + CHECKOUT (mesmo estilo da versão anterior) */
-        .cart-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-            z-index: 2000; opacity: 0; visibility: hidden; transition: 0.3s;
-        }
+        .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000; opacity: 0; visibility: hidden; transition: 0.3s; }
         .cart-overlay.open { opacity: 1; visibility: visible; }
         .cart-sidebar {
-            position: fixed; top: 0; right: -420px; width: 400px; max-width: 95%;
-            height: 100%; background: var(--cinza-escuro); z-index: 2001;
-            transition: 0.35s; display: flex; flex-direction: column; border-left: 1px solid #333;
+            position: fixed; top: 0; right: -420px; width: 400px; max-width: 95%; height: 100%;
+            background: var(--cinza-escuro); z-index: 2001; transition: 0.35s; display: flex; flex-direction: column; border-left: 1px solid #333;
         }
         .cart-sidebar.open { right: 0; }
-        .cart-header {
-            padding: 20px; border-bottom: 1px solid #333;
-            display: flex; justify-content: space-between; align-items: center;
-        }
+        .cart-header { padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
         .cart-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.55rem; }
         .close-cart { background: none; border: none; color: var(--cinza-texto); font-size: 1.6rem; cursor: pointer; }
         .cart-items { flex: 1; overflow-y: auto; padding: 16px; }
@@ -363,88 +151,47 @@
         .cart-footer { padding: 20px; border-top: 1px solid #333; }
         .cart-total { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; }
         .cart-total span:last-child { color: var(--laranja); }
-        .btn-finalizar {
-            width: 100%; background: var(--laranja); color: white; border: none;
-            padding: 15px; border-radius: 8px; font-weight: 700; font-size: 1rem;
-            cursor: pointer; margin-bottom: 10px;
-        }
-        .btn-whatsapp {
-            width: 100%; background: #25d366; color: white; border: none;
-            padding: 13px; border-radius: 8px; font-weight: 600; cursor: pointer;
-        }
+        .btn-finalizar { width: 100%; background: var(--laranja); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: 700; cursor: pointer; margin-bottom: 10px; }
+        .btn-whatsapp { width: 100%; background: #25d366; color: white; border: none; padding: 13px; border-radius: 8px; font-weight: 600; cursor: pointer; }
         .empty-cart { text-align: center; padding: 60px 20px; color: var(--cinza-texto); }
 
         .checkout-overlay {
             position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 3000;
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0; visibility: hidden; transition: 0.3s; padding: 20px;
+            display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: 0.3s; padding: 20px;
         }
         .checkout-overlay.open { opacity: 1; visibility: visible; }
-        .checkout-modal {
-            background: var(--cinza-escuro); border-radius: 16px; width: 100%;
-            max-width: 500px; max-height: 90vh; overflow-y: auto; border: 1px solid #333;
-        }
-        .checkout-header {
-            padding: 18px 22px; border-bottom: 1px solid #333;
-            display: flex; justify-content: space-between; align-items: center;
-        }
+        .checkout-modal { background: var(--cinza-escuro); border-radius: 16px; width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto; border: 1px solid #333; }
+        .checkout-header { padding: 18px 22px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
         .checkout-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; }
         .checkout-body { padding: 22px; }
         .payment-methods { display: grid; gap: 10px; margin-bottom: 22px; }
         .payment-option {
-            display: flex; align-items: center; gap: 14px; padding: 14px;
-            background: var(--cinza); border: 2px solid #333; border-radius: 12px;
-            cursor: pointer; transition: 0.25s;
+            display: flex; align-items: center; gap: 14px; padding: 14px; background: var(--cinza);
+            border: 2px solid #333; border-radius: 12px; cursor: pointer; transition: 0.25s;
         }
         .payment-option:hover, .payment-option.active { border-color: var(--laranja); background: #1a1a1a; }
         .payment-option input { display: none; }
         .payment-option .icon { font-size: 1.4rem; width: 34px; text-align: center; }
-        .payment-option .info h4 { font-size: 0.98rem; margin-bottom: 2px; }
+        .payment-option .info h4 { font-size: 0.98rem; }
         .payment-option .info p { font-size: 0.82rem; color: var(--cinza-texto); }
         .pix-area, .card-form, .boleto-area { display: none; }
         .pix-area.show, .card-form.show, .boleto-area.show { display: block; }
-        .pix-qr {
-            width: 170px; height: 170px; background: white; margin: 0 auto 14px;
-            border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3.2rem;
-        }
-        .pix-code {
-            background: #111; border: 1px solid #333; border-radius: 8px;
-            padding: 12px; font-family: monospace; font-size: 0.78rem;
-            word-break: break-all; margin-bottom: 12px;
-        }
-        .btn-copy {
-            background: var(--pix); color: white; border: none; padding: 12px;
-            border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; margin-bottom: 12px;
-        }
+        .pix-qr { width: 170px; height: 170px; background: white; margin: 0 auto 14px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3.2rem; }
+        .pix-code { background: #111; border: 1px solid #333; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.78rem; word-break: break-all; margin-bottom: 12px; }
+        .btn-copy { background: var(--pix); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; margin-bottom: 12px; }
         .pix-timer { color: var(--cinza-texto); font-size: 0.9rem; text-align: center; }
         .pix-timer span { color: var(--laranja); font-weight: 700; }
         .form-group { margin-bottom: 13px; }
         .form-group label { display: block; font-size: 0.85rem; color: var(--cinza-texto); margin-bottom: 5px; }
-        .form-group input, .form-group select {
-            width: 100%; background: #111; border: 1px solid #333; border-radius: 8px;
-            padding: 11px 13px; color: white; font-size: 0.95rem;
-        }
+        .form-group input, .form-group select { width: 100%; background: #111; border: 1px solid #333; border-radius: 8px; padding: 11px 13px; color: white; font-size: 0.95rem; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .boleto-code {
-            background: #111; border: 1px solid #333; border-radius: 8px;
-            padding: 14px; font-family: monospace; font-size: 0.88rem;
-            margin: 14px 0; text-align: center;
-        }
-        .btn-pay {
-            width: 100%; background: var(--laranja); color: white; border: none;
-            padding: 15px; border-radius: 8px; font-weight: 700; font-size: 1rem;
-            cursor: pointer; margin-top: 14px;
-        }
+        .boleto-code { background: #111; border: 1px solid #333; border-radius: 8px; padding: 14px; font-family: monospace; font-size: 0.88rem; margin: 14px 0; text-align: center; }
+        .btn-pay { width: 100%; background: var(--laranja); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: 700; cursor: pointer; margin-top: 14px; }
         .success-screen { text-align: center; padding: 30px 10px; }
         .success-icon { font-size: 3.8rem; margin-bottom: 12px; }
 
-        footer {
-            background: var(--cinza-escuro); padding: 55px 20px 28px; border-top: 1px solid #222;
-        }
-        .footer-content {
-            max-width: 1320px; margin: 0 auto 36px;
-            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px;
-        }
+        footer { background: var(--cinza-escuro); padding: 55px 20px 28px; border-top: 1px solid #222; }
+        .footer-content { max-width: 1320px; margin: 0 auto 36px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px; }
         .footer-brand .logo { font-size: 1.6rem; display: inline-block; margin-bottom: 12px; }
         .footer-brand p { color: var(--cinza-texto); max-width: 270px; font-size: 0.92rem; }
         .footer-col h4 { margin-bottom: 16px; }
@@ -452,17 +199,12 @@
         .footer-col li { margin-bottom: 9px; }
         .footer-col a { color: var(--cinza-texto); transition: 0.25s; font-size: 0.92rem; }
         .footer-col a:hover { color: var(--laranja); }
-        .copyright {
-            text-align: center; padding-top: 22px; border-top: 1px solid #222;
-            color: var(--cinza-texto); font-size: 0.88rem; max-width: 1320px; margin: 0 auto;
-        }
+        .copyright { text-align: center; padding-top: 22px; border-top: 1px solid #222; color: var(--cinza-texto); font-size: 0.88rem; max-width: 1320px; margin: 0 auto; }
 
         .whatsapp-float {
-            position: fixed; bottom: 26px; right: 26px; background: #25d366;
-            color: white; width: 58px; height: 58px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.7rem; z-index: 999;
-            box-shadow: 0 6px 20px rgba(37,211,102,0.4); transition: 0.3s;
+            position: fixed; bottom: 26px; right: 26px; background: #25d366; color: white;
+            width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.7rem; z-index: 999; box-shadow: 0 6px 20px rgba(37,211,102,0.4); transition: 0.3s;
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
@@ -479,9 +221,7 @@
 </head>
 <body>
 
-<div class="top-bar">
-    🚚 Frete grátis acima de R$ 1.500 • Pix com 5% de desconto • Peças originais
-</div>
+<div class="top-bar">🚚 Frete grátis acima de R$ 1.500 • Pix 5% off • Peças originais</div>
 
 <header>
     <nav class="navbar">
@@ -489,18 +229,14 @@
         <div class="search-box">
             <input type="text" id="search-input" placeholder="Buscar bikes, quadros, peças..." oninput="buscar()">
         </div>
-        <div class="nav-actions">
-            <button class="btn-carrinho" onclick="toggleCart()">
-                🛒 <span id="cart-count">0</span>
-            </button>
-        </div>
+        <button class="btn-carrinho" onclick="toggleCart()">🛒 <span id="cart-count">0</span></button>
     </nav>
 </header>
 
 <section class="hero">
     <div>
         <h1>BIKES + <span>PEÇAS</span></h1>
-        <p>Gios, Hupi Naja, Absolute e peças separadas para montar sua bike do seu jeito.</p>
+        <p>Gios, Hupi Naja, Absolute e peças separadas com imagens reais.</p>
         <a href="#produtos" class="btn-primary">Ver Catálogo</a>
     </div>
 </section>
@@ -534,12 +270,12 @@
     <div class="footer-content">
         <div class="footer-brand">
             <a href="#" class="logo">GRAU<span>BIKES</span></a>
-            <p>Bikes completas e peças separadas das melhores marcas do grau.</p>
+            <p>Bikes e peças das melhores marcas do grau.</p>
         </div>
         <div class="footer-col">
             <h4>Categorias</h4>
             <ul>
-                <li><a href="#" onclick="filtrar('bike')">Bikes Completas</a></li>
+                <li><a href="#" onclick="filtrar('bike')">Bikes</a></li>
                 <li><a href="#" onclick="filtrar('peca')">Peças</a></li>
                 <li><a href="#" onclick="filtrar('quadro')">Quadros</a></li>
             </ul>
@@ -548,7 +284,7 @@
             <h4>Pagamento</h4>
             <ul>
                 <li>Pix (5% off)</li>
-                <li>Cartão em até 12x</li>
+                <li>Cartão 12x</li>
                 <li>Boleto</li>
             </ul>
         </div>
@@ -556,7 +292,6 @@
             <h4>Contato</h4>
             <ul>
                 <li><a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a></li>
-                <li><a href="#">Instagram</a></li>
             </ul>
         </div>
     </div>
@@ -573,10 +308,7 @@
     </div>
     <div class="cart-items" id="cart-items"></div>
     <div class="cart-footer">
-        <div class="cart-total">
-            <span>Total:</span>
-            <span id="cart-total">R$ 0</span>
-        </div>
+        <div class="cart-total"><span>Total:</span><span id="cart-total">R$ 0</span></div>
         <button class="btn-finalizar" onclick="abrirCheckout()">Pagar Agora</button>
         <button class="btn-whatsapp" onclick="finalizarWhatsApp()">WhatsApp</button>
     </div>
@@ -595,37 +327,34 @@
 <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">💬</a>
 
 <script>
-// CATÁLOGO: BIKES + PEÇAS
 const produtos = [
-    // ===== BIKES =====
+    // BIKES
     { id: 1, marca: "gios", tipo: "bike", subtipo: "completa", nome: "Gios FRX Completa", categoria: "Bike Completa • Single", preco: 2199, img: "https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg", badge: "" },
     { id: 2, marca: "gios", tipo: "bike", subtipo: "completa", nome: "Gios 4Trix Completa", categoria: "Bike Completa • 21v", preco: 2399, img: "https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp", badge: "NOVO" },
-    { id: 3, marca: "hupi", tipo: "bike", subtipo: "completa", nome: "Hupi Naja Single 2025", categoria: "Single Speed • MT200", preco: 2899, img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp", badge: "NOVO" },
+    { id: 3, marca: "hupi", tipo: "bike", subtipo: "completa", nome: "Hupi Naja Single 2025", categoria: "Single • MT200", preco: 2899, img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp", badge: "NOVO" },
     { id: 4, marca: "hupi", tipo: "bike", subtipo: "completa", nome: "Hupi Naja V10 Laranja", categoria: "Bike Completa", preco: 2699, img: "https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp", badge: "" },
     { id: 5, marca: "hupi", tipo: "bike", subtipo: "completa", nome: "Hupi Sleeper BMX", categoria: "Big BMX • Single", preco: 2499, img: "https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg", badge: "NOVO" },
     { id: 6, marca: "absolute", tipo: "bike", subtipo: "completa", nome: "Absolute Nero 5 Cinza", categoria: "21v • Freestyle", preco: 1299, img: "https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg", badge: "PROMO" },
     { id: 7, marca: "absolute", tipo: "bike", subtipo: "completa", nome: "Absolute Nero 5 Oliva", categoria: "Bike Completa", preco: 1349, img: "https://http2.mlstatic.com/D_NQ_NP_935044-MLA99881475487_112025-O.webp", badge: "" },
     { id: 8, marca: "absolute", tipo: "bike", subtipo: "completa", nome: "Absolute Nero Grau Sport", categoria: "Aro 29 • Single", preco: 1599, img: "https://http2.mlstatic.com/D_NQ_NP_996978-MLB111201892744_052026-O-bicicleta-absolute-nero-grau-sport-aro-29-vmaxx-mt200-v3.webp", badge: "NOVO" },
 
-    // ===== QUADROS =====
+    // QUADROS
     { id: 9, marca: "gios", tipo: "peca", subtipo: "quadro", nome: "Quadro Gios FRX Roxo", categoria: "Quadro Aro 26 • Alumínio", preco: 999, img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg", badge: "DESTAQUE" },
     { id: 10, marca: "gios", tipo: "peca", subtipo: "quadro", nome: "Quadro Gios FRX Preto/Roxo", categoria: "Quadro Aro 26", preco: 949, img: "https://rogeriobikes.com/media/catalog/product/cache/83cdda7a34ac79691fa0545c8713101e/1/3/13793.png", badge: "" },
     { id: 11, marca: "gios", tipo: "peca", subtipo: "quadro", nome: "Quadro Gios FRX Evo 2026", categoria: "Quadro Nova Geração", preco: 1099, img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg", badge: "NOVO" },
-    { id: 12, marca: "hupi", tipo: "peca", subtipo: "quadro", nome: "Quadro Hupi Naja", categoria: "Quadro Freestyle", preco: 1899, img: "https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp", badge: "DESTAQUE" },
 
-    // ===== PEÇAS =====
-    { id: 13, marca: "gios", tipo: "peca", subtipo: "guidao", nome: "Guidão Gios Voador 700mm", categoria: "Guidão Alumínio", preco: 189, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Guidão+Gios", badge: "PEÇA" },
-    { id: 14, marca: "gios", tipo: "peca", subtipo: "mesa", nome: "Mesa Gios Freeride 40mm", categoria: "Mesa / Avanço", preco: 129, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Mesa+Gios", badge: "PEÇA" },
-    { id: 15, marca: "absolute", tipo: "peca", subtipo: "pedal", nome: "Pedal Absolute Brutus Flat", categoria: "Pedal Plataforma", preco: 149, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Pedal+Brutus", badge: "PEÇA" },
-    { id: 16, marca: "hupi", tipo: "peca", subtipo: "selim", nome: "Selim Hupi HPK", categoria: "Selim Freestyle", preco: 99, img: "https://http2.mlstatic.com/D_NQ_NP_798792-MLB89731168913_082025-O-banco-hupi-naja-selim-manobras-bmx-wheeling-grau-style-ddk.webp", badge: "PEÇA" },
-    { id: 17, marca: "absolute", tipo: "peca", subtipo: "cubo", nome: "Cubo Barulhento Absolute Brutus", categoria: "Cubo Traseiro 36F", preco: 279, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Cubo+Barulhento", badge: "PEÇA" },
-    { id: 18, marca: "gios", tipo: "peca", subtipo: "manopla", nome: "Manopla Gios BMX", categoria: "Manopla Par", preco: 49, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Manopla+Gios", badge: "PEÇA" },
-    { id: 19, marca: "absolute", tipo: "peca", subtipo: "freio", nome: "Freio Shimano MT200", categoria: "Freio Hidráulico", preco: 349, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Freio+MT200", badge: "PEÇA" },
-    { id: 20, marca: "gios", tipo: "peca", subtipo: "guidao", nome: "Guidão Absolute Flying", categoria: "Guidão 720mm", preco: 169, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Guidão+Flying", badge: "PEÇA" },
-    { id: 21, marca: "hupi", tipo: "peca", subtipo: "pedal", nome: "Pedal Hupi Nylon", categoria: "Pedal Freestyle", preco: 79, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Pedal+Hupi", badge: "PEÇA" },
-    { id: 22, marca: "absolute", tipo: "peca", subtipo: "mesa", nome: "Mesa Absolute Brutus 45mm", categoria: "Mesa Alumínio", preco: 139, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Mesa+Brutus", badge: "PEÇA" },
-    { id: 23, marca: "gios", tipo: "peca", subtipo: "aro", nome: "Aro Vzan Vmaxx 26\"", categoria: "Aro Parede Dupla", preco: 189, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Aro+Vmaxx", badge: "PEÇA" },
-    { id: 24, marca: "absolute", tipo: "peca", subtipo: "canote", nome: "Canote Absolute 27.2mm", categoria: "Canote Alumínio", preco: 69, img: "https://via.placeholder.com/300x200/1a1a1a/ff4d00?text=Canote", badge: "PEÇA" }
+    // PEÇAS COM IMAGENS REAIS
+    { id: 12, marca: "absolute", tipo: "peca", subtipo: "pedal", nome: "Pedal Absolute Brutus Flat", categoria: "Pedal Plataforma Vermelho", preco: 149, img: "https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp", badge: "PEÇA" },
+    { id: 13, marca: "absolute", tipo: "peca", subtipo: "mesa", nome: "Mesa Absolute Brutus 35mm", categoria: "Mesa / Avanço Preto", preco: 139, img: "https://http2.mlstatic.com/D_NQ_NP_756627-MLA99503239942_112025-O.webp", badge: "PEÇA" },
+    { id: 14, marca: "hupi", tipo: "peca", subtipo: "selim", nome: "Selim Hupi HPK", categoria: "Selim Freestyle", preco: 99, img: "https://http2.mlstatic.com/D_NQ_NP_798792-MLB89731168913_082025-O-banco-hupi-naja-selim-manobras-bmx-wheeling-grau-style-ddk.webp", badge: "PEÇA" },
+    { id: 15, marca: "gios", tipo: "peca", subtipo: "guidao", nome: "Guidão Gios Voador 700mm", categoria: "Guidão Alumínio", preco: 189, img: "https://http2.mlstatic.com/D_NQ_NP_730792-MLA114907022057_072026-B.webp", badge: "PEÇA" },
+    { id: 16, marca: "absolute", tipo: "peca", subtipo: "cubo", nome: "Cubo Barulhento Absolute", categoria: "Cubo Traseiro 36F", preco: 279, img: "https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp", badge: "PEÇA" },
+    { id: 17, marca: "gios", tipo: "peca", subtipo: "manopla", nome: "Manopla Gios BMX", categoria: "Par de Manoplas", preco: 49, img: "https://http2.mlstatic.com/D_NQ_NP_798792-MLB89731168913_082025-O-banco-hupi-naja-selim-manobras-bmx-wheeling-grau-style-ddk.webp", badge: "PEÇA" },
+    { id: 18, marca: "absolute", tipo: "peca", subtipo: "freio", nome: "Freio Shimano MT200", categoria: "Freio Hidráulico", preco: 349, img: "https://http2.mlstatic.com/D_NQ_NP_756627-MLA99503239942_112025-O.webp", badge: "PEÇA" },
+    { id: 19, marca: "gios", tipo: "peca", subtipo: "guidao", nome: "Guidão Absolute Flying", categoria: "Guidão 720mm", preco: 169, img: "https://http2.mlstatic.com/D_NQ_NP_730792-MLA114907022057_072026-B.webp", badge: "PEÇA" },
+    { id: 20, marca: "hupi", tipo: "peca", subtipo: "pedal", nome: "Pedal Hupi Plataforma", categoria: "Pedal Freestyle", preco: 79, img: "https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp", badge: "PEÇA" },
+    { id: 21, marca: "absolute", tipo: "peca", subtipo: "mesa", nome: "Mesa Absolute Brutus Camaleão", categoria: "Mesa 35mm", preco: 159, img: "https://http2.mlstatic.com/D_NQ_NP_756627-MLA99503239942_112025-O.webp", badge: "PEÇA" },
+    { id: 22, marca: "gios", tipo: "peca", subtipo: "aro", nome: "Aro Vzan Vmaxx 26\"", categoria: "Aro Parede Dupla", preco: 189, img: "https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg", badge: "PEÇA" }
 ];
 
 let carrinho = JSON.parse(localStorage.getItem('grauCarrinho')) || [];
@@ -636,12 +365,10 @@ function renderProdutos(lista) {
     listaAtual = lista;
     const grid = document.getElementById('produtos-grid');
     document.getElementById('produtos-count').textContent = `Mostrando ${lista.length} produto${lista.length !== 1 ? 's' : ''}`;
-
     if (lista.length === 0) {
-        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--cinza-texto)">Nenhum produto encontrado</div>`;
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--cinza-texto)">Nenhum produto encontrado</div>`;
         return;
     }
-
     grid.innerHTML = lista.map(p => `
         <div class="produto-card">
             <div class="produto-img">
@@ -665,7 +392,6 @@ function filtrar(tipo) {
     document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
     document.getElementById('search-input').value = '';
-
     let filtrados = produtos;
     if (tipo === 'bike') filtrados = produtos.filter(p => p.tipo === 'bike');
     else if (tipo === 'peca') filtrados = produtos.filter(p => p.tipo === 'peca');
@@ -673,7 +399,6 @@ function filtrar(tipo) {
     else if (tipo === 'quadro') filtrados = produtos.filter(p => p.subtipo === 'quadro');
     else if (tipo === 'guidao') filtrados = produtos.filter(p => p.subtipo === 'guidao');
     else if (tipo === 'pedal') filtrados = produtos.filter(p => p.subtipo === 'pedal');
-
     renderProdutos(filtrados);
 }
 
@@ -681,14 +406,10 @@ function buscar() {
     const termo = document.getElementById('search-input').value.toLowerCase().trim();
     document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
     document.querySelector('.filtro-btn').classList.add('active');
-
     if (!termo) return renderProdutos(produtos);
-
     const filtrados = produtos.filter(p =>
-        p.nome.toLowerCase().includes(termo) ||
-        p.marca.toLowerCase().includes(termo) ||
-        p.categoria.toLowerCase().includes(termo) ||
-        (p.subtipo && p.subtipo.toLowerCase().includes(termo))
+        p.nome.toLowerCase().includes(termo) || p.marca.toLowerCase().includes(termo) ||
+        p.categoria.toLowerCase().includes(termo) || (p.subtipo && p.subtipo.includes(termo))
     );
     renderProdutos(filtrados);
 }
@@ -705,43 +426,31 @@ function ordenar() {
 function adicionarCarrinho(id) {
     const produto = produtos.find(p => p.id === id);
     const item = carrinho.find(i => i.id === id);
-    if (item) item.qtd++;
-    else carrinho.push({ ...produto, qtd: 1 });
-    salvarCarrinho();
-    atualizarCarrinho();
+    if (item) item.qtd++; else carrinho.push({ ...produto, qtd: 1 });
+    salvarCarrinho(); atualizarCarrinho();
     mostrarToast(`${produto.nome} adicionado!`);
 }
 
 function mostrarToast(msg) {
     const toast = document.getElementById('toast');
-    toast.textContent = msg;
-    toast.classList.add('show');
+    toast.textContent = msg; toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 2200);
 }
 
-function removerItem(id) {
-    carrinho = carrinho.filter(i => i.id !== id);
-    salvarCarrinho();
-    atualizarCarrinho();
-}
-
+function removerItem(id) { carrinho = carrinho.filter(i => i.id !== id); salvarCarrinho(); atualizarCarrinho(); }
 function alterarQtd(id, delta) {
     const item = carrinho.find(i => i.id === id);
     if (!item) return;
     item.qtd += delta;
-    if (item.qtd <= 0) removerItem(id);
-    else { salvarCarrinho(); atualizarCarrinho(); }
+    if (item.qtd <= 0) removerItem(id); else { salvarCarrinho(); atualizarCarrinho(); }
 }
 
 function atualizarCarrinho() {
     const container = document.getElementById('cart-items');
-    const count = document.getElementById('cart-count');
-    const totalEl = document.getElementById('cart-total');
     const totalQtd = carrinho.reduce((s, i) => s + i.qtd, 0);
     const totalPreco = carrinho.reduce((s, i) => s + (i.preco * i.qtd), 0);
-    count.textContent = totalQtd;
-    totalEl.textContent = `R$ ${totalPreco.toLocaleString('pt-BR')}`;
-
+    document.getElementById('cart-count').textContent = totalQtd;
+    document.getElementById('cart-total').textContent = `R$ ${totalPreco.toLocaleString('pt-BR')}`;
     if (carrinho.length === 0) {
         container.innerHTML = `<div class="empty-cart">Seu carrinho está vazio</div>`;
         return;
@@ -763,19 +472,15 @@ function atualizarCarrinho() {
     `).join('');
 }
 
-function salvarCarrinho() {
-    localStorage.setItem('grauCarrinho', JSON.stringify(carrinho));
-}
+function salvarCarrinho() { localStorage.setItem('grauCarrinho', JSON.stringify(carrinho)); }
 
 function toggleCart(forceOpen = false) {
     const overlay = document.getElementById('cart-overlay');
     const sidebar = document.getElementById('cart-sidebar');
     if (forceOpen || !sidebar.classList.contains('open')) {
-        overlay.classList.add('open');
-        sidebar.classList.add('open');
+        overlay.classList.add('open'); sidebar.classList.add('open');
     } else {
-        overlay.classList.remove('open');
-        sidebar.classList.remove('open');
+        overlay.classList.remove('open'); sidebar.classList.remove('open');
     }
 }
 
@@ -785,7 +490,6 @@ function abrirCheckout() {
     document.getElementById('checkout-overlay').classList.add('open');
     renderCheckout();
 }
-
 function fecharCheckout() {
     document.getElementById('checkout-overlay').classList.remove('open');
     if (pixTimer) clearInterval(pixTimer);
@@ -796,26 +500,12 @@ function renderCheckout() {
     const body = document.getElementById('checkout-body');
     body.innerHTML = `
         <div style="margin-bottom:18px;padding:13px;background:#1a1a1a;border-radius:10px;display:flex;justify-content:space-between;font-weight:700">
-            <span>Total</span>
-            <span style="color:var(--laranja)">R$ ${total.toLocaleString('pt-BR')}</span>
+            <span>Total</span><span style="color:var(--laranja)">R$ ${total.toLocaleString('pt-BR')}</span>
         </div>
-        <p style="margin-bottom:11px;font-weight:600">Forma de pagamento</p>
         <div class="payment-methods">
-            <label class="payment-option active" onclick="selecionarMetodo('pix')">
-                <input type="radio" name="pagamento" checked>
-                <div class="icon">💠</div>
-                <div class="info"><h4>Pix</h4><p>Aprovação imediata • 5% off</p></div>
-            </label>
-            <label class="payment-option" onclick="selecionarMetodo('cartao')">
-                <input type="radio" name="pagamento">
-                <div class="icon">💳</div>
-                <div class="info"><h4>Cartão</h4><p>Até 12x sem juros</p></div>
-            </label>
-            <label class="payment-option" onclick="selecionarMetodo('boleto')">
-                <input type="radio" name="pagamento">
-                <div class="icon">📄</div>
-                <div class="info"><h4>Boleto</h4><p>3 dias úteis</p></div>
-            </label>
+            <label class="payment-option active" onclick="selecionarMetodo('pix')"><input type="radio" checked><div class="icon">💠</div><div class="info"><h4>Pix</h4><p>5% off</p></div></label>
+            <label class="payment-option" onclick="selecionarMetodo('cartao')"><input type="radio"><div class="icon">💳</div><div class="info"><h4>Cartão</h4><p>12x</p></div></label>
+            <label class="payment-option" onclick="selecionarMetodo('boleto')"><input type="radio"><div class="icon">📄</div><div class="info"><h4>Boleto</h4><p>3 dias</p></div></label>
         </div>
         <div class="pix-area show" id="pix-area">
             <div class="pix-qr">📱</div>
@@ -825,8 +515,8 @@ function renderCheckout() {
             <button class="btn-pay" onclick="simularPagamento('pix')">Já paguei</button>
         </div>
         <div class="card-form" id="card-form">
-            <div class="form-group"><label>Número do cartão</label><input type="text" placeholder="0000 0000 0000 0000"></div>
-            <div class="form-group"><label>Nome</label><input type="text" placeholder="NOME COMPLETO"></div>
+            <div class="form-group"><label>Número</label><input type="text" placeholder="0000 0000 0000 0000"></div>
+            <div class="form-group"><label>Nome</label><input type="text" placeholder="NOME"></div>
             <div class="form-row">
                 <div class="form-group"><label>Validade</label><input type="text" placeholder="MM/AA"></div>
                 <div class="form-group"><label>CVV</label><input type="text" placeholder="000"></div>
@@ -835,7 +525,7 @@ function renderCheckout() {
         </div>
         <div class="boleto-area" id="boleto-area">
             <div class="boleto-code">34191.79001 01043.510047 91020.150008 1 966100000${Math.floor(total)}</div>
-            <button class="btn-pay" onclick="simularPagamento('boleto')">Já paguei o Boleto</button>
+            <button class="btn-pay" onclick="simularPagamento('boleto')">Já paguei</button>
         </div>
     `;
     iniciarTimerPix();
@@ -865,9 +555,7 @@ function simularPagamento(metodo) {
     const total = carrinho.reduce((s, i) => s + (i.preco * i.qtd), 0);
     body.innerHTML = `<div style="text-align:center;padding:40px"><div style="font-size:2.8rem">⏳</div><h3>Processando...</h3></div>`;
     setTimeout(() => {
-        carrinho = [];
-        salvarCarrinho();
-        atualizarCarrinho();
+        carrinho = []; salvarCarrinho(); atualizarCarrinho();
         body.innerHTML = `
             <div class="success-screen">
                 <div class="success-icon">✅</div>
@@ -875,8 +563,7 @@ function simularPagamento(metodo) {
                 <p style="color:var(--cinza-texto);margin-bottom:16px">Pedido confirmado</p>
                 <p style="font-weight:700;color:var(--laranja);font-size:1.3rem;margin-bottom:20px">R$ ${total.toLocaleString('pt-BR')}</p>
                 <button class="btn-primary" onclick="fecharCheckout()">Continuar</button>
-            </div>
-        `;
+            </div>`;
     }, 1500);
 }
 
@@ -892,6 +579,5 @@ function finalizarWhatsApp() {
 renderProdutos(produtos);
 atualizarCarrinho();
 </script>
-
 </body>
 </html>
