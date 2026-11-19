@@ -98,7 +98,7 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:#bdbdbd;font-weight:500}
 .trust-item span{font-size:1.25rem}
 
-/* ===== MONTADOR DE BIKE CUSTOMIZADA ===== */
+/* ===== MONTADOR DE BIKE CUSTOMIZADA (6 ETAPAS + PRÉVIA VISUAL) ===== */
 .builder-section{
   max-width:1320px;margin:50px auto 20px;padding:0 20px;
 }
@@ -109,7 +109,7 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 }
 .builder-header{
   display:flex;justify-content:space-between;align-items:flex-end;
-  flex-wrap:wrap;gap:16px;margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid #222;
+  flex-wrap:wrap;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #222;
 }
 .builder-tag{
   display:inline-block;background:rgba(255,77,0,.15);color:var(--laranja);
@@ -120,21 +120,21 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .builder-header p{color:var(--cinza-texto);font-size:.95rem;margin-top:4px}
 
 .builder-steps-nav{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px;
+  display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:28px;
 }
 .step-tab{
   background:var(--cinza);border:1px solid #2e2e2e;border-radius:12px;
-  padding:12px 14px;text-align:left;color:var(--cinza-texto);transition:.25s;position:relative;
+  padding:10px 12px;text-align:left;color:var(--cinza-texto);transition:.25s;position:relative;min-width:0;
 }
 .step-tab.active{border-color:var(--laranja);background:#1f1612;color:#fff}
 .step-tab.done{border-color:rgba(0,200,83,.45)}
-.step-tab .step-num{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:2px}
+.step-tab .step-num{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:2px}
 .step-tab.active .step-num{color:var(--laranja)}
 .step-tab.done .step-num{color:var(--verde)}
-.step-tab strong{font-size:.95rem;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step-tab strong{font-size:.84rem;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 .builder-grid{
-  display:grid;grid-template-columns:1.35fr .65fr;gap:28px;align-items:start;
+  display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:start;
 }
 .builder-options-grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;
@@ -166,27 +166,50 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .btn-step-next{background:var(--laranja);border:none;color:#fff;padding:11px 24px;border-radius:8px;font-weight:700}
 .btn-step-next:hover{background:var(--laranja-hover)}
 
-/* RESUMO DO MONTADOR */
+/* RESUMO + PRÉVIA VISUAL DINÂMICA */
 .builder-summary{
-  background:var(--cinza-escuro);border:1px solid #2a2a2a;border-radius:16px;padding:22px;position:sticky;top:92px;
+  background:var(--cinza-escuro);border:1px solid #2a2a2a;border-radius:16px;padding:20px;position:sticky;top:92px;
 }
-.builder-summary h3{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:1px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.builder-summary h3{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:1px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
 .combo-badge{background:rgba(0,200,83,.15);color:var(--verde);font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:20px}
-.summary-list{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+
+.preview-stage{
+  background:radial-gradient(circle at center, #222 0%, #0d0d0d 100%);
+  border:1px solid #262626;border-radius:14px;padding:14px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden;
+}
+.preview-cor-badge{
+  position:absolute;top:10px;left:10px;background:rgba(0,0,0,.75);border:1px solid #333;
+  font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:20px;color:#fff;display:flex;align-items:center;gap:6px;
+}
+.cor-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.preview-stage img{
+  height:165px;max-width:92%;object-fit:contain;transition:transform .35s ease, opacity .25s ease;
+  filter:drop-shadow(0 12px 18px rgba(0,0,0,.8));
+}
+.preview-stage:hover img{transform:scale(1.05)}
+.preview-chips{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:5px;margin-top:10px;
+}
+.preview-chip{
+  background:#181818;border:1px solid #2e2e2e;color:#ccc;font-size:.68rem;padding:3px 8px;border-radius:6px;font-weight:600;
+}
+
+.summary-list{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;max-height:220px;overflow-y:auto;padding-right:4px}
 .summary-row{
   display:flex;justify-content:space-between;align-items:center;gap:10px;
-  padding:10px 12px;background:#181818;border-radius:10px;border:1px solid #242424;font-size:.85rem;
+  padding:8px 10px;background:#181818;border-radius:9px;border:1px solid #242424;font-size:.82rem;cursor:pointer;transition:.2s;
 }
-.summary-row .label{color:var(--cinza-texto);font-size:.74rem;display:block}
+.summary-row:hover{border-color:#444}
+.summary-row .label{color:var(--cinza-texto);font-size:.7rem;display:block}
 .summary-row .val{font-weight:600;color:#fff}
 .summary-row .price{font-weight:700;color:var(--laranja);white-space:nowrap}
-.summary-totals{border-top:1px solid #262626;padding-top:14px;margin-bottom:16px}
-.summary-pix{color:var(--pix);font-weight:700;font-size:.9rem;margin-bottom:2px}
-.summary-total-price{font-size:1.75rem;font-weight:800;color:#fff;line-height:1.1}
-.summary-parcela{font-size:.8rem;color:var(--cinza-texto);margin-top:3px}
-.btn-add-custom{width:100%;background:var(--laranja);color:#fff;border:none;padding:14px;border-radius:10px;font-weight:700;font-size:.96rem;margin-bottom:8px;transition:.2s}
+.summary-totals{border-top:1px solid #262626;padding-top:12px;margin-bottom:14px}
+.summary-pix{color:var(--pix);font-weight:700;font-size:.88rem;margin-bottom:2px}
+.summary-total-price{font-size:1.7rem;font-weight:800;color:#fff;line-height:1.1}
+.summary-parcela{font-size:.78rem;color:var(--cinza-texto);margin-top:3px}
+.btn-add-custom{width:100%;background:var(--laranja);color:#fff;border:none;padding:13px;border-radius:10px;font-weight:700;font-size:.94rem;margin-bottom:8px;transition:.2s}
 .btn-add-custom:hover{background:var(--laranja-hover);transform:translateY(-2px)}
-.btn-whats-custom{width:100%;background:transparent;border:1px solid #25d366;color:#25d366;padding:11px;border-radius:10px;font-weight:600;font-size:.86rem;transition:.2s}
+.btn-whats-custom{width:100%;background:transparent;border:1px solid #25d366;color:#25d366;padding:10px;border-radius:10px;font-weight:600;font-size:.84rem;transition:.2s}
 .btn-whats-custom:hover{background:#25d366;color:#fff}
 
 /* CATEGORIAS RÁPIDAS */
@@ -301,7 +324,7 @@ header{background:rgba(10,10,10,.96);backdrop-filter:blur(14px);position:sticky;
 .cart-item img{width:64px;height:64px;object-fit:contain;background:#111;border-radius:8px;padding:4px}
 .cart-item-info{flex:1}
 .cart-item-info h4{font-size:.92rem;margin-bottom:3px}
-.cart-item-sub{font-size:.75rem;color:var(--cinza-texto);margin-bottom:4px;line-height:1.35}
+.cart-item-sub{font-size:.74rem;color:var(--cinza-texto);margin-bottom:4px;line-height:1.35}
 .cart-item-info .preco{color:var(--laranja);font-weight:700;font-size:.93rem}
 .qty-controls{display:flex;align-items:center;gap:10px;margin-top:6px}
 .qty-btn{width:26px;height:26px;border:1px solid #444;background:#222;color:#fff;border-radius:6px;font-weight:700}
@@ -373,10 +396,12 @@ footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px soli
 .whatsapp-float:hover{transform:scale(1.1)}
 .btn-filtros-mobile{display:none;background:var(--cinza);border:1px solid #333;color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;margin-bottom:16px}
 
+@media(max-width:1050px){
+  .builder-steps-nav{grid-template-columns:repeat(3,1fr)}
+}
 @media(max-width:960px){
   .builder-grid{grid-template-columns:1fr}
   .builder-summary{position:static}
-  .builder-steps-nav{grid-template-columns:1fr 1fr}
 }
 @media(max-width:900px){
   .hero-content{grid-template-columns:1fr;text-align:center}
@@ -396,7 +421,7 @@ footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px soli
 }
 @media(max-width:600px){
   .builder-box{padding:20px 16px}
-  .builder-steps-nav{grid-template-columns:1fr}
+  .builder-steps-nav{grid-template-columns:1fr 1fr}
   .hero-cards{grid-template-columns:1fr}
   .footer-content{grid-template-columns:1fr}
   .trust-inner{justify-content:flex-start;gap:14px}
@@ -431,7 +456,7 @@ footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px soli
       <div class="hero-badge">🔥 Coleção 2026 Disponível</div>
       <h1>SUA PRÓXIMA<br><span>BIKE DE GRAU</span><br>ESTÁ AQUI</h1>
       <p class="subtitle">
-        Gios, Hupi Naja e Absolute. Escolha uma bike pronta, compre peças avulsas ou monte o seu projeto peça por peça.
+        Gios, Hupi Naja e Absolute. Escolha uma bike pronta, compre peças avulsas ou monte o seu projeto completo em 6 etapas.
       </p>
       <div class="hero-ctas">
         <a href="#montador" class="btn-primary">🛠️ Montar Minha Bike</a>
@@ -447,8 +472,8 @@ footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px soli
     <div class="hero-cards">
       <div class="hero-card">
         <div class="icon">🛠️</div>
-        <h3>Montador Custom</h3>
-        <p>Escolha quadro, suspensão, freio e guidão em 4 passos.</p>
+        <h3>Montador 6 Etapas</h3>
+        <p>Quadro, suspensão, freio, guidão, rodas Vmaxx e relação single.</p>
       </div>
       <div class="hero-card">
         <div class="icon">🚲</div>
@@ -485,12 +510,12 @@ footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px soli
       <div>
         <span class="builder-tag">Configurador Interativo • 5% OFF no Combo</span>
         <h2>MONTE SUA BIKE DO ZERO</h2>
-        <p>Selecione cada componente passo a passo. Todas as peças abaixo são 100% compatíveis entre si.</p>
+        <p>Escolha cada componente nas 6 etapas abaixo e veja a prévia da sua configuração em tempo real.</p>
       </div>
       <button class="btn-limpar" onclick="resetarMontador()">Reiniciar Montagem</button>
     </div>
 
-    <!-- Navegação das 4 Etapas -->
+    <!-- Navegação das 6 Etapas -->
     <div class="builder-steps-nav" id="builder-steps-nav"></div>
 
     <div class="builder-grid">
@@ -503,10 +528,21 @@ footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px soli
         </div>
       </div>
 
-      <!-- Resumo em Tempo Real -->
+      <!-- Resumo + Prévia Visual Dinâmica -->
       <aside class="builder-summary">
-        <h3>SUA CONFIGURAÇÃO <span class="combo-badge">Combo -5%</span></h3>
+        <h3>PRÉVIA DO PROJETO <span class="combo-badge">Combo -5%</span></h3>
+
+        <div class="preview-stage">
+          <div class="preview-cor-badge">
+            <span class="cor-dot" id="preview-cor-dot"></span>
+            <span id="preview-cor-nome">Gios FRX Roxo</span>
+          </div>
+          <img id="preview-bike-img" src="" alt="Prévia da bike montada">
+          <div class="preview-chips" id="preview-chips"></div>
+        </div>
+
         <div class="summary-list" id="builder-summary-list"></div>
+
         <div class="summary-totals">
           <div class="summary-pix" id="builder-pix">💠 R$ 0 no Pix</div>
           <div class="summary-total-price" id="builder-total">R$ 0</div>
@@ -712,46 +748,66 @@ footer{background:var(--cinza-escuro);padding:55px 20px 28px;border-top:1px soli
 <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">💬</a>
 
 <script>
-/* ===== DADOS DO MONTADOR DE BIKE CUSTOMIZADA ===== */
+/* ===== DADOS DO MONTADOR DE BIKE CUSTOMIZADA (6 ETAPAS) ===== */
 const etapasMontador = [
   {
     chave: 'quadro',
     titulo: '1. Quadro',
     nomeCurto: 'Quadro',
     opcoes: [
-      { id: 'q1', marca: 'Gios', nome: 'Quadro Gios FRX Roxo', spec: 'Aro 26 • Alumínio 6061 Reforçado', preco: 999, img: 'https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg' },
-      { id: 'q2', marca: 'Gios', nome: 'Quadro Gios FRX Preto/Roxo', spec: 'Aro 26 • Gancheira Horizontal', preco: 949, img: 'https://rogeriobikes.com/media/catalog/product/cache/83cdda7a34ac79691fa0545c8713101e/1/3/13793.png' },
-      { id: 'q3', marca: 'Hupi', nome: 'Quadro Hupi Naja V10 Laranja', spec: 'Aro 26 • Geometria Wheeling Pro', preco: 1190, img: 'https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp' }
+      { id: 'q1', marca: 'Gios', nome: 'Quadro Gios FRX Roxo', spec: 'Aro 26 • Alumínio 6061 Reforçado', preco: 999, corHex: '#8e24aa', corLabel: 'Roxo Metálico', previewImg: 'https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg', img: 'https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg' },
+      { id: 'q2', marca: 'Gios', nome: 'Quadro Gios FRX Preto/Roxo', spec: 'Aro 26 • Gancheira Horizontal', preco: 949, corHex: '#212121', corLabel: 'Preto Fosco / Roxo', previewImg: 'https://rogeriobikes.com/media/catalog/product/cache/83cdda7a34ac79691fa0545c8713101e/1/3/13793.png', img: 'https://rogeriobikes.com/media/catalog/product/cache/83cdda7a34ac79691fa0545c8713101e/1/3/13793.png' },
+      { id: 'q3', marca: 'Hupi', nome: 'Quadro Hupi Naja V10 Laranja', spec: 'Aro 26 • Geometria Wheeling Pro', preco: 1190, corHex: '#ff4d00', corLabel: 'Laranja Neon', previewImg: 'https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp', img: 'https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp' }
     ]
   },
   {
     chave: 'suspensao',
-    titulo: '2. Suspensão / Garfo',
+    titulo: '2. Suspensão',
     nomeCurto: 'Suspensão',
     opcoes: [
-      { id: 's1', marca: 'Absolute', nome: 'Suspensão Absolute Nero 100mm', spec: 'Trava no Ombro • Espiga Reta', preco: 389, img: 'https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg' },
-      { id: 's2', marca: 'RST', nome: 'Suspensão RST Dirt 100mm', spec: 'Canelas 32mm • Reforçada p/ Impacto', preco: 690, img: 'https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg' },
-      { id: 's3', marca: 'Gios', nome: 'Garfo Rígido Gios Cr-Mo', spec: 'Leveza Máxima • Resposta Direta', preco: 299, img: 'https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg' }
+      { id: 's1', marca: 'Absolute', nome: 'Suspensão Absolute Nero 100mm', spec: 'Trava no Ombro • Espiga Reta', preco: 389, chip: 'Susp. 100mm', img: 'https://http2.mlstatic.com/D_NQ_NP_833581-MLU115906486564_092026-F.jpg' },
+      { id: 's2', marca: 'RST', nome: 'Suspensão RST Dirt 100mm', spec: 'Canelas 32mm • Reforçada p/ Impacto', preco: 690, chip: 'RST Dirt 32mm', img: 'https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg' },
+      { id: 's3', marca: 'Gios', nome: 'Garfo Rígido Gios Cr-Mo', spec: 'Leveza Máxima • Resposta Direta', preco: 299, chip: 'Garfo Rígido', img: 'https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg' }
     ]
   },
   {
     chave: 'freio',
-    titulo: '3. Sistema de Freio',
+    titulo: '3. Freio',
     nomeCurto: 'Freio',
     opcoes: [
-      { id: 'f1', marca: 'Shimano', nome: 'Freio Hidráulico Shimano MT200', spec: 'Par Completo + Discos 160mm', preco: 449, img: 'https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp' },
-      { id: 'f2', marca: 'Absolute', nome: 'Freio Hidráulico Absolute Wild', spec: 'Óleo Mineral • Ótimo Custo-Benefício', preco: 329, img: 'https://http2.mlstatic.com/D_NQ_NP_996978-MLB111201892744_052026-O-bicicleta-absolute-nero-grau-sport-aro-29-vmaxx-mt200-v3.webp' },
-      { id: 'f3', marca: 'Absolute', nome: 'Freio a Disco Mecânico Nero', spec: 'Pinças Duplo Acionamento + Rotores', preco: 179, img: 'https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp' }
+      { id: 'f1', marca: 'Shimano', nome: 'Freio Hidráulico Shimano MT200', spec: 'Par Completo + Discos 160mm', preco: 449, chip: 'Shimano MT200', img: 'https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp' },
+      { id: 'f2', marca: 'Absolute', nome: 'Freio Hidráulico Absolute Wild', spec: 'Óleo Mineral • Ótimo Custo-Benefício', preco: 329, chip: 'Hidráulico Wild', img: 'https://http2.mlstatic.com/D_NQ_NP_996978-MLB111201892744_052026-O-bicicleta-absolute-nero-grau-sport-aro-29-vmaxx-mt200-v3.webp' },
+      { id: 'f3', marca: 'Absolute', nome: 'Freio a Disco Mecânico Nero', spec: 'Pinças Duplo Acionamento + Rotores', preco: 179, chip: 'Disco Mecânico', img: 'https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp' }
     ]
   },
   {
     chave: 'guidao',
-    titulo: '4. Guidão + Mesa',
+    titulo: '4. Guidão',
     nomeCurto: 'Guidão',
     opcoes: [
-      { id: 'g1', marca: 'Gios', nome: 'Combo Guidão 740mm + Mesa 35mm', spec: 'Alumínio 31.8mm • Alta Pegada', preco: 239, img: 'https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg' },
-      { id: 'g2', marca: 'Hupi', nome: 'Combo Guidão Hupi Pub + Mesa', spec: 'Rise Alto 50mm • Ideal Wheeling', preco: 289, img: 'https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp' },
-      { id: 'g3', marca: 'Absolute', nome: 'Combo Guidão Nero + Mesa Curta', spec: '720mm Alumínio Preto Fosco', preco: 189, img: 'https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp' }
+      { id: 'g1', marca: 'Gios', nome: 'Combo Guidão 740mm + Mesa 35mm', spec: 'Alumínio 31.8mm • Alta Pegada', preco: 239, chip: 'Guidão 740mm', img: 'https://http2.mlstatic.com/D_NQ_NP_967617-MLB95134873300_102025-O-quadro-26-gios-frx-reforcado-bike-grau-freeride-roxo.jpg' },
+      { id: 'g2', marca: 'Hupi', nome: 'Combo Guidão Hupi Pub + Mesa', spec: 'Rise Alto 50mm • Ideal Wheeling', preco: 289, chip: 'Hupi Pub Rise', img: 'https://http2.mlstatic.com/D_NQ_NP_921936-MLB115692745834_092026-O-bicicleta-do-grau-hupi-naja-v10-disc-shimano.webp' },
+      { id: 'g3', marca: 'Absolute', nome: 'Combo Guidão Nero + Mesa Curta', spec: '720mm Alumínio Preto Fosco', preco: 189, chip: 'Guidão 720mm', img: 'https://http2.mlstatic.com/D_NQ_NP_831037-MLB90578122005_082025-O-pedal-plataforma-absolute-brutus-flat-916-vermelho-bmx-mtb.webp' }
+    ]
+  },
+  {
+    chave: 'rodas',
+    titulo: '5. Rodas',
+    nomeCurto: 'Rodas',
+    opcoes: [
+      { id: 'r1', marca: 'Vzan', nome: 'Par Rodas Vzan Vmaxx Disco 26"', spec: 'Folha Dupla • Cubos Rolamentados + Pneus Kenda', preco: 549, chip: 'Aros Vmaxx 26"', img: 'https://http2.mlstatic.com/D_NQ_NP_772094-MLA100068464337_122025-O.jpg' },
+      { id: 'r2', marca: 'Vzan', nome: 'Par Rodas Vzan Extreme Pro 26"', spec: 'Mais Leve • Raios Inox Pretos + Pneus Balão', preco: 629, chip: 'Vzan Extreme', img: 'https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp' },
+      { id: 'r3', marca: 'Vzan', nome: 'Par Rodas Vmaxx 29" Street', spec: 'Aro 29 Reforçado • Pneus Slick 29x2.10', preco: 589, chip: 'Aros Vmaxx 29"', img: 'https://http2.mlstatic.com/D_NQ_NP_996978-MLB111201892744_052026-O-bicicleta-absolute-nero-grau-sport-aro-29-vmaxx-mt200-v3.webp' }
+    ]
+  },
+  {
+    chave: 'relacao',
+    titulo: '6. Relação',
+    nomeCurto: 'Relação',
+    opcoes: [
+      { id: 't1', marca: 'Absolute', nome: 'Kit Relação Single Speed Pro', spec: 'Pedivela 34D + Catraca 16D + Tensor + Corrente Grossa', preco: 269, chip: 'Single 34x16D', img: 'https://http2.mlstatic.com/D_NQ_NP_679031-MLB116259556566_092026-O-bicicleta-big-bmx-aro-26-hupi-single-speed-wheeling-grau.jpg' },
+      { id: 't2', marca: 'Shimano', nome: 'Kit Single Integrado Hollowtech', spec: 'Eixo Vazado • Coroa Narrow Wide + KMC Reforçada', preco: 459, chip: 'Single Hollowtech', img: 'https://http2.mlstatic.com/D_NQ_NP_625140-MLB92975503795_092025-O-bike-hupi-naja-2025-grau-kit-single-freio-mt200.webp' },
+      { id: 't3', marca: 'Shimano', nome: 'Kit 21 Velocidades Shimano Tourney', spec: 'Câmbios + Alavancas Rapid Fire + Roda Livre 7v', preco: 349, chip: 'Kit 21v Shimano', img: 'https://http2.mlstatic.com/D_NQ_NP_644143-MLB83525452790_042025-O-bicicleta-gios-4trixfrx-do-grau-aro-26-freio-a-disco-21v.webp' }
     ]
   }
 ];
@@ -761,11 +817,13 @@ let selecaoMontador = {
   quadro: etapasMontador[0].opcoes[0],
   suspensao: etapasMontador[1].opcoes[0],
   freio: etapasMontador[2].opcoes[0],
-  guidao: etapasMontador[3].opcoes[0]
+  guidao: etapasMontador[3].opcoes[0],
+  rodas: etapasMontador[4].opcoes[0],
+  relacao: etapasMontador[5].opcoes[0]
 };
 
 function renderizarMontador() {
-  // Tabs das etapas
+  // Tabs das 6 etapas
   const nav = document.getElementById('builder-steps-nav');
   nav.innerHTML = etapasMontador.map((et, idx) => {
     const itemSelecionado = selecaoMontador[et.chave];
@@ -799,21 +857,42 @@ function renderizarMontador() {
   document.getElementById('btn-step-prev').disabled = etapaAtual === 0;
   const btnNext = document.getElementById('btn-step-next');
   if (etapaAtual === etapasMontador.length - 1) {
-    btnNext.textContent = '✓ Montagem Concluída';
+    btnNext.textContent = '✓ Finalizar e Adicionar';
     btnNext.onclick = () => adicionarBikeMontadaCarrinho();
   } else {
     btnNext.textContent = `Próximo: ${etapasMontador[etapaAtual + 1].nomeCurto} →`;
     btnNext.onclick = () => mudarEtapa(1);
   }
 
+  // Atualiza Prévia Dinâmica Visual
+  const quadro = selecaoMontador.quadro;
+  const imgPreview = document.getElementById('preview-bike-img');
+  if (imgPreview.src !== quadro.previewImg) {
+    imgPreview.style.opacity = '0.35';
+    setTimeout(() => {
+      imgPreview.src = quadro.previewImg;
+      imgPreview.style.opacity = '1';
+    }, 120);
+  }
+  document.getElementById('preview-cor-dot').style.background = quadro.corHex;
+  document.getElementById('preview-cor-nome').textContent = `${quadro.marca} • ${quadro.corLabel}`;
+
+  const chips = [
+    selecaoMontador.suspensao.chip,
+    selecaoMontador.freio.chip,
+    selecaoMontador.rodas.chip,
+    selecaoMontador.relacao.chip
+  ];
+  document.getElementById('preview-chips').innerHTML = chips.map(c => `<span class="preview-chip">${c}</span>`).join('');
+
   // Resumo lateral
   const summaryList = document.getElementById('builder-summary-list');
   let somaPecas = 0;
-  summaryList.innerHTML = etapasMontador.map(et => {
+  summaryList.innerHTML = etapasMontador.map((et, idx) => {
     const peca = selecaoMontador[et.chave];
     somaPecas += peca.preco;
     return `
-      <div class="summary-row">
+      <div class="summary-row" onclick="irParaEtapa(${idx})" title="Clique para alterar ${et.nomeCurto}">
         <div>
           <span class="label">${et.nomeCurto}</span>
           <span class="val">${peca.nome}</span>
@@ -823,7 +902,6 @@ function renderizarMontador() {
     `;
   }).join('');
 
-  // Aplica 5% de desconto de combo
   const totalCombo = Math.round(somaPecas * 0.95);
   const totalPix = Math.round(totalCombo * 0.95);
   document.getElementById('builder-pix').textContent = `💠 ${formatarMoeda(totalPix)} no Pix`;
@@ -859,7 +937,9 @@ function resetarMontador() {
     quadro: etapasMontador[0].opcoes[0],
     suspensao: etapasMontador[1].opcoes[0],
     freio: etapasMontador[2].opcoes[0],
-    guidao: etapasMontador[3].opcoes[0]
+    guidao: etapasMontador[3].opcoes[0],
+    rodas: etapasMontador[4].opcoes[0],
+    relacao: etapasMontador[5].opcoes[0]
   };
   renderizarMontador();
   mostrarToast('Montador reiniciado para configuração padrão');
@@ -868,7 +948,7 @@ function resetarMontador() {
 function adicionarBikeMontadaCarrinho() {
   const somaPecas = Object.values(selecaoMontador).reduce((acc, p) => acc + p.preco, 0);
   const totalCombo = Math.round(somaPecas * 0.95);
-  const descricaoPecas = `${selecaoMontador.quadro.nome} • ${selecaoMontador.suspensao.nome} • ${selecaoMontador.freio.nome} • ${selecaoMontador.guidao.nome}`;
+  const descricaoPecas = Object.values(selecaoMontador).map(p => p.nome).join(' • ');
   const customId = 'custom_' + Object.values(selecaoMontador).map(p => p.id).join('_');
 
   const existente = carrinho.find(i => i.id === customId);
@@ -877,10 +957,10 @@ function adicionarBikeMontadaCarrinho() {
   } else {
     carrinho.push({
       id: customId,
-      nome: `Bike Custom (${selecaoMontador.quadro.marca})`,
+      nome: `Bike Custom ${selecaoMontador.quadro.marca} (${selecaoMontador.quadro.corLabel})`,
       detalhes: descricaoPecas,
       preco: totalCombo,
-      img: selecaoMontador.quadro.img,
+      img: selecaoMontador.quadro.previewImg,
       qty: 1
     });
   }
@@ -892,11 +972,13 @@ function adicionarBikeMontadaCarrinho() {
 function enviarMontagemWhatsApp() {
   const somaPecas = Object.values(selecaoMontador).reduce((acc, p) => acc + p.preco, 0);
   const totalCombo = Math.round(somaPecas * 0.95);
-  const texto = `Olá! Montei esta bike customizada no site da *Grau Bikes*:%0A%0A` +
+  const texto = `Olá! Montei esta bike customizada de 6 etapas na *Grau Bikes*:%0A%0A` +
     `• *Quadro:* ${selecaoMontador.quadro.nome}%0A` +
     `• *Suspensão:* ${selecaoMontador.suspensao.nome}%0A` +
     `• *Freio:* ${selecaoMontador.freio.nome}%0A` +
-    `• *Guidão/Mesa:* ${selecaoMontador.guidao.nome}%0A%0A` +
+    `• *Guidão/Mesa:* ${selecaoMontador.guidao.nome}%0A` +
+    `• *Rodas:* ${selecaoMontador.rodas.nome}%0A` +
+    `• *Relação:* ${selecaoMontador.relacao.nome}%0A%0A` +
     `*Valor do Combo:* ${formatarMoeda(totalCombo)}%0AQuero tirar uma dúvida sobre essa montagem!`;
   window.open(`https://wa.me/5511999999999?text=${texto}`, '_blank');
 }
